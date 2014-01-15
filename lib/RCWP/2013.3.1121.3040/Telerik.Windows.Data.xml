@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Data.DataOperationType">
+            <summary>
+            Defines the possible data descriptor types.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.DataOperationType.Filter">
+            <summary>
+            Filtering operation.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.DataOperationType.Sort">
+            <summary>
+            Sorting operation.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.DataOperationType.Group">
+            <summary>
+            Grouping operation.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.DataHelper">
+            <summary>
+            Exposes common data-related operations.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataHelper.CompareNulls(System.Object,System.Object)">
+            <summary>
+            Compares two objects, checking for null or <see cref="T:System.DBNull"/> values.
+            </summary>
+            <param name="val1"></param>
+            <param name="val2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Data.INamedDescriptor">
+            <summary>
+            Defines a <see cref="T:Telerik.Windows.Data.DataDescriptor"/> instance that is identified by a name.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.INamedDescriptor.Name">
+            <summary>
+            Gets the name of this instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.SortableDataDescriptor">
+            <summary>
+            Represents a <see cref="T:Telerik.Windows.Data.DataDescriptor"/> which has knowledge for a sort operation.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.DataDescriptor">
+            <summary>
+            Base class for all descriptors that define one of the following data operations: sorting, filtering or grouping.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.CollectionViewObject">
+            <summary>
+            Represents an object that resides within a <see cref="T:Telerik.Windows.Data.RadCollectionViewSource"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.CollectionViewObject.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.CollectionViewObject"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.IDescriptorProcessor">
+            <summary>
+            Defines an instance that may perform data operation, using data descriptor.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.IDescriptorProcessor.BeginProcess(System.Collections.IEnumerable)">
+            <summary>
+            Notifies this instance for a starting data operation.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Telerik.Windows.Data.IDescriptorProcessor.Process(System.Collections.IEnumerable)">
+            <summary>
+            Performs the core data operation logic, as defined by the associated <see cref="T:Telerik.Windows.Data.DataDescriptor"/>.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataDescriptor.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects.
+            </summary>
+            <param name="element1">The first object to compare.</param>
+            <param name="element2">The second object to compare.</param>
+            <returns>If the first object is bigger than the second one -1, 0 if both objects are equal and 1 if the second object is the bigger one.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataDescriptor.Process(System.Collections.IEnumerable)">
+            <summary>
+            Performs the data operation, defined by this descriptor over the specified data.
+            Delegates functionality to the descriptor itself and allows for different descriptor implementations.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataDescriptor.BeginProcess(System.Collections.IEnumerable)">
+            <summary>
+            Begins data process. Called by the owning source upon building the view.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataDescriptor.Index">
+            <summary>
+            Gets the index of this descriptor within its owner's collection.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataDescriptor.OperationType">
+            <summary>
+            Gets the type of the data operation this descriptor defines.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.SortableDataDescriptor.SortMode">
+            <summary>
+            Gets or sets the sort mode to be used when this descriptor processes data.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.GenericFilterDescriptor`1">
+            <summary>
+            Represents a data descriptor that defines filtering mechanism and uses a generic delegate to see whether an item meets filtering criteria.
+            </summary>
+            <typeparam name="TElement">The type of the items within the collection.</typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericFilterDescriptor`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericFilterDescriptor`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericFilterDescriptor`1.#ctor(System.Func{`0,System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericFilterDescriptor`1"/> class.
+            </summary>
+            <param name="predicate">The delegate that is called to determine whether an item meets the filtering criteria.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericFilterDescriptor`1.Process(System.Collections.IEnumerable)">
+            <summary>
+            Performs the data operation, defined by this descriptor over the specified data.
+            Delegates functionality to the descriptor itself and allows for different descriptor implementations.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericFilterDescriptor`1.Predicate">
+            <summary>
+            Gets the delegate that determines whether an item meets the filtering criteria.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericFilterDescriptor`1.Index">
+            <summary>
+            Gets the index of this descriptor within its owner's collection.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericFilterDescriptor`1.OperationType">
+            <summary>
+            Gets the type of the data operation this descriptor defines.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telerik.Windows.Data.GenericGroupDescriptor`2">
+            <summary>
+            Represents a data descriptor that defines a grouping operation and uses generic delegates to retrieve each item's key.
+            </summary>
+            <typeparam name="TElement">The type of the items within the collection.</typeparam>
+            <typeparam name="TKey">The type of the key that will be used upon sorting.</typeparam>
+        </member>
+        <member name="T:Telerik.Windows.Data.GenericKeyDataDescriptor`2">
+            <summary>
+            Base class for all descriptors that perform data operation upon certain keys and use a generic delegate to retrieve each item's key.
+            </summary>
+            <typeparam name="TElement">The type of the items within the collection.</typeparam>
+            <typeparam name="TKey">The type of the key that will be used upon sorting.</typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericKeyDataDescriptor`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericKeyDataDescriptor`2"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericKeyDataDescriptor`2.#ctor(System.Func{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericKeyDataDescriptor`2"/> class.
+            </summary>
+            <param name="keySelector">The generic delegate used to retrieve each item's key.</param>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericKeyDataDescriptor`2.KeyName">
+            <summary>
+            Gets or sets the name of the key used by this descriptor.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericKeyDataDescriptor`2.KeySelector">
+            <summary>
+            Gets or sets the method that extracts the key of each element.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericGroupDescriptor`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericGroupDescriptor`2"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericGroupDescriptor`2.#ctor(System.Func{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericGroupDescriptor`2"/> class.
+            </summary>
+            <param name="keySelector">The generic delegate used to retrieve each item's key.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericGroupDescriptor`2.Process(System.Collections.IEnumerable)">
+            <summary>
+            Performs the data operation, defined by this descriptor over the specified data.
+            Delegates functionality to the descriptor itself and allows for different descriptor implementations.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericGroupDescriptor`2.GroupFormatString">
+            <summary>
+            Gets or sets the string used to format each <see cref="T:Telerik.Windows.Data.DataGroup"/> display text. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericGroupDescriptor`2.Index">
+            <summary>
+            Gets the index of this descriptor within its owner's collection.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericGroupDescriptor`2.OperationType">
+            <summary>
+            Gets the type of the data operation this descriptor defines.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telerik.Windows.Data.PropertyDataDescriptor">
+            <summary>
+            Base class for all data descriptors that use a property name to extract data keys.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertyDataDescriptor.BeginProcess(System.Collections.IEnumerable)">
+            <summary>
+            Begins data process. Called by the owning source upon building the view.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Telerik.Windows.Data.PropertyDataDescriptor.PropertyName">
+            <summary>
+            Gets or sets the name of the key used by this descriptor.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.PropertyGroupDescriptor">
+            <summary>
+            Represents a descriptor that defines a grouping data operation and uses the name of the desired property to look-up keys.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertyGroupDescriptor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.PropertyGroupDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertyGroupDescriptor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.PropertyGroupDescriptor"/> class.
+            </summary>
+            <param name="propertyName">The name of the property that contains data keys.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertyGroupDescriptor.Process(System.Collections.IEnumerable)">
+            <summary>
+            Performs the data operation, defined by this descriptor over the specified data.
+            Delegates functionality to the descriptor itself and allows for different descriptor implementations.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.PropertyGroupDescriptor.Index">
+            <summary>
+            Gets the index of this descriptor within its owner's collection.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.PropertyGroupDescriptor.OperationType">
+            <summary>
+            Gets the type of the data operation this descriptor defines.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.PropertyGroupDescriptor.GroupFormatString">
+            <summary>
+            Gets or sets the format string that will be applied to each <see cref="T:Telerik.Windows.Data.DataGroup"/> created.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.PropertySortDescriptor">
+            <summary>
+            Represents a descriptor that defines a sorting data operation and uses property to retrieve the keys of each item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertySortDescriptor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.PropertySortDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertySortDescriptor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.PropertySortDescriptor"/> class.
+            </summary>
+            <param name="propName">The name of the property this descriptor is associated with.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.PropertySortDescriptor.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects.
+            </summary>
+            <param name="element1">The first object to compare.</param>
+            <param name="element2">The second object to compare.</param>
+            <returns>
+            If the first object is bigger than the second one -1, 0 if both objects are equal and 1 if the second object is the bigger one.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.PropertySortDescriptor.Index">
+            <summary>
+            Gets the index of this descriptor within its owner's collection.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.PropertySortDescriptor.OperationType">
+            <summary>
+            Gets the type of the data operation this descriptor defines.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telerik.Windows.Data.RadCollectionView">
+            <summary>
+            Encapsulates common data operations like sorting, grouping and filtering over IEnumerable instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionView.Refresh">
+            <summary>
+            Re-evaluates data operations and rebuilds the view.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionView.GetFlattenView">
+            <summary>
+            Gets a flat representation of the current view. That is to merge all groups and items (if any) in one collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionView.GetEnumerator">
+            <summary>
+            Gets the <see cref="T:System.Collections.IEnumerator"/> that allows to iterate through currently present items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionView.OnResumed(System.Boolean)">
+            <summary>
+            Notifies that this instance is no longer suspended.
+            Allows inheritors to provide their own update logic.
+            </summary>
+            <param name="update">True if an Update is requested, false otherwise.</param>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.View">
+            <summary>
+            Gets the current view over the original data with all the filtering, grouping and sorting applied.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.HasDataOperation">
+            <summary>
+            Determines whether a data operation is defined within the view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.Source">
+            <summary>
+            Gets or sets the source data to create view for.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.Count">
+            <summary>
+            Gets the count of all the items present within the view after data operations are completed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.FilterDescriptors">
+            <summary>
+            Gets the collection with all the filter descriptors registered with the view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.GroupDescriptors">
+            <summary>
+            Gets the collection with all the group descriptors registered with the view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionView.SortDescriptors">
+            <summary>
+            Gets the collection with all the sort descriptors registered with the view.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.CollectionViewEnumerationMode">
+            <summary>
+            Defines how a <see cref="T:Telerik.Windows.Data.RadCollectionViewSource"/> instance may be iterated.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.CollectionViewEnumerationMode.Standard">
+            <summary>
+            Standard iteration. If grouping is applied, only the groups are enumerated.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.CollectionViewEnumerationMode.Flatten">
+            <summary>
+            View is always considered as a flat collection. If grouping is applied, depth-first approach is used to traverse groups and their child items.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.RadCollectionViewSource">
+            <summary>
+            Represents an extended <see cref="T:Telerik.Windows.Data.RadListSource"/> that allows for core data operations like grouping, sorting and filtering.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.SourceCollectionChangedOverride(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Updates the current instance after a change in the raw data.
+            Allows inheritors to provide additional logic upon the change.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.RadCollectionViewSource"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.GetItemAt(System.Int32)">
+            <summary>
+            Gets the item at the specified index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.EnumerateItems(Telerik.Windows.Data.CollectionViewEnumerationMode)">
+            <summary>
+            Enumerates all the items within this instance.
+            </summary>
+            <param name="mode">The mode which specifies whether nested items should be also included.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.GetLastItem">
+            <summary>
+            Gets the last item in the collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.RefreshOverride">
+            <summary>
+            Performs the core refresh logic. Allows inheritors to specify some additional logic or to completely override the existing one.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.OnCurrentItemChanging(Telerik.Windows.Data.CurrentItemChangingEventArgs)">
+            <summary>
+            Raises the <see cref="E:CurrentItemChanging"/> event.
+            </summary>
+            <param name="args">The <see cref="T:Telerik.Windows.Data.CurrentItemChangingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.AttachDataOverride">
+            <summary>
+            Allows inheritors to perform some additional logic upon attaching to raw data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.RadCollectionViewSource.ItemPropertyChangedOverride(Telerik.Windows.Controls.ItemPropertyChangedEventArgs)">
+            <summary>
+            Refreshes the view if the changed property participates in a data operation.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.FlatCount">
+            <summary>
+            Gets the count of the flat representation of this instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.GroupDescriptors">
+            <summary>
+            Gets the collection containing all the grouping descriptors for this source.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.SortDescriptors">
+            <summary>
+            Gets the collection containing all the sorting descriptors for this source.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.FilterDescriptors">
+            <summary>
+            Gets the collection containing all the filtering descriptors for this source.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.HasDataOperation">
+            <summary>
+            Determines whethe the source has a data operation - such as Sorting, Grouping or Filtering.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.Groups">
+            <summary>
+            Gets an array with all the top-level groups or null if no grouping data operation is applied.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.HasGroups">
+            <summary>
+            Determines whether grouping data operation is currently applied.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.SupportsItemReorder">
+            <summary>
+            Gets a boolean value determining whether the source collection.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.RadCollectionViewSource.DataItemsSource">
+            <summary>
+            Gets the IEnumerable instance to be used when building inner view models (<see cref="T:Telerik.Windows.Data.IDataSourceItem"/> instances).
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telerik.Windows.Data.GenericSortDescriptor`2">
+            <summary>
+            Represents a data descriptor that defines a sort operation and uses generic delegates to retrieve each item's key.
+            </summary>
+            <typeparam name="TElement">The type of the items within the collection.</typeparam>
+            <typeparam name="TKey">The type of the key that will be used upon sorting.</typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericSortDescriptor`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericSortDescriptor`2"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericSortDescriptor`2.#ctor(System.Func{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GenericSortDescriptor`2"/> class.
+            </summary>
+            <param name="keySelector">The generic delegate used to retrieve each item's key.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.GenericSortDescriptor`2.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects.
+            </summary>
+            <param name="element1">The first object to compare.</param>
+            <param name="element2">The second object to compare.</param>
+            <returns>
+            If the first object is bigger than the second one -1, 0 if both objects are equal and 1 if the second object is the bigger one.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericSortDescriptor`2.Index">
+            <summary>
+            Gets the index of this descriptor within its owner's collection.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.GenericSortDescriptor`2.OperationType">
+            <summary>
+            Gets the type of the data operation this descriptor defines.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Telerik.Windows.Data.ListSortMode">
+            <summary>
+            Defines the sorting mode within a <see cref="T:Telerik.Windows.Data.SortableDataDescriptor"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.ListSortMode.Ascending">
+            <summary>
+            Items are sorted in ascending order.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.ListSortMode.Descending">
+            <summary>
+            Items are sorted in descending order.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.ListSortMode.None">
+            <summary>
+            No sorting is applied.
+            </summary>
+        </member>
+    </members>
+</doc>

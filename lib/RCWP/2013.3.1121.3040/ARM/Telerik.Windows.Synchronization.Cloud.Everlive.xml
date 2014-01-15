@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Synchronization.Cloud.Everlive</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Cloud.EverliveIdentificatorProvider`1">
+            <summary>
+            Represents the GUID provider for the Everlive implementation of the synchronization mechanism.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveIdentificatorProvider`1.GetLocalStorageGuidForItem(`0)">
+            <summary>
+            Gets the local storage GUID for item. The local storage GUID
+            uniquely identifies the instance in the local database.
+            </summary>
+            <param name="item">The item to get the local storage GUID for.</param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveIdentificatorProvider`1.GetSynchronizationId">
+            <summary>
+            Gets the synchronization GUID that uniquely identifies the application
+            that uses the synchronization infrastructure.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveIdentificatorProvider`1.ResetSynchronizationId">
+            <summary>
+            Resets the synchronization GUID that uniquely identifies the application
+            that uses the synchronization infrastructure.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.EverliveSynchronizationContextFactory">
+            <summary>
+            Creates <see cref="T:Telerik.Windows.Cloud.SynchronizationContext`1"/> instances set up to use Telerik Everlive Cloud Services for
+            data synchronization.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveSynchronizationContextFactory.GetSynchronizationContext``1(Telerik.Windows.Cloud.SynchronizationSettings)">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Cloud.SynchronizationContext`1"/> instance for the specified type.
+            </summary>
+            <typeparam name="T">The type to get the <see cref="T:Telerik.Windows.Cloud.SynchronizationContext`1"/> instance for.</typeparam>
+            <param name="settings">An instance of the <see cref="T:Telerik.Windows.Cloud.SynchronizationSettings"/> class used to initialize the context.</param>
+            <returns>The context.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.EverliveSynchronizationSettings">
+            <summary>
+            Contains the settings for a <see cref="T:Telerik.Windows.Cloud.SynchronizationContext`1"/> instance
+            which uses Everlive as a Cloud provider.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveSynchronizationSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Cloud.EverliveSynchronizationSettings"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1">
+            <summary>
+            Represents an <see cref="T:Telerik.Windows.Cloud.ISynchronizationServiceProvider`1"/> implementation targeting
+            the Everlive cloud services.
+            </summary>
+            <typeparam name="TItem">The Everlive content type to work with.</typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1"/> class.
+            </summary>
+            <param name="localDatabaseName">Name of the local database.</param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1.GetLocalStorage">
+            <summary>
+            Gets the local storage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1.GetCloudService">
+            <summary>
+            Gets the cloud service.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1.GetIdentificatorProvider">
+            <summary>
+            Gets the identificator provider.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.EverliveSyncServiceProvider`1.DatabaseName">
+            <summary>
+            Gets the name of the database.
+            </summary>
+            <value>
+            The name of the database.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.SynchronizableDataItem">
+            <summary>
+            Represents a <see cref="T:Telerik.Everlive.Sdk.Core.Model.Base.DataItem"/> that can be stored locally and synced with the cloud.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.GetRelatedItems``1">
+            <summary>
+            Gets the related items of the provided TItem type described by an associated <see cref="T:Telerik.Windows.Cloud.RelationAttribute"/> instance.
+            </summary>
+            <typeparam name="TItem">The type of the related items to this <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation.</typeparam>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing all related items.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.SynchronizeAsync">
+            <summary>
+            Synchronizes the current object by either creating a new instance of it
+            in the correposnding content type table, updating an existing one or updating the
+            current instance with a newer one that resides in the cloud.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.UpdateAsync">
+            <summary>
+            Updates the current <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation locally.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.DeleteAsync">
+            <summary>
+            Deletes the current <see cref="T:Telerik.Windows.Cloud.SynchronizableDataItem"/> on the server.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.CreateSynchronizationContext">
+            <summary>
+            Creates an implementation of the <see cref="T:Telerik.Windows.Cloud.ISynchronizationContext"/> interface
+            that is used when the current <see cref="T:Telerik.Windows.Cloud.SynchronizableDataItem"/> is synchronized.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.SynchWithObject(Telerik.Windows.Cloud.ISynchronizableCloudItem)">
+            <summary>
+            Copies all properties from the source object to the current <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation.
+            </summary>
+            <param name="source">The <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation to copy the property values from.</param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.InitSynchronizationContext(Telerik.Windows.Cloud.ISynchronizationContext)">
+            <summary>
+            Called by the <see cref="T:Telerik.Windows.Cloud.ISynchronizationContext"/> implementation which
+            will take care of the synchronization of the current <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.ResetSynchronizationContext">
+            <summary>
+            Resets the <see cref="T:Telerik.Windows.Cloud.ISynchronizationContext"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.PrepareForStoringLocally">
+            <summary>
+            Called when the item is about to be stored locally.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.OnObjectRetrievedFromLocalDataBase">
+            <summary>
+            Called when the item has just been retrieved from the local database.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.OnItemUpdatedOnServer(System.Object)">
+            <summary>
+            Called when the current <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation has been uploaded on the Cloud.
+            </summary>
+            <param name="creationInfo">An object containing the server information about the time the object was uploaded on the server..</param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.SuspendPropertyChangeTracking">
+            <summary>
+            Suspends any property changed tracking mechanism on the <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.ResumePropertyChangeTracking">
+            <summary>
+            Resumes any property changed tracking mechanisms on the <see cref="T:Telerik.Windows.Cloud.ISynchronizableCloudItem"/> implementation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.GetId">
+            <summary>
+            Gets the id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.SynchronizableDataItem.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the property changed event.
+            </summary>
+            <param name="args">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.LocalStorageId">
+            <summary>
+            Gets or sets the local storage ID of the object.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.DirtyProperties">
+            <summary>
+            Gets or sets a comma-separated list of property names
+            that were dirty upon storing the object in the local
+            database.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.IsObjectModifiedLocally">
+            <summary>
+            Gets or sets a boolean value determining whether the object has been
+            modified locally upon storing in the local database.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified property.
+            </summary>
+            <value>
+            The <see cref="T:System.Object"/>.
+            </value>
+            <param name="property">The property.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.SynchronizationId">
+            <summary>
+            Gets or sets the synchronization ID.
+            </summary>
+            <value>
+            The synchronization ID.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.IsSynchronizing">
+            <summary>
+            Gets a boolean value determining whether the current <see cref="T:Telerik.Windows.Cloud.ISynchronizable"/> implementation
+            performs a synchronization procedure.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.SynchronizableDataItem.IsDeleted">
+            <summary>
+            Gets or sets a boolean value determining whether the item is deleted from the local storage.
+            </summary>
+        </member>
+    </members>
+</doc>

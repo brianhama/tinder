@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Core.Cloud.Azure</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureFeedbackItem">
+            <summary>
+            Represents the default container for a feedback item in the RadCloudFeedbackControl.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureItem">
+            <summary>
+            Represents a base class for all Telerik Cloud Controls items used in the context with Azure Mobile Services.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureItem.GetId">
+            <summary>
+            Gets a <see cref="T:System.Guid"/> representing the unique ID of the cloud item.
+            </summary>
+            <returns>
+            The ID.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureFeedbackItem.CreationDate">
+            <summary>
+            Gets or sets the date when this feedback item was created.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureFeedbackItem.IsDeleted">
+            <summary>
+            Gets or sets a value indicating whether this feedback item is deleted by the user.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureFeedbackItem.IsNew">
+            <summary>
+            Gets or sets a value indicating whether this feedback item is new.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureFeedbackItem.IsSentByDeveloper">
+            <summary>
+            Gets or sets a value indicating whether this feedback item is sent by developer.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureFeedbackItem.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureFeedbackItem.UserId">
+            <summary>
+            Gets or sets the id of the user that is related to this feedback item.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureNotificationItem">
+            <summary>
+            Represents the default Notification Item used by the RadCloudNotificationControl.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureNotificationItem.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this notification item is active. If it is not active, it will not be visible to the users.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureNotificationItem.Message">
+            <summary>
+            Gets or sets the notification message.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureNotificationItem.TaskToExecute">
+            <summary>
+            Gets or sets the task that will be created if the user accept this notification.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureNotificationItem.TaskToExecuteArgs">
+            <summary>
+            Gets or sets the arguments that will be used by the <see cref="P:Telerik.Windows.Cloud.ICloudNotificationItem.TaskToExecute"/>.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureNotificationItem.Title">
+            <summary>
+            Gets or sets the notification title.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzurePicture">
+            <summary>
+            Represents the default Picture Item used in the RadCloudPictureGallery instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzurePicture.PictureId">
+            <summary>
+            Gets or sets the id of the picture item.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzurePicture.PictureThumbnailId">
+            <summary>
+            Gets or sets the id of the picture item that contains thumbnail of the image.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzurePicture.PictureThumbnailUri">
+            <summary>
+            Gets the URI of the picture item's thumbnail image.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzurePicture.PictureUri">
+            <summary>
+            Gets the URI of the picture item.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureProvider">
+            <summary>
+            Represents a provider that will be used by Telerik's CloudControls to make their connection with Azure.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.#ctor(System.String,System.String,System.Type,System.Type,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Cloud.Azure.AzureProvider"/> class.
+            </summary>
+            <param name="appUri">The URI of the Azure Mobile Service to which the connection will be established.</param>
+            <param name="apiKey">The API key.</param>
+            <param name="userType">Type of the user.</param>
+            <param name="settingsType">Type of the settings.</param>
+            <param name="picturesType">Type of the pictures.</param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.#ctor(Telerik.Windows.Cloud.Azure.AzureProviderSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Cloud.Azure.AzureProvider"/> class.
+            </summary>
+            <param name="providerSettings">The settings for the provider.</param>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.CheckForExistingUser(System.String)">
+            <summary>
+            Checks whether a user with the provided username already exists.
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.CheckForExistingEmail(System.String)">
+            <summary>
+            Checks whether a user with the provided email already exists.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LoginWithFacebook(System.String)">
+            <summary>
+            Provides a mechanism for authenticating a user with a Facebook account.
+            </summary>
+            <param name="token">The token provided by the Facbook OAuth SDK after a successful login.</param>
+            <returns>An instance of the <see cref="T:Telerik.Windows.Cloud.LoginResult"/> enum determining the result of the login operation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LoginWithGoogle(System.String)">
+            <summary>
+            Provides a mechanism for authenticating a user with a Google account.
+            </summary>
+            <param name="token">The token provided by the Google OAuth SDK after a successful login.</param>
+            <returns>An instance of the <see cref="T:Telerik.Windows.Cloud.LoginResult"/> enum determining the result of the login operation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LoginWithLiveId(System.String)">
+            <summary>
+            Provides a mechanism for authenticating a user with a LiveID account.
+            </summary>
+            <param name="token">The token provided by the LiveID OAuth SDK after a successful login.</param>
+            <returns>An instance of the <see cref="T:Telerik.Windows.Cloud.LoginResult"/> enum determining the result of the login operation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LoginAsync(System.String,System.String)">
+            <summary>
+            Performs a login operation with the provided username and password.
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LogoutAsync">
+            <summary>
+            Performs a logout operation of the currently logged user.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.GetItemsByTypeAsync(System.Type)">
+            <summary>
+            Gets the items from the provided type.
+            </summary>
+            <param name="itemsType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.CreateDataItemAsync(Telerik.Windows.Cloud.ICloudDataItem)">
+            <summary>
+            Saves the specified new data item to the cloud storage.
+            </summary>
+            <param name="dataItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.CreateItemAsync(Telerik.Windows.Cloud.ICloudDataItem)">
+            <summary>
+            Creates the item async.
+            </summary>
+            <param name="dataItem">The data item.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.UpdateDataItemAsync(Telerik.Windows.Cloud.ICloudDataItem)">
+            <summary>
+            Updates the specified data item to the cloud storage.
+            </summary>
+            <param name="dataItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.DeleteDataItemAsync(Telerik.Windows.Cloud.ICloudDataItem)">
+            <summary>
+            Deletes the specified data item from the cloud storage.
+            </summary>
+            <param name="dataItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.DeleteDataItemsAsync(System.Collections.Generic.IEnumerable{Telerik.Windows.Cloud.ICloudDataItem})">
+            <summary>
+            Deletes the specified data items from the cloud storage.
+            </summary>
+            <param name="dataItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LoadCurrentSettingsAsync">
+            <summary>
+            Loads the application settings saved by the currently logged user.
+            If there are no settings saved by the currently logged user or if there is no user logged the default settings are loaded.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.LoadSettings(Telerik.Windows.Cloud.ICloudSettings)">
+            <summary>
+            Loads the provided application settings.
+            </summary>
+            <param name="settings"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureProvider.SaveSettingsAsync(Telerik.Windows.Cloud.ICloudSettings)">
+            <summary>
+            Saves the provided application settings for the currently logged user.
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProvider.UserType">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Type"/> class
+            describing the custom type used to store user information.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProvider.SettingsType">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Type"/> class
+            describing the custom type used to store information about the application settings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProvider.PicturesType">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Type"/> class
+            describing the custom type used to store picture information.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProvider.CurrentUser">
+            <summary>
+            Gets the current user.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProvider.CurrentSettings">
+            <summary>
+            Gets the currently loaded application settings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProvider.NativeConnection">
+            <summary>
+            Gets a native connection to the cloud services used by this provider.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureProviderSettings">
+            <summary>
+            A settings container for establishing a connection to the Azure Mobile Services.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureProviderSettings.ServiceUri">
+            <summary>
+            Gets or sets the URI of the Azure Mobile Services instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureSettings">
+            <summary>
+            Represents the container holding the settings operated by a RadCloudSettingsControl instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureSettings.CreatedBy">
+            <summary>
+            The Id of the user that created these settings.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Cloud.Azure.AzureUser">
+            <summary>
+            Represents a user logged into the Azure Mobile Service.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Cloud.Azure.AzureUser.#ctor(Microsoft.WindowsAzure.MobileServices.MobileServiceUser)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Cloud.Azure.AzureUser"/> class.
+            </summary>
+            <param name="nativeUser">The native user object.</param>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureUser.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureUser.NativeId">
+            <summary>
+            Gets a string representing the ID of the currently logged user in the Azure service.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Cloud.Azure.AzureUser.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>

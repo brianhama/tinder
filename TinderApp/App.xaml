@@ -1,0 +1,403 @@
+﻿<Application x:Class="TinderApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:MVVM="clr-namespace:TinderApp.Library.MVVM;assembly=TinderApp.Library"
+             xmlns:ViewModels="clr-namespace:TinderApp.Library.ViewModels;assembly=TinderApp.Library"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:TinderApp"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+             xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+             mc:Ignorable="d">
+    <Application.Resources>
+        <Style x:Key="MainMenuButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Fill)">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#DEFF0000" />
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="ellipse"
+                                                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                            To="#FFF55B29"
+                                                            d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="ellipse1"
+                                                            Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)"
+                                                            To="#DEFF0000"
+                                                            d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled" />
+                                    <VisualState x:Name="MouseOver" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse x:Name="ellipse"
+                                     Width="60"
+                                     Height="60"
+                                     Margin="0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Fill="{TemplateBinding BorderBrush}"
+                                     OpacityMask="{TemplateBinding Background}"
+                                     StrokeThickness="0" />
+                            <Ellipse x:Name="ellipse1"
+                                     Width="60"
+                                     Height="60"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Stroke="#DEFFFFFF"
+                                     StrokeThickness="2" />
+                            <ContentPresenter Grid.Column="1"
+                                              Margin="24,0,0,0"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ImageButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}" />
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}" />
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+            <Setter Property="Padding" Value="10,5,10,6" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="(Border.Background)">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Null}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver" />
+                                    <VisualState x:Name="Pressed">
+
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="(Border.Background)">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#33000000" />
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="ButtonBackground"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    CornerRadius="10">
+                                <ContentControl x:Name="ContentContainer"
+                                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                Content="{TemplateBinding Content}"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                Padding="{TemplateBinding Padding}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CustomFrame" TargetType="phone:PhoneApplicationFrame">
+            <Setter Property="Background" Value="{StaticResource PhoneBackgroundBrush}" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="phone:PhoneApplicationFrame">
+                        <Border x:Name="ClientArea" Background="White">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SideBarState">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.5" To="LeftShowing">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.5"
+                                                                 Storyboard.TargetName="LeftSideBar"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                                                 To="0">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <CircleEase EasingMode="EaseIn" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition From="LeftShowing" GeneratedDuration="0:0:0.5">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.5"
+                                                                 Storyboard.TargetName="LeftSideBar"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)">
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <CircleEase EasingMode="EaseOut" />
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition GeneratedDuration="0:0:0.5" To="RightShowing" />
+                                        <VisualTransition From="RightShowing" GeneratedDuration="0:0:0.5" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="LeftShowing">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0"
+                                                             Storyboard.TargetName="LeftSideBar"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                                             To="0"
+                                                             d:IsOptimized="True" />
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Overlay" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimation Duration="0"
+                                                             Storyboard.TargetName="rightSideBarControl"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                                             To="320"
+                                                             d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="RightShowing">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Overlay" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimation Duration="0"
+                                                             Storyboard.TargetName="LeftSideBar"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                                             To="-320"
+                                                             d:IsOptimized="True" />
+                                            <DoubleAnimation Duration="0"
+                                                             Storyboard.TargetName="rightSideBarControl"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                                             To="0"
+                                                             d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Default" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid Width="480">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid Height="65"
+                                      VerticalAlignment="Top"
+                                      Background="#FFFFFFFF">
+                                    <Grid.DataContext>
+                                        <MVVM:TopBarViewModel />
+                                    </Grid.DataContext>
+                                    <Button Width="65"
+                                            Height="65"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top"
+                                            BorderBrush="{StaticResource PhoneAccentBrush}"
+                                            BorderThickness="0,0,1,0"
+                                            Foreground="{StaticResource PhoneAccentBrush}"
+                                            Padding="0"
+                                            Style="{StaticResource ImageButton}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <ec:GoToStateAction StateName="LeftShowing" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <Rectangle Width="65"
+                                                   Height="65"
+                                                   HorizontalAlignment="Left"
+                                                   VerticalAlignment="Top"
+                                                   Fill="{TemplateBinding Foreground}"
+                                                   Stroke="Black">
+                                            <Rectangle.OpacityMask>
+                                                <ImageBrush ImageSource="Assets/Images/Menu.png" Stretch="None" />
+                                            </Rectangle.OpacityMask>
+                                        </Rectangle>
+                                    </Button>
+                                    <Image Margin="0,0,0,-35"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Top"
+                                           Source="Assets/Images/SmallTopLogo.jpg"
+                                           Stretch="None" />
+                                    <Button Width="65"
+                                            Height="65"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Top"
+                                            Foreground="{StaticResource PhoneAccentBrush}"
+                                            Padding="0"
+                                            Style="{StaticResource ImageButton}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <ec:GoToStateAction StateName="RightShowing" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <Rectangle Width="65"
+                                                   Height="65"
+                                                   HorizontalAlignment="Left"
+                                                   VerticalAlignment="Top"
+                                                   Fill="{TemplateBinding Foreground}"
+                                                   Stroke="Black">
+                                            <Rectangle.OpacityMask>
+                                                <ImageBrush ImageSource="Assets/Images/Messages.png" Stretch="None" />
+                                            </Rectangle.OpacityMask>
+                                        </Rectangle>
+                                    </Button>
+                                </Grid>
+                                <ContentPresenter Grid.Row="1" />
+                                <Border x:Name="Overlay"
+                                        Grid.RowSpan="2"
+                                        Background="#7F000000"
+                                        BorderBrush="Black"
+                                        BorderThickness="1"
+                                        Visibility="Collapsed">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                                            <ec:GoToStateAction StateName="Default" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </Border>
+                                <ScrollViewer x:Name="LeftSideBar"
+                                              Grid.RowSpan="2"
+                                              Width="320"
+                                              HorizontalAlignment="Left"
+                                              Background="#FF272727"
+                                              Foreground="#DEFFFFFF"
+                                              RenderTransformOrigin="0.5,0.5">
+                                    <ScrollViewer.RenderTransform>
+                                        <CompositeTransform TranslateX="-320" />
+                                    </ScrollViewer.RenderTransform>
+                                    <StackPanel Margin="24,36,0,0">
+                                        <Button x:Name="profileButton"
+                                                Margin="0,0,0,24"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Top"
+                                                BorderBrush="#DEFFFFFF"
+                                                Click="profileButton_Click"
+                                                Content="Profile"
+                                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                                Foreground="#DEFFFFFF"
+                                                Style="{StaticResource MainMenuButton}">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="Assets/Images/status.png" Stretch="UniformToFill" />
+                                            </Button.Background>
+                                        </Button>
+                                        <Button Margin="0,0,0,24"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Top"
+                                                BorderBrush="White"
+                                                Click="Home_Click"
+                                                Content="Home"
+                                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                                Foreground="White"
+                                                Style="{StaticResource MainMenuButton}">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="Assets/Images/Map_Pin.png" Stretch="UniformToFill" />
+                                            </Button.Background>
+                                        </Button>
+                                        <Button Margin="0,0,0,24"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Top"
+                                                BorderBrush="#DEFFFFFF"
+                                                Content="Messages"
+                                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                                Foreground="#DEFFFFFF"
+                                                Style="{StaticResource MainMenuButton}">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ec:GoToStateAction StateName="RightShowing" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="Assets/Images/Chat.png" Stretch="UniformToFill" />
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="settingsButton"
+                                                Margin="0,0,0,24"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Top"
+                                                BorderBrush="#DEFFFFFF"
+                                                Click="settingsButton_Click"
+                                                Content="Settings"
+                                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                                Foreground="#DEFFFFFF"
+                                                Style="{StaticResource MainMenuButton}">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="Assets/Images/Spanner.png" Stretch="UniformToFill" />
+                                            </Button.Background>
+                                        </Button>
+                                        <TextBlock Margin="0,0,12,0"
+                                                   FontSize="{StaticResource PhoneFontSizeSmall}"
+                                                   Foreground="#DEFF9700"
+                                                   Text="Check out the app 'Nearby' for even more fun!"
+                                                   TextOptions.TextHintingMode="Animated"
+                                                   TextWrapping="Wrap" />
+                                        <TextBlock Margin="0,24,12,0"
+                                                   FontSize="{StaticResource PhoneFontSizeSmall}"
+                                                   Foreground="#DEB2B2B2"
+                                                   Text="Tinder is a registered trademark of Tinder, Co."
+                                                   TextOptions.TextHintingMode="Animated"
+                                                   TextWrapping="Wrap" />
+                                        <HyperlinkButton x:Name="privacyPolicy"
+                                                         Margin="-12,12,0,0"
+                                                         HorizontalAlignment="Left"
+                                                         VerticalAlignment="Top"
+                                                         Click="privacyPolicy_Click"
+                                                         Content="Privacy Policy"
+                                                         FontSize="{StaticResource PhoneFontSizeSmall}"
+                                                         Foreground="#DEFFFFFF" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                                <local:RightSideBarControl x:Name="rightSideBarControl"
+                                                           Grid.RowSpan="2"
+                                                           Width="320"
+                                                           HorizontalAlignment="Right"
+                                                           RenderTransformOrigin="0.5,0.5">
+                                    <local:RightSideBarControl.RenderTransform>
+                                        <CompositeTransform TranslateX="320" />
+                                    </local:RightSideBarControl.RenderTransform>
+                                </local:RightSideBarControl>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+    <Application.ApplicationLifetimeObjects>
+        <shell:PhoneApplicationService />
+    </Application.ApplicationLifetimeObjects>
+</Application>

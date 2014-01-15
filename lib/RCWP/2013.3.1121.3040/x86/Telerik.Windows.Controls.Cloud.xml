@@ -1,0 +1,1948 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Controls.Cloud</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Controls.Cloud.FacebookLoginProvider">
+            <summary>
+            Enables the Facebook login functionality for <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.LoginProviderInfo">
+            <summary>
+            Holds information about a login provider displayed in a <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>
+            instance such as image URI and description.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.Provider">
+            <summary>
+            Gets a value from the <see cref="T:Telerik.Windows.Controls.Cloud.LoginProvider"/> enum determining the type of the current provider.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.Icon">
+            <summary>
+            Gets the URI used to display the icon for the associated login provider.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.ClientSecret">
+            <summary>
+            Gets or sets the Google app's client secret code.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.ClientId">
+            <summary>
+            Gets or sets the Client ID used for access to the corresponding Google service.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.RedirectUri">
+            <summary>
+            Gets or sets the redirect URI which will be used to compose the Google Auth URI.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.Scopes">
+            <summary>
+            Gets or sets a comma separated list of Google permission scopes requested from the
+            authenticated user to gain access to their information.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginProviderInfo.RefreshToken">
+            <summary>
+            Gets or sets the refresh token which is used to make a request for a
+            new access token after it expires.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.FacebookLoginProvider.#ctor">
+            <summary>
+            Creates an instance of the <see cref="T:Telerik.Windows.Controls.Cloud.FacebookLoginProvider"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.FacebookLoginProvider.Provider">
+            <summary>
+            Gets a value from the <see cref="T:Telerik.Windows.Controls.Cloud.LoginProvider"/> enum determining the type of the current provider.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.GoogleLoginProvider">
+            <summary>
+            Represents the login provider that utilizes the Google login services.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.GoogleLoginProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.GoogleLoginProvider"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.GoogleLoginProvider.Provider">
+            <summary>
+            Gets a value from the <see cref="T:Telerik.Windows.Controls.Cloud.LoginProvider"/> enum determining the type of the current provider.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.LiveIDLoginProvider">
+            <summary>
+            Represents the login provider that utilizes the Live ID login services.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.LiveIDLoginProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.LiveIDLoginProvider"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LiveIDLoginProvider.Provider">
+            <summary>
+            Gets a value from the <see cref="T:Telerik.Windows.Controls.Cloud.LoginProvider"/> enum determining the type of the current provider.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.LoginProvider">
+            <summary>
+            Lists the possible login providers supported by the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/> control.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.LoginProvider.Facebook">
+            <summary>
+            Displays a Facebook login button in <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.LoginProvider.Google">
+            <summary>
+            Displays a Google login button in <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.LoginProvider.LiveId">
+            <summary>
+            Displays a LiveID login button in <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RetrieveSocialLoginTokenHandler">
+            <summary>
+            Represents the method called by the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/> control
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.LoginEventArgs">
+            <summary>
+            Contains information about the <see cref="E:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoggingIn"/>
+            event fired by <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.LoginEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.LoginEventArgs"/> class.
+            </summary>
+            <param name="identification">The username or email used for identification of the user.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.LoginEventArgs.#ctor(System.String,Telerik.Windows.Controls.Cloud.LoginProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.LoginEventArgs"/> class.
+            </summary>
+            <param name="identification">The username or email used for identification of the user.</param>
+            <param name="provider">The <see cref="T:Telerik.Windows.Controls.Cloud.LoginProvider"/> chosen to perform the login operation with.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginEventArgs.Identification">
+            <summary>
+            Gets the username or password used for identification of the user.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginEventArgs.Provider">
+            <summary>
+            Gets an instance of the <see cref="T:Telerik.Windows.Controls.Cloud.LoginProvider"/> enum
+            that determines the Social Login provider used to perform the login operation.
+            If this value is null, the standard login approach is used.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.LoginFailedEventArgs">
+            <summary>
+            EventArgs for the LoginFailed event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.LoginFailedEventArgs.#ctor(Telerik.Windows.Cloud.LoginResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.LoginFailedEventArgs"/> class.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LoginFailedEventArgs.FailReason">
+            <summary>
+            Gets or sets the reason for the login failure.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Authentication.SocialLoginBrowserPage">
+            <summary>
+            Represents the WebBrowser page in which the corresponding
+            Social Login Provider website is opened when a Social Login
+            procedure is performed in <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Authentication.SocialLoginBrowserPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.Authentication.SocialLoginBrowserPage"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Authentication.SocialLoginBrowserPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudLogin">
+            <summary>
+            Represents Cloud enabled login control
+            that automatically checks for the correctness of provided
+            credentials and allows the developer to specify what will happen upon successful
+            or not successful login.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContent"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContentTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContentTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsSignInButtonEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsSignInButtonEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignInButtonStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignInButtonStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsSignUpButtonEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsSignUpButtonEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignUpButtonStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignUpButtonStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsPasswordForgottenButtonEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsPasswordForgottenButtonEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.PasswordForgottenButtonStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.PasswordForgottenButtonStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsKeepMeSignedInCheckBoxEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsKeepMeSignedInCheckBoxEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.KeepMeSignedInCheckBoxStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.KeepMeSignedInCheckBoxStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsBusyIndicatorEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsBusyIndicatorEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) 
+            call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />. In simplest terms, this means the method is called just before 
+            a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoginAsync">
+            <summary>
+            Performs a login operation with the currently storred credentials.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.SocialLoginAsync(Telerik.Windows.Controls.Cloud.LoginProvider,System.String)">
+            <summary>
+            Performs a social login procedure by using the specified Social Login provider.
+            </summary>
+            <param name="provider">A value from the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoginProviders"/> enum
+            determining the social login provider that will be used.</param>
+            <param name="token">The token retrieved from the corresponding Social Login SDK&gt;</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoginAsync(System.String,System.String,System.Boolean)">
+            <summary>
+            Performs a login operation with the provided username and password.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoginAsync(System.String,System.String)">
+            <summary>
+            Performs a login operation with the provided username and password.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.LogoutAsync">
+            <summary>
+            Performs a logout operation of the currently logged user.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignIn">
+            <summary>
+            Signs the user with the provided credentials.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignUp">
+            <summary>
+            Navigates to the provided registration page.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.ResetPassword">
+            <summary>
+            Attempts to reset the current password of the user.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.OnLoggingIn(Telerik.Windows.Controls.Cloud.LoginEventArgs)">
+            <summary>
+            Raises the <see cref="E:LoggingIn"/> event.
+            </summary>
+            <param name="args">The <see cref="T:Telerik.Windows.Controls.Cloud.LoginEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.OnSuccess(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:LoginSuccessful"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudLogin.OnFailed(Telerik.Windows.Controls.Cloud.LoginFailedEventArgs)">
+            <summary>
+            Raises the <see cref="E:LoginFailed"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoggingIn">
+            <summary>
+            Fires when the user presses the Login button in the control
+            and provides the possibility to perform custom validation before
+            the actual log in procedure takes place.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudLogin.Success">
+            <summary>
+            Fires when the user has successfully logged in.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudLogin.Failed">
+            <summary>
+            Fires when the user has failed to log in.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.LoginProviders">
+            <summary>
+            Gets a collection of <see cref="T:Telerik.Windows.Controls.Cloud.LoginProviderInfo"/> instances
+            that represent the currently available custom login providers exposed by this instance
+            of <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.SocialLoginTokenProvider">
+            <summary>
+            Gets or sets an awaitable function that retrieves a string token from the
+            corresponding social login provider initialized in the arguments.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContent">
+            <summary>
+            Gets or sets the content object displayed in the 
+            custom content portion of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudLogin"/>.
+            This portion is between the login form and the login buttons.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContentTemplate">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.DataTemplate"/> that defines the visual appearance
+            of the object set to the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.CustomContent"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsSignInButtonEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a sign in button that commits the login form.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignInButtonStyle">
+            <summary>
+            Gets or sets the style for the sign in button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsSignUpButtonEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a sign up button that allows registration.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.SignUpButtonStyle">
+            <summary>
+            Gets or sets the style for the sign up button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsKeepMeSignedInCheckBoxEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a check box that allows the users to stay signed in even exit the application
+            so that the next time they run it, they won't have to provide their credentials again.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.KeepMeSignedInCheckBoxStyle">
+            <summary>
+            Gets or sets the style for the check box that allows the user to stay signed in.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsPasswordForgottenButtonEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a button that enables forgotten password retrieval.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.PasswordForgottenButtonStyle">
+            <summary>
+            Gets or sets the style for the password forgotten button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.IsBusyIndicatorEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a busy indicator displayed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.SuccessNavigationUri">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Uri"/> class
+            that points to the page where the login control will navigate to
+            in case of successful login.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudLogin.RegisterNavigationUri">
+            <summary>
+            Gets or sets the URI of the user registration page.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RegistrationHyperlinkButton">
+            <summary>
+            Represents a Hyperlink button that has a custom style.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RegistrationHyperlinkButton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RegistrationHyperlinkButton"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudRegistration">
+            <summary>
+            Represents a Cloud enabled user registration component that implements logic
+            for adding new users or editing user profiles to/from the Cloud Users base.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudRegistration.DisplayModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.DisplayMode"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsCommitButtonEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsCommitButtonEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudRegistration.CommitButtonStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.CommitButtonStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsChangePasswordButtonEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsChangePasswordButtonEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudRegistration.ChangePasswordButtonStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.ChangePasswordButtonStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsBusyIndicatorEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsBusyIndicatorEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudRegistration"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.CommitAsync">
+            <summary>
+            Attempts to commit the currently provided values.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.ComposeVisualStateName">
+            <summary>
+            Builds the current visual state for this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.OnRegistrationSuccess(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:RegistrationSuccessful"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.OnRegistrationFailed(Telerik.Windows.Controls.Cloud.RegistrationFailedEventArgs)">
+            <summary>
+            Raises the <see cref="E:RegistrationFailed"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.OnRegistering(Telerik.Windows.Controls.Cloud.RegistrationEventArgs)">
+            <summary>
+            Raises the <see cref="E:Registering"/> event.
+            </summary>
+            <param name="args">The <see cref="T:Telerik.Windows.Controls.Cloud.RegistrationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudRegistration.OnPasswordChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:PasswordChanged"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudRegistration.RegistrationSuccess">
+            <summary>
+            Fires when the information was successfully commited.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudRegistration.RegistrationFailed">
+            <summary>
+            Fires when the information was not commited.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudRegistration.PasswordChanged">
+            <summary>
+            Fires when the password is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudRegistration.Registering">
+            <summary>
+            Fires when the user is registering.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.DisplayMode">
+            <summary>
+            Gets or sets a value indication which fields of the control should be visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsCommitButtonEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a button that commits the current input.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.CommitButtonStyle">
+            <summary>
+            Gets or sets the style for the commit button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsChangePasswordButtonEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a button that enables changing the current password of the currently logged user.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.ChangePasswordButtonStyle">
+            <summary>
+            Gets or sets the style for the change password button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.IsBusyIndicatorEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a busy indicator while the data is commiting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudRegistration.SuccessRegistrationUri">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Uri"/> class
+            that points to the page where the registration control will navigate to
+            in case of successful registration. If this property is not set the user will be navigated back and will not be logged in automatically.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RegistrationDisplayModeToVisibilityConverter">
+            <summary>
+            Represents a converter used to find if the property specified as a parameter should be visible according to the current <see cref="T:Telerik.Windows.Controls.Cloud.RegistrationDisplayMode"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RegistrationDisplayModeToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RegistrationDisplayModeToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RegistrationDisplayMode">
+            <summary>
+            Specifies the different visible fields for <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudRegistration"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RegistrationDisplayMode.Email">
+            <summary>
+            The email field is visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RegistrationDisplayMode.RepeatPassword">
+            <summary>
+            The repeat password field is visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RegistrationDisplayMode.EmailAndRepeatPassword">
+            <summary>
+            Both email and repeat passwords fields are visible.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RegistrationEventArgs">
+            <summary>
+            Contains information about the user that attempts registration.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RegistrationEventArgs.#ctor(Telerik.Windows.Cloud.ICloudUser)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RegistrationEventArgs"/> class.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RegistrationEventArgs.User">
+            <summary>
+            Gets the username or password used for identification of the user.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RegistrationFailedEventArgs">
+            <summary>
+            EventArgs for the RegistrationFailed event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RegistrationFailedEventArgs.#ctor(Telerik.Windows.Cloud.RegistrationResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RegistrationFailedEventArgs"/> class.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RegistrationFailedEventArgs.FailReason">
+            <summary>
+            Gets or sets the reason for the registration failure.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.AgendaView">
+            <summary>
+            Defines a page that will display appointments in agenda view style similar to the native calendar app for Windows Phone.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.AgendaView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.Calendar.AgendaView"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.AgendaView.OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs)">
+            <summary>
+            Called when a page becomes the active page in a frame.
+            </summary>
+            <param name="e">An object that contains the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.AgendaView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.AppointmentAddEdit">
+            <summary>
+            Defines a page that allows editing and creation of appointments.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.AppointmentAddEdit.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.Calendar.AppointmentAddEdit"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.AppointmentAddEdit.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.Converters.AppointmentConflictVisibilityConverter">
+            <summary>
+            Defines a converter that will be used to determine whether the appointment conflict icon should be visible for a specific time in the appointment agenda.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Converters.AppointmentConflictVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Converters.AppointmentConflictVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.Converters.AppointmentToDurationConverter">
+            <summary>
+            Defines a converter that converts an appointment to its string representation of the duration according to the native Calendar app specification.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Converters.AppointmentToDurationConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Converters.AppointmentToDurationConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.Converters.DayHeaderConverter">
+            <summary>
+            Defines a converter used to get the current header for acoording to the selected date in the agenda view of RadCloudCalendar.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Converters.DayHeaderConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Converters.DayHeaderConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.DetailsView">
+            <summary>
+            Defines a page where the appointments in RadCloudCalendar can be seen in more details.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.DetailsView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.Calendar.DetailsView"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.DetailsView.OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs)">
+            <summary>
+            Called when a page becomes the active page in a frame.
+            </summary>
+            <param name="e">An object that contains the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.DetailsView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.Helpers.AppointmentItemTemplateSelector">
+            <summary>
+            Defines a template selector that will be used to select an empty template for the agenda view of RadCloudCalendar if there are no appointment for Today.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Helpers.AppointmentItemTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            When overridden in a derived class, returns a DataTemplate based on custom logic.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.Helpers.AppointmentItemTemplateSelector.EmptyTemplate">
+            <summary>
+            Gets or sets the empty template.
+            </summary>
+            <value>
+            The empty template.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.Helpers.HeaderTemplateSelector">
+            <summary>
+            Defines a template selector used with appointment that determines where the current item is the date or the time of a specific appointment.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.Helpers.HeaderTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            When overridden in a derived class, returns a DataTemplate based on custom logic.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.Helpers.HeaderTemplateSelector.NoAppointmentsTemplate">
+            <summary>
+            Gets or sets the template that is used if there are no appointments for today.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.Helpers.HeaderTemplateSelector.RootGroupTemplate">
+            <summary>
+            Gets or sets the root group template. This is the template that shows the dates in the AgendaView of RadCloudCalendar.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.Helpers.HeaderTemplateSelector.NestedGroupTemplate">
+            <summary>
+            Gets or sets the nested group template. This is the template that shows the times in the AgendaView of RadCloudCalendar.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment">
+            <summary>
+            Defines a type of appointment that can be used to split an existing appointment in RadCloudCalendar so that it can be displayed correctly in the AgendaView.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.#ctor(Telerik.Windows.Cloud.ICloudAppointment,System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment"/> class.
+            </summary>
+            <param name="originalAppointment">The original appointment.</param>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.GetId">
+            <summary>
+            Gets a <see cref="T:System.Guid" /> representing the unique ID of the cloud item.
+            </summary>
+            <returns>
+            The ID.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.OriginalAppointment">
+            <summary>
+            Gets the original appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.Location">
+            <summary>
+            Gets or sets the location.
+            </summary>
+            <value>
+            The location.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.Notes">
+            <summary>
+            Gets or sets the notes.
+            </summary>
+            <value>
+            The notes.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.EndDate">
+            <summary>
+            Gets the end date of the appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.StartDate">
+            <summary>
+            Gets the start date of the appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Calendar.PartialAppointment.Subject">
+            <summary>
+            Gets or sets the subject.
+            </summary>
+            <value>
+            The subject.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudCalendar">
+            <summary>
+            Represents a calendar control that mimics the behavior of the native Calendar app for Windows Phone and allows storing appointment to the cloud.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudCalendar.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudCalendar"/> class.
+            </summary>
+            <seealso cref="T:Telerik.Windows.Controls.RadCalendar"/>
+            <remarks>
+            Please refer to the <see cref="T:Telerik.Windows.Controls.RadCalendar"/> information examples on
+            how to use the control.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudCalendar.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudCalendar.AgendaViewNavigationUri">
+            <summary>
+            Gets or sets the location of an AgendaView page that will display the appointment of the current calendar when an item is tapped.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudDataForm">
+            <summary>
+            Represents an extended <see cref="T:Telerik.Windows.Controls.RadDataForm"/> that supports
+            Everlive and edits objects stored in an Everlive application.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudDataForm.IsBusyIndicatorEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudDataForm.IsBusyIndicatorEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDataForm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudDataForm"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDataForm.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application
+            code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />.
+            In simplest terms, this means the method is called just before a UI element displays
+            in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDataForm.OnCommitted(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Telerik.Windows.Controls.RadDataForm.Committed" /> event.
+            </summary>
+            <param name="args">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDataForm.OnCurrentItemChanged(System.Object,System.Object)">
+            <summary>
+            Called when the <see cref="P:Telerik.Windows.Controls.RadDataForm.CurrentItem"/> changes.
+            </summary>
+            <param name="oldItem">The old item.</param>
+            <param name="newItem">The new item.</param>
+            <exception cref="T:System.ArgumentException">The Current Item must be an Everlive compatible type.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDataForm.OnSuccess">
+            <summary>
+            Fires the <see cref="E:Telerik.Windows.Controls.Cloud.RadCloudDataForm.Success"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDataForm.OnFailed">
+            <summary>
+            Fires the <see cref="E:Telerik.Windows.Controls.Cloud.RadCloudDataForm.Failed"/> event.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudDataForm.Success">
+            <summary>
+            Fired when the data synchronization is successful.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudDataForm.Failed">
+            <summary>
+            Fired when the data synchronization has failed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudDataForm.IsBusyIndicatorEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a busy indicator displayed.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudDiagnostics">
+            <summary>
+            Represents a Cloud enabled diagnostics control
+            that automatically collects diagnostics info that will be
+            saved in the Cloud in case an unhandled exception occurs.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudDiagnostics.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudDiagnostics"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudDiagnostics.IsUserNotifiedOnException">
+            <summary>
+            Gets or sets a value indicating whether the user will be notified first when an exception occurs or the report will be immediately sent.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.FeedbackControl.DateTimeToFormattedTimeStampConverter">
+            <summary>
+            Provides custom formatting of DateTime objects.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.FeedbackControl.DateTimeToFormattedTimeStampConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.FeedbackControl.DateTimeToFormattedTimeStampConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.FeedbackTemplateSelector">
+            <summary>
+            A template selector used to distinguish the feedback items sent by the developers from the items sent by the users.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.FeedbackTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            When overridden in a derived class, returns a DataTemplate based on custom logic.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.FeedbackTemplateSelector.UserMessageTemplate">
+            <summary>
+            Gets or sets the template for messages sent by users.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.FeedbackTemplateSelector.DeveloperMessageTemplate">
+            <summary>
+            Gets or sets the template for messages sent by developers.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.FeedbackControl.ImageToVisibilityConverter">
+            <summary>
+            Converts instance of type <see cref="T:System.Windows.Media.Imaging.BitmapImage"/> to <see cref="T:System.Windows.Visibility"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.FeedbackControl.ImageToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.FeedbackControl.ImageToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl">
+            <summary>
+            Represents a control used to send and display feedback communication between user and developer.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.ConversationStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.ConversationStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.DeveloperNameProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.DeveloperName"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.DeveloperImageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.DeveloperImage"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.UserNameProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.UserName"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.UserImageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.UserImage"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.EmptyContentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.EmptyContent"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.EmptyContentTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.EmptyContentTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.SendFeedback(Telerik.Windows.Cloud.ICloudFeedbackItem)">
+            <summary>
+            Sends the provided feedback item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.GetNewMessagesCount(System.Type)">
+            <summary>
+            Gets the number of new feedback messages sent from the developer to the current user.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.GoToSendFeedbackPage">
+            <summary>
+            Navigates to the page provided as <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.SendFeedbackNavigationUri"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.RefreshFeedbackItemsAsync">
+            <summary>
+            Refreshes the feedback items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.LoadFeedbackItems(System.Collections.Generic.IEnumerable{Telerik.Windows.Cloud.ICloudFeedbackItem})">
+            <summary>
+            Loads the provided list of feedback items.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.ClearHistoryAsync">
+            <summary>
+            Clears the current feedback history.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.ClearHistoryAsync(System.Collections.Generic.IEnumerable{Telerik.Windows.Cloud.ICloudFeedbackItem})">
+            <summary>
+            Clears the provided items from the feedback history.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.ConversationStyle">
+            <summary>
+            Gets or sets the style for the feedback conversation between user and developer.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.DeveloperName">
+            <summary>
+            Gets or sets the developer's name that will be used for the feedback conversation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.DeveloperImage">
+            <summary>
+            Gets or sets the developer's image that will be used for the feedback conversation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.UserName">
+            <summary>
+            Gets or sets the user's name that will be used for the feedback conversation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.UserImage">
+            <summary>
+            Gets or sets the user's image that will be used for the feedback conversation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.EmptyContent">
+            <summary>
+            Gets or sets the empty content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.EmptyContentTemplate">
+            <summary>
+            Gets or sets the empty content template.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.SendFeedbackNavigationUri">
+            <summary>
+            Gets or sets the URI of the page where the user can send feedback.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.GetOnlyNewItems">
+            <summary>
+            Gets or sets a value indicating whether the feedback control will show only the items marked as new.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl.ItemsType">
+            <summary>
+            Gets or sets the type of the feedback items managed by this <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudFeedbackControl"/>.
+            This type must implement the <see cref="T:Telerik.Windows.Cloud.ICloudFeedbackItem"/> interface.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudJumpList">
+            <summary>
+            Represents an extended <see cref="T:Telerik.Windows.Controls.RadJumpList"/> that supports
+            Everlive and displays objects stored in the cloud.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudJumpList.IsBusyIndicatorEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudJumpList.IsBusyIndicatorEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudJumpList.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudJumpList"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudJumpList.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudJumpList.ReloadCloudItemsAsync">
+            <summary>
+            Reloads the cloud items from the current <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudJumpList.CloudDataService"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudJumpList.OnCloudItemsLoaded(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ItemsLoaded"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudJumpList.StartBusyMode">
+            <summary>
+            Starts the busy mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudJumpList.EndBusyMode">
+            <summary>
+            Ends the busy mode.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudJumpList.CloudItemsLoaded">
+            <summary>
+            Occurs when items are loaded from the current CloudDataService.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudJumpList.IsBusyIndicatorEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a busy indicator displayed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudJumpList.CloudDataService">
+            <summary>
+            Gets or sets the cloud data service.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.LocalizedStrings">
+            <summary>
+            Provides access to string resources.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.LocalizedStrings.LocalizedResources">
+            <summary>
+            Gets the localized resources.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl">
+            <summary>
+            Represents a control used to send and display notifications from the developer to the user.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl"/> class.
+            </summary>
+            <param name="notificationItemType">Type of the notification item. This type must implement the <see cref="T:Telerik.Windows.Cloud.ICloudNotificationItem"/> interface.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.GetNewNotificationsCount">
+            <summary>
+            Gets the number of active notifications which haven’t been seen by the current user.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.ShowFirstNotificationAsync">
+            <summary>
+            Shows a message box with the first active notification.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.ShowNotificationAsync(Telerik.Windows.Cloud.ICloudNotificationItem)">
+            <summary>
+            Shows the provided notification item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.CheckIfNotificationIsNew(System.Guid)">
+            <summary>
+            Checks if the notification with the provided id is new.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.GetAllNotificationsAsync">
+            <summary>
+            Gets all notifications based on the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.MaxNotificationsPeriod"/> and <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.MaxNotificationsCount"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.MarkNotificationAsSeen(Telerik.Windows.Cloud.ICloudNotificationItem)">
+            <summary>
+            Marks the provided notification item as seen.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.MaxNotificationsPeriod">
+            <summary>
+            Allows for limitation of the displayed notifications by their creation date.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudNotificationControl.MaxNotificationsCount">
+            <summary>
+            Allows for limitation of the displayed notifications by their count.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.SeenNotificationInfo">
+            <summary>
+            A class used internally to save information about shown notifications.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.SeenNotificationInfo.NotificationId">
+            <summary>
+            The id of the notification item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.SeenNotificationInfo.SeenAt">
+            <summary>
+            The time when the notification item is seen by the user.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.PictureGallery.EditPage">
+            <summary>
+            The default page for image editing used in <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureGallery.EditPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.PictureGallery.EditPage"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureGallery.EditPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.NewPictureItemCreatingEventArgs">
+            <summary>
+            Contains information about the <see cref="E:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.NewPictureItemCreating"/>
+            event fired by <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.NewPictureItemCreatingEventArgs.#ctor(Telerik.Windows.Cloud.ICloudPictureItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.NewPictureItemCreatingEventArgs"/> class.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.NewPictureItemCreatingEventArgs.NewPictureItem">
+            <summary>
+            Gets the new picture item that is being created.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.GalleryViewModel">
+            <summary>
+            Provides a ViewModel that contains information about the gallery items used among different pages while using <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.GalleryViewModel.Items">
+            <summary>
+            Gets or sets the picture items.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.GalleryViewModel.SelectedItem">
+            <summary>
+            Gets or sets the currently selected picture item.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery">
+            <summary>
+            Represents an Everlive enabled gallery control
+            that automatically gets the image that the users
+            have in their everlive accounts.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.Edit(Telerik.Windows.Cloud.ICloudPictureItem)">
+            <summary>
+            Navigate to the edit page.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.Share(Telerik.Windows.Cloud.ICloudPictureItem,System.Boolean)">
+            <summary>
+            Request confirmation to save the image to the library and then opens a ShareMediaTask for the specified picture.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.DeleteAsync(Telerik.Windows.Cloud.ICloudPictureItem)">
+            <summary>
+            Deletes the provided picture item asynchronously.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.DeleteAsync(System.Collections.Generic.IEnumerable{Telerik.Windows.Cloud.ICloudPictureItem})">
+            <summary>
+            Deletes the provided picture items asynchronously.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.AddNewPicture">
+            <summary>
+            Adds new picture to the current picture gallery.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.OnNewPictureItemCreating(Telerik.Windows.Controls.Cloud.NewPictureItemCreatingEventArgs)">
+            <summary>
+            Fires the <see cref="E:NewPictureItemCreating"/> event.
+            </summary>
+            <param name="args">The <see cref="T:Telerik.Windows.Controls.Cloud.NewPictureItemCreatingEventArgs"/> that contains information about the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.OnNewPictureItemCreated(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:NewPictureItemCreated"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> that contains information about the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.OnItemTap(Telerik.Windows.Controls.RadDataBoundListBoxItem,System.Windows.UIElement,System.Windows.UIElement,System.Windows.Point)">
+            <summary>
+            Handles a click from a child visual item.
+            </summary>
+            <param name="item"></param>
+            <param name="container"></param>
+            <param name="originalSource"></param>
+            <param name="hitPoint"></param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.NewPictureItemCreating">
+            <summary>
+            Occurs when new picture item is being created.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.NewPictureItemCreated">
+            <summary>
+            Occurs when new picture item is created.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.GalleryContext">
+            <summary>
+            Gets or sets the gallery context that can be used from other pages related to the gallery. For example, a page containing slide view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureGallery.SlideViewNavigationUri">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Uri"/> class
+            that points to the page where the gallery control will navigate to
+            in case of item tap.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.PictureGallery.SaveImageToCloudCommand">
+            <summary>
+            A command that is used for saving an edited image to the cloud.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureGallery.SaveImageToCloudCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">Data used by the command. If the command does not require data to be passed, this object can be set to null.</param>
+            <returns>
+            true if this command can be executed; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureGallery.SaveImageToCloudCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked.
+            </summary>
+            <param name="parameter">Data used by the command. If the command does not require data to be passed, this object can be set to null.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.PictureGallery.SaveImageToCloudCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether the command should execute.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.PictureGallery.SlidePage">
+            <summary>
+            The default page for image viewing as a gallery.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureGallery.SlidePage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.PictureGallery.SlidePage"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureGallery.SlidePage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.PictureUploadEventArgs">
+            <summary>
+            Contains information about the <see cref="E:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureUploaded"/>
+            event fired by <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.PictureUploadEventArgs.#ctor(Telerik.Windows.Cloud.ICloudPictureItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.PictureUploadEventArgs"/> class.
+            </summary>
+            <param name="pictureItem">The new picture item for the uploaded picture.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.PictureUploadEventArgs.PictureItem">
+            <summary>
+            Gets the id of the uploaded picture.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload">
+            <summary>
+            Represents a control that implements functionality for uploading pictures to the 
+            Files table of an Everlive application.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.EmptyContentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.EmptyContent"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.EmptyContentTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.EmptyContentTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.ImageElementStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.ImageElementStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureUriProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureUri"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.IsImageElementEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.IsImageElementEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.IsBusyIndicatorEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.IsBusyIndicatorEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.OnTap(System.Windows.Input.GestureEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.Tap" /> event occurs.For information on using gestures on Windows Phone, see How to handle manipulation events for Windows Phone.
+            </summary>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.OnPictureSelected(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:PictureSelected"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> that contains information about the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.OnPictureUploadFailed(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:PictureUploadFailed"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.EventArgs"/> that contains information about the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.OnPictureUploaded(Telerik.Windows.Controls.Cloud.PictureUploadEventArgs)">
+            <summary>
+            Fires the <see cref="E:PictureUploaded"/> event.
+            </summary>
+            <param name="args">The <see cref="T:Telerik.Windows.Controls.Cloud.PictureUploadEventArgs"/> that contains information about the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.UploadImage">
+            <summary>
+            Allows the user to select a image from the gallery of the phone or create one with the camera and uploads it to the cloud.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.GetThumbnailStream(System.IO.Stream)">
+            <summary>
+            Gets a new stream for thumbnail image from the provided photo stream.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureSelected">
+            <summary>
+            Fired when the <see cref="T:Microsoft.Phone.Tasks.PhotoChooserTask"/> completes and a picture is selected for upload.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureUploaded">
+            <summary>
+            Fires when the selected picture has been uploaded to the cloud.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureUploadFailed">
+            <summary>
+            Fires when the selected picture has failed to be uploaded to the cloud.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.EmptyContent">
+            <summary>
+            Gets or sets the empty content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.EmptyContentTemplate">
+            <summary>
+            Gets or sets the empty content template.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.IsBusyIndicatorEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be a busy indicator to show the progress.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.IsImageElementEnabled">
+            <summary>
+            Gets or sets a value indicating whether there will be an image element that displays the selected image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PixelHeight">
+            <summary>
+            Gets or sets the height in pixels of the image to be uploaded.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PixelWidth">
+            <summary>
+            Gets or sets the width in pixels of the image to be uploaded.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.PictureUri">
+            <summary>
+            Gets or sets the picture URI of the uploaded picture.
+            </summary>
+            <value>
+            The picture URI.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudPictureUpload.ImageElementStyle">
+            <summary>
+            Gets or sets the style for the Image element.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.CancelText">
+            <summary>
+              Looks up a localized string similar to cancel.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ChangePasswordText">
+            <summary>
+              Looks up a localized string similar to Change password.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.CheckEmailMessage">
+            <summary>
+              Looks up a localized string similar to Please check your email and follow the instructions to compete the procedure for resetting your password..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ChooseText">
+            <summary>
+              Looks up a localized string similar to Choose.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.DeleteAllText">
+            <summary>
+              Looks up a localized string similar to delete all.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.DeleteFeedbackConfirmationMessage">
+            <summary>
+              Looks up a localized string similar to This will delete all of your feedback history. Do you want to continue?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.DeleteMessageTitle">
+            <summary>
+              Looks up a localized string similar to Delete?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.DeleteMultipleImagesMessage">
+            <summary>
+              Looks up a localized string similar to These photos will be deleted..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.DeleteSingleImageMessage">
+            <summary>
+              Looks up a localized string similar to This picture will be deleted..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.DeleteText">
+            <summary>
+              Looks up a localized string similar to delete.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.EditText">
+            <summary>
+              Looks up a localized string similar to edit.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.EmailNotFoundMessage">
+            <summary>
+              Looks up a localized string similar to We couldn&apos;t find a user with the provided email..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.EmailText">
+            <summary>
+              Looks up a localized string similar to Email.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.EnterEmailMessage">
+            <summary>
+              Looks up a localized string similar to Please enter the email that is associated with your profile!.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.NewMessageUppercase">
+            <summary>
+              Looks up a localized string similar to NEW MESSAGE.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.NewPasswordText">
+            <summary>
+              Looks up a localized string similar to New password.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.NoFeedbackMessage">
+            <summary>
+              Looks up a localized string similar to No feedback to display..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.OldPasswordText">
+            <summary>
+              Looks up a localized string similar to Old password.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.PasswordForgottenText">
+            <summary>
+              Looks up a localized string similar to Forgot your password?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.PasswordsMismatchText">
+            <summary>
+              Looks up a localized string similar to Passwords do not match..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.PasswordText">
+            <summary>
+              Looks up a localized string similar to Password.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.RefreshText">
+            <summary>
+              Looks up a localized string similar to refresh.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.RememberCredentialsText">
+            <summary>
+              Looks up a localized string similar to Keep me signed in.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.RepeatPasswordText">
+            <summary>
+              Looks up a localized string similar to Repeat password.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ShareMessageConfirmation">
+            <summary>
+              Looks up a localized string similar to Do not ask again.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ShareMessageContent">
+            <summary>
+              Looks up a localized string similar to In order to share this image, you need to save it to your media library first. Would you like to save this image to your media library?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ShareMessageTitle">
+            <summary>
+              Looks up a localized string similar to Share?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.ShareText">
+            <summary>
+              Looks up a localized string similar to share....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.SignInTextLower">
+            <summary>
+              Looks up a localized string similar to sign in.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.SignInToYourAccountText">
+            <summary>
+              Looks up a localized string similar to SIGN IN TO YOUR ACCOUNT.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.SignUpText">
+            <summary>
+              Looks up a localized string similar to create an account.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.SignUpTextLower">
+            <summary>
+              Looks up a localized string similar to sign up.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.SignUpWithText">
+            <summary>
+              Looks up a localized string similar to OR SIGN UP WITH.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.UpdateProfileTextLower">
+            <summary>
+              Looks up a localized string similar to update.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.UploadText">
+            <summary>
+              Looks up a localized string similar to Upload.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.Resources.UsernameText">
+            <summary>
+              Looks up a localized string similar to Username.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl">
+            <summary>
+            Represents a control used to store and read application specific
+            settings associated with the currently logged user.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl.LoadSettings(Telerik.Windows.Cloud.ICloudSettings)">
+            <summary>
+            Loads the provided settings.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl.OnCommitted(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Telerik.Windows.Controls.RadDataForm.Committed" /> event.
+            </summary>
+            <param name="args">The event arguments.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Cloud.RadCloudSettingsControl.SaveSettingsAutomatically">
+            <summary>
+            Gets or sets a value indicating whether the settings should be manually saved.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,171 @@
+﻿<phone:PhoneApplicationPage x:Class="TinderApp.ProfileInfoPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:ViewModels="clr-namespace:TinderApp.Library.ViewModels;assembly=TinderApp.Library"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+                            Orientation="Portrait"
+                            SupportedOrientations="Portrait"
+                            mc:Ignorable="d">
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="ImageSlideItemTemplate">
+            <Grid>
+                <Image Source="{Binding}" Stretch="UniformToFill" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="FacebookObjectItemTemplate">
+            <Grid Margin="0,0,12,0">
+                <Ellipse Width="65"
+                         Height="65"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         Stroke="#FF747474">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding}" Stretch="UniformToFill" />
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="FacebookObjectItemPanel">
+            <StackPanel Orientation="Horizontal" />
+        </ItemsPanelTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal" />
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal" />
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush" />
+    </phone:PhoneApplicationPage.Foreground>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <telerikPrimitives:RadSlideView Height="400"
+                                        Margin="0"
+                                        VerticalAlignment="Top"
+                                        Background="Black"
+                                        CacheMode="BitmapCache"
+                                        IsLoopingEnabled="False"
+                                        ItemTemplate="{StaticResource ImageSlideItemTemplate}"
+                                        ItemsSource="{Binding Photos}" />
+        <ScrollViewer Grid.Row="1"
+                      Margin="0"
+                      Foreground="#DE000000">
+            <Grid Margin="12,0" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="#DE000000"
+                           Style="{StaticResource JumpListStringStyle}"
+                           Text="{Binding NameAndAge,
+                                          Mode=OneWay}"
+                           TextWrapping="Wrap" />
+                <StackPanel Grid.Column="1"
+                            Margin="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Right"
+                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               Foreground="#DE000000"
+                               Text="{Binding Distance,
+                                              Mode=OneWay}"
+                               TextWrapping="Wrap" />
+                    <TextBlock HorizontalAlignment="Right"
+                               Foreground="#DE000000"
+                               Text="{Binding LastActive,
+                                              Mode=OneWay}"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Margin="0,12,0,0"
+                            VerticalAlignment="Top"
+                            Orientation="Vertical"
+                            Visibility="{Binding ShowBio,
+                                                 Mode=OneWay}">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               FontSize="{StaticResource PhoneFontSizeNormal}"
+                               Foreground="#DE000000"
+                               Style="{StaticResource JumpListStringStyle}"
+                               Text="About"
+                               TextWrapping="Wrap" />
+                    <TextBlock VerticalAlignment="Top"
+                               Text="{Binding Bio,
+                                              Mode=OneWay}"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            Margin="0,12,0,0"
+                            VerticalAlignment="Top"
+                            Orientation="Vertical"
+                            Visibility="{Binding ShowFriends,
+                                                 Mode=OneWay}">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               FontSize="{StaticResource PhoneFontSizeNormal}"
+                               Foreground="#DE000000"
+                               Style="{StaticResource JumpListStringStyle}"
+                               Text="Shared Friends"
+                               TextWrapping="Wrap" />
+                    <ScrollViewer Height="65"
+                                  Margin="-12,6,-468,0"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Disabled">
+                        <ItemsControl Margin="12,0,0,0"
+                                      HorizontalAlignment="Left"
+                                      ItemTemplate="{StaticResource FacebookObjectItemTemplate}"
+                                      ItemsPanel="{StaticResource FacebookObjectItemPanel}"
+                                      ItemsSource="{Binding CommonFriends}" />
+                    </ScrollViewer>
+                </StackPanel>
+                <StackPanel Grid.Row="3"
+                            Grid.ColumnSpan="2"
+                            Margin="0,12,0,0"
+                            VerticalAlignment="Top"
+                            Orientation="Vertical"
+                            Visibility="{Binding ShowLikes,
+                                                 Mode=OneWay}">
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               FontSize="{StaticResource PhoneFontSizeNormal}"
+                               Foreground="#DE000000"
+                               Style="{StaticResource JumpListStringStyle}"
+                               Text="Shared Likes"
+                               TextWrapping="Wrap" />
+                    <ScrollViewer Height="65"
+                                  Margin="-12,6,-12,0"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Disabled">
+                        <ItemsControl Margin="12,0,0,0"
+                                      HorizontalAlignment="Left"
+                                      ItemTemplate="{StaticResource FacebookObjectItemTemplate}"
+                                      ItemsPanel="{StaticResource FacebookObjectItemPanel}"
+                                      ItemsSource="{Binding LikePhotos}" />
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

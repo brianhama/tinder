@@ -1,0 +1,928 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Controls.Data</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.Windows.Controls.ConversationMessageTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            When overridden in a derived class, returns a DataTemplate based on custom logic.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns>Returns a DataTemplate object or null.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ConversationViewMessage">
+            <summary>
+            Represents the default data item for RadConversationView.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ConversationViewMessage.#ctor(System.String,System.DateTime,Telerik.Windows.Controls.ConversationViewMessageType)">
+            <summary>
+            Initializes a new instance of the ConversationViewMessage class.
+            </summary>
+            <param name="text">The text of the message.</param>
+            <param name="timeStamp">The time at which the message was posted.</param>
+            <param name="type">The type of message. Incoming or Outgoing.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ConversationViewMessage.Text">
+            <summary>
+            Gets the text of the message.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ConversationViewMessage.TimeStamp">
+            <summary>
+            Gets the time stamp at which the message was posted.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ConversationViewMessage.Type">
+            <summary>
+            Gets the type of the message.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ConversationViewMessageEventArgs">
+            <summary>
+            Event arguments for the SendingMessage event of RadConversationView.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ConversationViewMessageEventArgs.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the ConversationViewMessageEventArgs class.
+            </summary>
+            <param name="message">The conversation view message that was posted.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ConversationViewMessageEventArgs.Message">
+            <summary>
+            Gets the posted conversation view message.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ConversationViewMessageType">
+            <summary>
+            Determines the type of the default conversation view message.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ConversationViewMessageType.Incoming">
+            <summary>
+            Defines an incoming message.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ConversationViewMessageType.Outgoing">
+            <summary>
+            Defines an outgoing message.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadConversationView">
+            <summary>
+            Represents a view similar to the one in the Messages application in the Windows Phone OS.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.EmptyContentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.EmptyContent"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.EmptyContentTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.EmptyContentTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.EmptyContentDisplayModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.EmptyContentDisplayMode"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.KeepLastMessageVisibleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.KeepLastMessageVisible"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.OutgoingMessageTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.OutgoingMessageTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.IncomingMessageTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.IncomingMessageTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.MessageTemplateSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.MessageTemplateSelector"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.ItemsSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.TextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.Text"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.CreateMessageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.CreateMessage"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.GroupDescriptorsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.GroupDescriptors"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.GroupHeaderTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.GroupHeaderTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.GroupHeaderTemplateSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.GroupHeaderTemplateSelector"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.TextBoxTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.TextBoxTemplate"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.TextBoxVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.TextBoxVisibility"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.IsPullToRefreshEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.IsPullToRefreshEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadConversationView.PullToRefreshIndicatorStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadConversationView.PullToRefreshIndicatorStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.#ctor">
+            <summary>
+            Initializes a new instance of the RadConversationView class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.StopPullToRefreshLoading(System.Boolean)">
+            <summary>
+            Stops the loading indicator in the pull-to-refresh element and hides the element by updating
+            the last refresh time. By default the DateTime.Now value is used but a custom value can be provided
+            as an optional parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.BringIntoView(System.Object)">
+            <summary>
+            Brings the given data item into the viewport.
+            </summary>
+            <param name="message">The message to bring into view.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added
+            to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnOutgoingMessageTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.RadConversationView.OutgoingMessageTemplate"/> property changes.
+            </summary>
+            <param name="newTemplate">The new property value.</param>
+            <param name="oldTemplate">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnIncomingMessageTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.RadConversationView.IncomingMessageTemplate"/> property changes.
+            </summary>
+            <param name="newTemplate">The new property value.</param>
+            <param name="oldTemplate">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnMessageTemplateSelectorChanged(Telerik.Windows.Controls.DataTemplateSelector,Telerik.Windows.Controls.DataTemplateSelector)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.RadConversationView.MessageTemplateSelector"/> property changes.
+            </summary>
+            <param name="newSelector">The new property value.</param>
+            <param name="oldSelector">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnItemsSourceChanged(System.Collections.IEnumerable,System.Collections.IEnumerable)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.RadConversationView.ItemsSource"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnTextBoxTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.RadConversationView.TextBoxTemplate"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.OnTextChanged(System.String,System.String)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.RadConversationView.Text"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConversationView.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Provides the behavior for the Measure pass of Silverlight layout. Classes
+            can override this method to define their own Measure pass behavior.
+            </summary>
+            <param name="availableSize">
+            The available size that this object can give to child objects. Infinity (System.Double.PositiveInfinity)
+            can be specified as a value to indicate that the object will size to whatever
+            content is available.
+            </param>
+            <returns>
+            The size that this object determines it needs during layout, based on its
+            calculations of the allocated sizes for child objects; or based on other
+            considerations, such as a fixed container size.
+            </returns>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadConversationView.RefreshRequested">
+            <summary>
+            Fires when the user pulls down the scrollable list to refresh the data. This event will fire
+            when the <see cref="P:Telerik.Windows.Controls.RadConversationView.IsPullToRefreshEnabled"/> property is set to true.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadConversationView.SendingMessage">
+            <summary>
+            Fired when the user presses the send button of the conversation view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.PullToRefreshIndicatorStyle">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Windows.Style"/> class that
+            defines the visual appearance of the pull-to-refresh indicator element.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.IsPullToRefreshEnabled">
+            <summary>
+            Gets or sets a boolen value determining whether
+            the end user will be able to load more items in the conversation view
+            by pulling down the scrollable content when the top end edge is reached.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.EmptyContent">
+            <summary>
+            Gets or sets the content that will be shown when the control is not bound to a data collection or when the collection is empty.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.EmptyContentTemplate">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Windows.DataTemplate"/> class that defines how the content
+            defined in the <see cref="P:Telerik.Windows.Controls.RadConversationView.EmptyContent"/> property will be shown.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.EmptyContentDisplayMode">
+            <summary>
+            Gets or sets the mode for displaying the content displayed when there is no
+            data to display.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.KeepLastMessageVisible">
+            <summary>
+            Gets or sets a value that determines if the last message will be brought into view whenever
+            new messages are added to the <see cref="P:Telerik.Windows.Controls.RadConversationView.ItemsSource"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.TextBoxVisibility">
+            <summary>
+            Gets or sets the text box visibility.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.TextBoxTemplate">
+            <summary>
+            Gets or sets the text box template.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.GroupDescriptors">
+            <summary>
+            Gets or sets the group descriptors of the conversation view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.GroupHeaderTemplate">
+            <summary>
+            Gets or sets the group header template of the conversation view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.GroupHeaderTemplateSelector">
+            <summary>
+            Gets or sets the group header template selector of the conversation view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.Text">
+            <summary>
+            Gets or sets the text of the conversation view text box.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.OutgoingMessageTemplate">
+            <summary>
+            Gets or sets the outgoing message template.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.IncomingMessageTemplate">
+            <summary>
+            Gets or sets the incoming message template.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.MessageTemplateSelector">
+            <summary>
+            Gets or sets the message template selector.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.ItemsSource">
+            <summary>
+            Gets or sets the data source of the conversation view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.CreateMessage">
+            <summary>
+            A callback that is used to create a custom conversation view message based on the text
+            that is entered into the conversation view text box.
+            </summary>
+            <remarks>
+            This property has to be used when custom message objects are used because RadConversationView
+            does not know how to create these custom messages. When this property is null, the default implementation
+            assumes that RadConversationView is bound to a data source of <see cref="T:Telerik.Windows.Controls.ConversationViewMessage"/> objects.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadConversationView.IsProperlyTemplated">
+            <summary>
+            Gets a value indicating whether this control is properly templated.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GroupHeaderWrapMode">
+            <summary>
+            Defines the layout modes of group headers when
+            the <see cref="T:Telerik.Windows.Controls.RadJumpList"/> uses is in wrap mode.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GroupHeaderWrapMode.Default">
+            <summary>
+            Groups are rendered as normal items are.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GroupHeaderWrapMode.Stretch">
+            <summary>
+            Groups are stretched to take a single wrap line in the layout.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GroupCheckMode">
+            <summary>
+            Provides the possible behavior options for data groups
+            when the check-mode is activated in <see cref="T:Telerik.Windows.Controls.RadJumpList"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GroupCheckMode.Standard">
+            <summary>
+            Data groups can be independently checked or unchecked without affecting their children.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GroupCheckMode.Automatic">
+            <summary>
+            When a data group is checked or unchecked all its children are also checked or unchecked.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GroupCheckMode.None">
+            <summary>
+            Data groups do not participate in the check mode.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GroupHeaderItemTapEventArgs">
+            <summary>
+            Encapsulates the data associated with a Tap gesture over a group header item within <see cref="T:Telerik.Windows.Controls.RadJumpList"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GroupHeaderItemTapEventArgs.#ctor(Telerik.Windows.Controls.RadDataBoundListBoxItem,System.Windows.UIElement,System.Windows.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GroupHeaderItemTapEventArgs"/> class.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="container">The UIElement where the Tap gesture originated.</param>
+            <param name="manipulationOrigin">The manipulation origin.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GroupHeaderItemTapEventArgs.#ctor(Telerik.Windows.Controls.RadDataBoundListBoxItem,System.Windows.UIElement,System.Windows.UIElement,System.Windows.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GroupHeaderItemTapEventArgs"/> class.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="container">The UIElement where the Tap gesture originated.</param>
+            <param name="originalSource">The <see cref="T:System.Windows.UIElement"/> where the manipulation originated from.</param>
+            <param name="manipulationOrigin">The manipulation origin.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GroupHeaderItemTapEventArgs.ShowGroupPicker">
+            <summary>
+            Determines whether the built-in group picker should be displayed after group header Tap.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GroupPickerItemTapEventArgs">
+            <summary>
+            Encapsulates the data associated with a Tap gesture over an item within the <see cref="T:Telerik.Windows.Controls.RadJumpList"/> group picker.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GroupPickerItemTapEventArgs.#ctor(System.Windows.Controls.ContentControl)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GroupPickerItemTapEventArgs"/> class.
+            </summary>
+            <param name="element">The element.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GroupPickerItemTapEventArgs.Item">
+            <summary>
+            Gets the visual element instance that was tapped.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GroupPickerItemTapEventArgs.DataItem">
+            <summary>
+            Gets the data item associated with the tapped element.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GroupPickerItemTapEventArgs.ClosePicker">
+            <summary>
+            Determines whether the group picker should be closed after this Tap.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GroupPickerItemTapEventArgs.ScrollToItem">
+            <summary>
+            Determines whether the group picker should be closed after this Tap.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GroupPickerItemTapEventArgs.DataItemToNavigate">
+            <summary>
+            Gets or sets the item to navigate to after the tap. Defaults to the data item associated with the event.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.JumpList.JumpListGroupPicker">
+            <summary>
+            Represents the groups picker displayed in <see cref="T:Telerik.Windows.Controls.RadJumpList"/> control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpList.JumpListGroupPicker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.JumpList.JumpListGroupPicker"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpList.JumpListGroupPicker.GetContainerForItemOverride">
+            <summary>
+            Creates or identifies the element that is used to display the given item.
+            </summary>
+            <returns>
+            The element that is used to display the given item.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpList.JumpListGroupPicker.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Prepares the specified element to display the specified item.
+            </summary>
+            <param name="element">The element used to display the specified item.</param>
+            <param name="item">The item to display.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpList.JumpListGroupPicker.ClearContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Undoes the effects of the <see cref="M:System.Windows.Controls.ItemsControl.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)"/> method.
+            </summary>
+            <param name="element">The container element.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.JumpList.JumpListGroupPicker.Owner">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.RadJumpList"/> instance this picker is attached to.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.JumpList.JumpListGroupPickerItem">
+            <summary>
+            Represents the visual item within a <see cref="T:Telerik.Windows.Controls.JumpList.JumpListGroupPicker"/> items control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpList.JumpListGroupPickerItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.JumpList.JumpListGroupPickerItem"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpList.JumpListGroupPickerItem.OnManipulationCompleted(System.Windows.Input.ManipulationCompletedEventArgs)">
+            <summary>
+            Called when the <see cref="E:System.Windows.Controls.Control.ManipulationCompleted"/> event occurs. This member overrides <see cref="M:System.Windows.UIElement.OnManipulationCompleted(System.Object,System.Windows.Input.ManipulationCompletedEventArgs)"/>.
+            </summary>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadJumpList">
+            <summary>
+            Represents a list control that supports visual representation of groups and corresponding sub-items.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupCheckModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadJumpList.GroupCheckMode"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.FilterDescriptorsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadJumpList.FilterDescriptorsSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.SortDescriptorsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadJumpList.SortDescriptorsSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupDescriptorsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadJumpList.GroupDescriptorsSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.StickyHeaderTemplateProperty">
+            <summary>
+            Identifies the StickyHeaderTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.IsStickyHeaderEnabledProperty">
+            <summary>
+            Identifies the IsStickyHeaderEnabled dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerItemsPanelProperty">
+            <summary>
+            Identifies the GroupPickerPanel dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerOpenAnimationProperty">
+            <summary>
+            Identifies the GroupPickerOpenAnimation dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerCloseAnimationProperty">
+            <summary>
+            Identifies the GroupPickerCloseAnimation dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerItemsSourceProperty">
+            <summary>
+            Identifies the GroupPickerItemsSource dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.IsGroupPickerEnabledProperty">
+            <summary>
+            Identifies the GroupPickerPanel dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.IsGroupPickerOpenProperty">
+            <summary>
+            Identifies the GroupPickerPanel dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerItemTemplateSelectorProperty">
+            <summary>
+            Identifies the GroupPickerItemTemplateSelector dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerItemTemplateProperty">
+            <summary>
+            Identifies the GroupPickerItemTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupPickerItemStyleProperty">
+            <summary>
+            Identifies the GroupPickerItemStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupHeaderTemplateSelectorProperty">
+            <summary>
+            Identifies the GroupHeaderTemplateSelector dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupHeaderTemplateProperty">
+            <summary>
+            Identifies the GroupHeaderTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadJumpList.GroupHeaderStyleProperty">
+            <summary>
+            Identifies the GroupHeaderStyle dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadJumpList"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.Finalize">
+            <summary>
+            Releases unmanaged resources and performs other cleanup operations before the
+            <see cref="T:Telerik.Windows.Controls.RadJumpList"/> is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.Telerik#Windows#Data#IWeakEventListener#ReceiveEvent(System.Object,System.EventArgs)">
+            <summary>
+            Receives the event.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.BeginDataUpdate">
+            <summary>
+            Begins a batch data update operation. Useful when adding more than one data descriptor simultaneously.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.EndDataUpdate">
+            <summary>
+            Ends a batch data update operation. Should be stacked with a previous <see cref="M:Telerik.Windows.Controls.RadJumpList.BeginDataUpdate"/> call.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.RefreshData">
+            <summary>
+            Forces explicit re-evaluation of the data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.BringIntoView(System.Object)">
+            <summary>
+            Brings the given data item into the viewport.
+            </summary>
+            <param name="item">The item to show.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnBottomEdgeCorrected">
+            <summary>
+            Called when [bottom edge corrected].
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnGroupPickerItemTap(System.Windows.Controls.ContentControl)">
+            <summary>
+            Callback used by the group picker to notify for a Tap gesture over a group item.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.CreateListSource">
+            <summary>
+            Initializes the list source.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnItemTap(Telerik.Windows.Controls.RadDataBoundListBoxItem,System.Windows.UIElement,System.Windows.UIElement,System.Windows.Point)">
+            <summary>
+            Handles a click from a child visual item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnScrollStateChanged(Telerik.Windows.Controls.ScrollState,Telerik.Windows.Controls.ScrollState)">
+            <summary>
+            Called when the current scrolling state has changed.
+            </summary>
+            <param name="oldState">The old state.</param>
+            <param name="newState">The new state.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Called when the value of the <see cref="P:System.Windows.Controls.ItemsControl.Items"/>
+            property changes.
+            </summary>
+            <param name="e">A <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/>
+            that contains the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.OnUnloaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when this object is no longer connected to the main object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadJumpList.PrepareContainerForItemOverride(Telerik.Windows.Controls.RadVirtualizingDataControlItem,Telerik.Windows.Data.IDataSourceItem)">
+            <summary>
+            Prepares the specified element to display the specified item.
+            </summary>
+            <param name="element">The element used to display the specified item.</param>
+            <param name="item">The item to display.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupCheckMode">
+            <summary>
+            Gets or sets a value from the <see cref="P:Telerik.Windows.Controls.RadJumpList.GroupCheckMode"/> enumeration
+            that defines the behavior of data group items when the check mode
+            is activated in this instance of <see cref="T:Telerik.Windows.Controls.RadJumpList"/>.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadJumpList.GroupHeaderItemTap">
+            <summary>
+            Occurs when a group header item container has been tapped.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadJumpList.GroupPickerItemTap">
+            <summary>
+            Occurs when an item within the group picker has been tapped.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.FilterDescriptorsSource">
+            <summary>
+            Gets or sets an observable collection
+            that contains a set of <see cref="T:Telerik.Windows.Data.DataDescriptor"/> instances that
+            are used to filter the current data source of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupDescriptorsSource">
+            <summary>
+            Gets or sets an observable collection
+            that contains a set of <see cref="T:Telerik.Windows.Data.DataDescriptor"/> instances that
+            are used to group the current data source of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.SortDescriptorsSource">
+            <summary>
+            Gets or sets an observable collection
+            that contains a set of <see cref="T:Telerik.Windows.Data.DataDescriptor"/> instances that
+            are used to sort the current data source of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.ItemCount">
+            <summary>
+            Gets the count of the data items in the current
+            view.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.IsStickyHeaderEnabled">
+            <summary>
+            Gets or sets a boolean value determining whether <see cref="T:Telerik.Windows.Controls.RadJumpList"/>
+            will show a sticky header on top of the viewport indiciating the currently
+            visible data group in the viewport.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.StickyHeaderTemplate">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Windows.DataTemplate"/>
+            class that defines the appearance of the header displayed at the top part
+            of the viewport.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerItemsPanel">
+            <summary>
+            Gets or sets the group picker panel.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.IsGroupPickerEnabled">
+            <summary>
+            Gets or sets a boolean value determining whether the group picker panel
+            can be shown by tapping on a group's header.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.IsGroupPickerOpen">
+            <summary>
+            Gets or sets a boolean value determining whether the group picker window is currently opened.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerOpenAnimation">
+            <summary>
+            Gets or sets the animation used to display the group picker.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerCloseAnimation">
+            <summary>
+            Gets or sets the animation used to hide the group picker.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerItemTemplate">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Windows.DataTemplate"/> class that represents
+            the template used to define the visual appearance of a group picker.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerItemTemplateSelector">
+            <summary>
+            Gets or sets an instance of the <see cref="T:Telerik.Windows.Controls.DataTemplateSelector"/> class
+            that is used to select a template for a group displayed in the group picker panel.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupHeaderTemplateSelector">
+            <summary>
+            Gets or sets an instance of the <see cref="T:Telerik.Windows.Controls.DataTemplateSelector"/> class
+            that is used to select a template for a group's header.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerItemsSource">
+            <summary>
+            Gets or sets user-defined collection of items to be displayed within the group picker.
+            If this collection is specified, user is responsible for handling the GroupPickerItemTap event.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.Groups">
+            <summary>
+            Gets an array with all the top-level groups or null if no grouping data operation is applied.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupHeaderTemplate">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Windows.DataTemplate"/> class that represents
+            the template used to define the visual appearance of a group's header.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupHeaderStyle">
+            <summary>
+            Gets or sets the Style instance to be applied to group headers.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupPickerItemStyle">
+            <summary>
+            Gets or sets the Style instance to be applied to the group picker items.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.GroupDescriptors">
+            <summary>
+            Gets an instance of the class that
+            holds instances of the <see cref="T:Telerik.Windows.Data.DataDescriptor"/> class which
+            describe the data groups.
+            </summary>
+            <value>The group descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.FilterDescriptors">
+            <summary>
+            Gets an instance of the class that
+            holds instances of the <see cref="T:Telerik.Windows.Data.DataDescriptor"/> class which
+            describe the filters.
+            </summary>
+            <value>The filter descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.SortDescriptors">
+            <summary>
+            Gets an instance of the class that
+            holds instances of the <see cref="T:Telerik.Windows.Data.DataDescriptor"/> class which define
+            how the data is sorted.
+            </summary>
+            <value>The sort descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.StickyHeader">
+            <summary>
+            Gets the instance of <see cref="T:Telerik.Windows.Controls.RadTransitionControl"/> that
+            displays the sticky header.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.PickerWindow">
+            <summary>
+            This property is internal because it is used in the unit tests for the <see cref="T:Telerik.Windows.Controls.RadJumpList"/>
+            control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadJumpList.IsProperlyTemplated">
+            <summary>
+            Gets a value indicating whether this control is properly templated.
+            </summary>
+            <value>
+            	<c>True</c> if this instance is properly templated; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.JumpListDynamicGridVirtualizationStrategyDefinition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.JumpListDynamicGridVirtualizationStrategyDefinition.CreateStrategy">
+            <summary>
+            Creates an actual <see cref="T:Telerik.Windows.Controls.VirtualizationStrategy" /> instance
+            based on the properties defined on this <see cref="T:Telerik.Windows.Controls.VirtualizationStrategyDefinition" /> instance.
+            </summary>
+            <returns>
+            An instance of the <see cref="T:Telerik.Windows.Controls.VirtualizationStrategy" /> class that
+            represents the UI virtualization strategy.
+            </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.JumpListWrapVirtualizationStrategy">
+            <summary>
+            Represents a specialized <see cref="T:Telerik.Windows.Controls.WrapVirtualizationStrategy"/> used
+            in <see cref="T:Telerik.Windows.Controls.RadJumpList"/> in the context of grouping. Allows defining different
+            layout modes for the group headers.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.JumpListWrapVirtualizationStrategyDefinition">
+            <summary>
+            Represents a UI virtualization strategy definition for a <see cref="T:Telerik.Windows.Controls.JumpListWrapVirtualizationStrategy"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.JumpListWrapVirtualizationStrategyDefinition.GroupHeaderWrapMode">
+            <summary>
+            Gets or sets the wrap layout mode for group headers
+            in <see cref="T:Telerik.Windows.Controls.RadJumpList"/>.
+            </summary>
+            <value>The group header wrap mode.</value>
+        </member>
+    </members>
+</doc>

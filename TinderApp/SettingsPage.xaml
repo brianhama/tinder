@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage x:Class="TinderApp.SettingsPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:Lib="clr-namespace:TinderApp.Lib;assembly=TinderApp.Library"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            SupportedOrientations="Portrait"
+                            mc:Ignorable="d">
+    <ScrollViewer>
+        <StackPanel Margin="12,24,12,0" VerticalAlignment="Top">
+            <telerikInput:RadListPicker x:Name="genderDropDown"
+                                        Height="85"
+                                        Margin="0"
+                                        VerticalAlignment="Top"
+                                        Header="I am a"
+                                        SelectedIndex="{Binding gender,
+                                                                Mode=TwoWay}">
+                <ListBoxItem Content="Man" />
+                <ListBoxItem Content="Woman" />
+            </telerikInput:RadListPicker>
+            <TextBlock Margin="0,24,12,0"
+                       Style="{StaticResource PhoneTextSubtleStyle}"
+                       Text="Show me"
+                       TextWrapping="Wrap" />
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="showMenCheckbox" Content="Men" />
+                <CheckBox x:Name="showWomenCheckBox" Content="Women" />
+            </StackPanel>
+            <telerikInput:RadNumericUpDown x:Name="searchDistance"
+                                           Margin="0,24,0,0"
+                                           BorderBrush="Black"
+                                           Change="5"
+                                           Header="Search Distance:"
+                                           Value="{Binding distance_filter,
+                                                           Mode=TwoWay}" />
+            <telerikInput:RadNumericUpDown x:Name="minAge"
+                                           Margin="0,24,0,0"
+                                           BorderBrush="Black"
+                                           Header="Minimum Age:"
+                                           MaxValue="49"
+                                           MinValue="18"
+                                           Value="{Binding age_filter_min,
+                                                           Mode=TwoWay}" />
+            <telerikInput:RadNumericUpDown x:Name="maxAge"
+                                           Margin="0,24,0,0"
+                                           BorderBrush="Black"
+                                           Header="Maximum Age:"
+                                           MaxValue="50"
+                                           MinValue="{Binding Value,
+                                                              ElementName=minAge}"
+                                           Value="{Binding age_filter_max,
+                                                           Mode=TwoWay}" />
+            <TextBlock Margin="0,24,0,0"
+                       HorizontalAlignment="Center"
+                       Foreground="#DEFF0000"
+                       Text="Press the back button to save your changes."
+                       TextWrapping="Wrap" />
+            <Button x:Name="logout"
+                    Margin="-12,24,-12,0"
+                    Background="#FF9B9B9B"
+                    BorderBrush="#DEB0B0B0"
+                    Click="logout_Click"
+                    Content="Log out"
+                    Foreground="#DE000000" />
+        </StackPanel>
+    </ScrollViewer>
+</phone:PhoneApplicationPage>

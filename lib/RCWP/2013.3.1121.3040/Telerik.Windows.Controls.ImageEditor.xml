@@ -1,0 +1,2747 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Controls.ImageEditor</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Controls.BoolToOpacityConverter">
+            <summary>
+            Converts bool to opacity.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BoolToOpacityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BoolToOpacityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter">
+            <summary>
+            Converts collection indices to background colors.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.EvenLightBrush">
+            <summary>
+            Gets or sets the even brush for the light theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.OddLightBrush">
+            <summary>
+            Gets or sets the odd brush for the light theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.EvenDarkBrush">
+            <summary>
+            Gets or sets the even brush for the dark theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CollectionIndexToBackgroundConverter.OddDarkBrush">
+            <summary>
+            Gets or sets the odd brush for the dark theme.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.IconToBrushConverter">
+            <summary>
+            Converts an image path to a solid brush or an image brush.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.IconToBrushConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.IconToBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.NegativeValueConverter">
+            <summary>
+            Converts a value to its negative equivalent.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.NegativeValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.NegativeValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.StringToIntValueConverter">
+            <summary>
+            Converts string to double.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.StringToIntValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.StringToIntValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.StringToLowerConverter">
+            <summary>
+            Converts a string to lower case.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.StringToLowerConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.StringToLowerConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ThemeResourceConverter">
+            <summary>
+            A value converter that when bound to the ThemeObserver.IsDarkTheme property returns either its DarkResource or its LightResource.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ThemeResourceConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ThemeResourceConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ThemeResourceConverter.LightResource">
+            <summary>
+            Gets or sets the light resource.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ThemeResourceConverter.DarkResource">
+            <summary>
+            Gets or sets the dark resource.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageEditCancelledEventArgs">
+            <summary>
+            Event arguments for the ImageEditor.ImageEditCancelled event.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadImageEditor">
+            <summary>
+            A UI component that allows end-users to edit images.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.SourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.Source"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.ToolsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.Tools"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.CurrentToolProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.CurrentTool"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.ModifiedImageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.ModifiedImage"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.FileNamePrefixProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.FileNamePrefix"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.SaveImageCommandProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.SaveImageCommand"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.SaveImageCommandParameterProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.SaveImageCommandParameter"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.CancelEditCommandProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.CancelEditCommand"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.CancelEditCommandParameterProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.CancelEditCommandParameter"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadImageEditor.ToolUISelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadImageEditor.ToolUISelector"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.#ctor">
+            <summary>
+            Initializes a new instance of the RadImageEditor class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.SaveToPhoneLibrary(System.String,System.Int32)">
+            <summary>
+            Saves the currently edited image to the phone library.
+            </summary>
+            <param name="fileName">The file name of the saved image.</param>
+            <param name="quality">The quality of the jpeg compression.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnImageEditCancelled">
+            <summary>
+            A virtual callback that fires the ImageEditCancelled event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnImageSaved(System.String)">
+            <summary>
+            A virtual callback that is invoked when he image is saved.
+            </summary>
+            <param name="fileName">The file name of the saved image.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnSourceChanged(System.Windows.Media.ImageSource,System.Windows.Media.ImageSource)">
+            <summary>
+            A virtual callback that is called when the <see cref="P:Telerik.Windows.Controls.RadImageEditor.Source"/> property changes.
+            </summary>
+            <param name="newValue"></param>
+            <param name="oldValue"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnImageSaving">
+            <summary>
+            A virtual callback that fires the ImageSaving event.
+            </summary>
+            <returns>Returns the event arguments of the ImageSaving event modified by the user.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadImageEditor.OnCurrentToolChanged(Telerik.Windows.Controls.ImageEditorTool,Telerik.Windows.Controls.ImageEditorTool)">
+            <summary>
+            A virtual callback that is called when the <see cref="P:Telerik.Windows.Controls.RadImageEditor.CurrentTool"/> property changes.
+            </summary>
+            <param name="newValue"></param>
+            <param name="oldValue"></param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadImageEditor.ImageSaved">
+            <summary>
+            Fired when the image editor saves the current image to the media library or local storage.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadImageEditor.ImageSaving">
+            <summary>
+            Fired before the image editor saves the modified image to the media library or local storage.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadImageEditor.ImageEditCancelled">
+            <summary>
+            Fired when the user presses the cancel button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.ToolUISelector">
+            <summary>
+            Gets or sets the tool ui selector.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.SaveImageCommand">
+            <summary>
+            Gets or sets a command that is executed when the user presses the save button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.SaveImageCommandParameter">
+            <summary>
+            Gets or sets the command parameter for the <see cref="P:Telerik.Windows.Controls.RadImageEditor.SaveImageCommand"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.CancelEditCommand">
+            <summary>
+            Gets or sets a command that is executed when the user presses the cancel button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.CancelEditCommandParameter">
+            <summary>
+            Gets or sets the command parameter for the <see cref="P:Telerik.Windows.Controls.RadImageEditor.CancelEditCommand"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.FileNamePrefix">
+            <summary>
+            Gets or sets a prefix that will be prepended to the file name of the saved image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.CurrentTool">
+            <summary>
+            Gets the currently used tool in the image editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.Tools">
+            <summary>
+            Gets the collection of tools of RadImageEditor.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.Source">
+            <summary>
+            Gets or sets the image that will be edited inside RadImageEditor.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadImageEditor.ModifiedImage">
+            <summary>
+            Gets the edited version of the Source image.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageEditorLocalizationManager">
+            <summary>
+            A singleton class that represents a localization manager responsible for localizing resources in the Telerik.Windows.Controls.ImageEditor assembly.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.BrightnessToolTextKey">
+            <summary>
+            Defines the key for looking-up the "BRIGHTNESS" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolColorFixTextKey">
+            <summary>
+            Defines the key for looking-up the "color fix" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolGreyscaleTextKey">
+            <summary>
+            Defines the key for looking-up the "greyscale" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolInvertColorsTextKey">
+            <summary>
+            Defines the key for looking-up the "invert colors" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolTextKey">
+            <summary>
+            Defines the key for looking-up the "EFFECTS" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.ContrastToolTextKey">
+            <summary>
+            Defines the key for looking-up the "CONTRAST" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.CropToolSquareTextKey">
+            <summary>
+            Defines the key for looking-up the "Square" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.CropToolTextKey">
+            <summary>
+            Defines the key for looking-up the "CROP" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.HueToolTextKey">
+            <summary>
+            Defines the key for looking-up the "HUE" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.OrientationToolFlipTextKey">
+            <summary>
+            Defines the key for looking-up the "flip" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.OrientationToolRotateTextKey">
+            <summary>
+            Defines the key for looking-up the "rotate" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.OrientationToolTextKey">
+            <summary>
+            Defines the key for looking-up the "ORIENTATION" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.ResizeToolTextKey">
+            <summary>
+            Defines the key for looking-up the "RESIZE" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.SaturationToolTextKey">
+            <summary>
+            Defines the key for looking-up the "SATURATION" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.SharpenToolTextKey">
+            <summary>
+            Defines the key for looking-up the "SHARPNESS" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolCharacterSpacingShortTextKey">
+            <summary>
+            Defines the key for looking-up the "character" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolCharacterSpacingTextKey">
+            <summary>
+            Defines the key for looking-up the "CHARACTER SPACING" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolDefaultTextKey">
+            <summary>
+            Defines the key for looking-up the "enter text here" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolFontFamilyShortTextKey">
+            <summary>
+            Defines the key for looking-up the "font" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolFontFamilyTextKey">
+            <summary>
+            Defines the key for looking-up the "TEXT FONT" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolLineHeightShortTextKey">
+            <summary>
+            Defines the key for looking-up the "line height" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolLineHeightTextKey">
+            <summary>
+            Defines the key for looking-up the "LINE HEIGHT" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolOpacityShortTextKey">
+            <summary>
+            Defines the key for looking-up the "opacity" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolOpacityTextKey">
+            <summary>
+            Defines the key for looking-up the "TEXT OPACITY" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextKey">
+            <summary>
+            Defines the key for looking-up the "TEXT" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextHueShortTextKey">
+            <summary>
+            Defines the key for looking-up the "hue" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextHueTextKey">
+            <summary>
+            Defines the key for looking-up the "TEXT COLOR" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextLightnessShortTextKey">
+            <summary>
+            Defines the key for looking-up the "lightness" string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextLightnessTextKey">
+            <summary>
+            Defines the key for looking-up the "TEXT LIGHTNESS" string.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.Instance">
+            <summary>
+            Gets the only instance of the <see cref="T:Telerik.Windows.Controls.ImageEditorLocalizationManager"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.BrightnessToolText">
+            <summary>
+            Gets the text for the brightness tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolColorFixText">
+            <summary>
+            Gets the default text for the color fix feature of the color effects tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolGreyscaleText">
+            <summary>
+            Gets the default text for the greyscale feature of the color effects tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolInvertColorsText">
+            <summary>
+            Gets the default text for the invert colors feature of the color effects tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.ColorEffectsToolText">
+            <summary>
+            Gets the text for the color effercts tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.ContrastToolText">
+            <summary>
+            Gets the text for the contrast tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.CropToolText">
+            <summary>
+            Gets the text for the crop tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.CropToolSquareText">
+            <summary>
+            Gets the default text for the square ratio of the crop tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.HueToolText">
+            <summary>
+            Gets the text for the hue tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.OrientationToolRotateText">
+            <summary>
+            Gets the default text for the rotation feature of the orientation tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.OrientationToolFlipText">
+            <summary>
+            Gets the default text for the flip feature of the orientation tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.OrientationToolText">
+            <summary>
+            Gets the text for the orientation tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.ResizeToolText">
+            <summary>
+            Gets the text for the resize tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.SaturationToolText">
+            <summary>
+            Gets the text for the saturation tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.SharpenToolText">
+            <summary>
+            Gets the text for the sharpen tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolCharacterSpacingText">
+            <summary>
+            Gets the text for the character spacing feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolCharacterSpacingShortText">
+            <summary>
+            Gets the short text for the character spacing feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolDefaultText">
+            <summary>
+            Gets the default initial input text for the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolFontFamilyShortText">
+            <summary>
+            Gets the short text for the font family feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolFontFamilyText">
+            <summary>
+            Gets the text for the font family feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolLineHeightShortText">
+            <summary>
+            Gets the short text for the line height feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolLineHeightText">
+            <summary>
+            Gets the text for the line height feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolOpacityShortText">
+            <summary>
+            Gets the short text for the opacity feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolOpacityText">
+            <summary>
+            Gets the text for the opacity feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolText">
+            <summary>
+            Gets the text for the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextHueShortText">
+            <summary>
+            Gets the short text for the text hue feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextHueText">
+            <summary>
+            Gets the text for the text hue feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextLightnessShortText">
+            <summary>
+            Gets the short text for the text lightness feature of the text tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorLocalizationManager.TextToolTextLightnessText">
+            <summary>
+            Gets the text for the text lightness feature of the text tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageSavedEventArgs">
+            <summary>
+            Event arguments for the ImageSaved event of <see cref="T:Telerik.Windows.Controls.RadImageEditor"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageSavedEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ImageSavedEventArgs class.
+            </summary>
+            <param name="fileName">The file name of the saved image.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageSavedEventArgs.FileName">
+            <summary>
+            Gets the file name of the saved image.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageSavingEventArgs">
+            <summary>
+            Event arguments for the ImageEditor.ImageSaving event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageSavingEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the ImageSavingEventArgs class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageSavingEventArgs.FileName">
+            <summary>
+            Gets or sets the file name of the saved image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageSavingEventArgs.JpgQuality">
+            <summary>
+            Gets or sets the quality of the saved jpg file.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LocalizedStrings">
+            <summary>
+            Provides access to string resources.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LocalizedStrings.LocalizedResources">
+            <summary>
+            Gets the localized resources.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.BrightnessToolText">
+            <summary>
+              Looks up a localized string similar to BRIGHTNESS.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ColorEffectsToolColorFixText">
+            <summary>
+              Looks up a localized string similar to color fix.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ColorEffectsToolGreyscaleText">
+            <summary>
+              Looks up a localized string similar to greyscale.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ColorEffectsToolInvertColorsText">
+            <summary>
+              Looks up a localized string similar to invert colors.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ColorEffectsToolText">
+            <summary>
+              Looks up a localized string similar to EFFECTS.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ContrastToolText">
+            <summary>
+              Looks up a localized string similar to CONTRAST.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.CropToolSquareText">
+            <summary>
+              Looks up a localized string similar to Square.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.CropToolText">
+            <summary>
+              Looks up a localized string similar to CROP.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.HueToolText">
+            <summary>
+              Looks up a localized string similar to HUE.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.OrientationToolFlipText">
+            <summary>
+              Looks up a localized string similar to flip.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.OrientationToolRotateText">
+            <summary>
+              Looks up a localized string similar to rotate.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.OrientationToolText">
+            <summary>
+              Looks up a localized string similar to ORIENTATION.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.ResizeToolText">
+            <summary>
+              Looks up a localized string similar to RESIZE.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.SaturationToolText">
+            <summary>
+              Looks up a localized string similar to SATURATION.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.SharpenToolText">
+            <summary>
+              Looks up a localized string similar to SHARPNESS.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolCharacterSpacingShortText">
+            <summary>
+              Looks up a localized string similar to character.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolCharacterSpacingText">
+            <summary>
+              Looks up a localized string similar to CHARACTER SPACING.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolDefaultText">
+            <summary>
+              Looks up a localized string similar to enter text here.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolFontFamilyShortText">
+            <summary>
+              Looks up a localized string similar to font.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolFontFamilyText">
+            <summary>
+              Looks up a localized string similar to TEXT FONT.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolLineHeightShortText">
+            <summary>
+              Looks up a localized string similar to line height.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolLineHeightText">
+            <summary>
+              Looks up a localized string similar to LINE HEIGHT.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolOpacityShortText">
+            <summary>
+              Looks up a localized string similar to opacity.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolOpacityText">
+            <summary>
+              Looks up a localized string similar to TEXT OPACITY.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolText">
+            <summary>
+              Looks up a localized string similar to TEXT.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolTextHueShortText">
+            <summary>
+              Looks up a localized string similar to hue.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolTextHueText">
+            <summary>
+              Looks up a localized string similar to TEXT COLOR.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolTextLightnessShortText">
+            <summary>
+              Looks up a localized string similar to lightness.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Resources.TextToolTextLightnessText">
+            <summary>
+              Looks up a localized string similar to TEXT LIGHTNESS.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ThemeObserver">
+            <summary>
+            A view model that indicates that current phone theme.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ViewModel">
+            <summary>
+            A base view model class that implements the INotifyPropertyChanged interface.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ViewModel.OnPropertyChanged(System.String)">
+            <summary>
+            A virtual method that is called when a property changes.
+            </summary>
+            <param name="propertyName">The name of the property that changed.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.ViewModel.PropertyChanged">
+            <summary>
+            Fires when a property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ThemeObserver.#ctor">
+            <summary>
+            Initializes a new instance of the ThemeObserver class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ThemeObserver.IsDarkTheme">
+            <summary>
+            Gets a value that determines if the phone is in the dark theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ThemeObserver.HueRangeBrush">
+            <summary>
+            Gets a brush that contains all colors of the HSL color space arranged horizontally.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.BrightnessTool">
+            <summary>
+            A tool that adjusts the brightness of an image.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RangeTool">
+            <summary>
+            A base class for tools that have a single value.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageEditorTool">
+            <summary>
+            The base class fo all tools useable by RadImageEditor.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorTool.workingBitmap">
+            <summary>
+            The bitmap on which the tool algorithm is performed.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.HandleApply">
+            <summary>
+            Called by RadImageEditor when the apply button is pressed.
+            </summary>
+            <returns>Returns true if the apply operation was handled and false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.HandleCancel">
+            <summary>
+            Called by RadImageEditor when the cancel button is pressed.
+            </summary>
+            <returns>Returns true if the cancel operation was handled and false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.Apply(System.Windows.Media.Imaging.BitmapImage)">
+            <summary>
+            Applies the tool to the specified image.
+            </summary>
+            <param name="actualImage">The image to modify.</param>
+            <returns>Returns a modified image.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.Apply(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            Applies the tool to the specified image.
+            </summary>
+            <param name="actualImage">The image to modify.</param>
+            <returns>Returns a modified image.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.OnOriginalImageChanged">
+            <summary>
+            A virtual callback that is called when the <see cref="P:Telerik.Windows.Controls.ImageEditorTool.OriginalImage"/> property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.OnIsSelectedChanged(System.Boolean)">
+            <summary>
+            A virtual callback that is called the <see cref="P:Telerik.Windows.Controls.ImageEditorTool.IsSelected"/> property changes.
+            </summary>
+            <param name="previousValue">The previous property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.OnPreviewImageChanged">
+            <summary>
+            A virtual callback that is called when the <see cref="P:Telerik.Windows.Controls.ImageEditorTool.PreviewImage"/> property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.ResetWorkingBitmap">
+            <summary>
+            Resets the working bitmap to be the same as the preview image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.CollectionIndex">
+            <summary>
+            The index of the tool inside the Tools collection of RadImageEditor.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.ZoomMode">
+            <summary>
+            Gets the zoom mode of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.IsWorking">
+            <summary>
+            Gets a value that indicates whether the tool is currently working.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.SupportsComparison">
+            <summary>
+            Gets a value that determines if the tool supports the before/after feature.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.PreviewImage">
+            <summary>
+            Gets or sets the preview image which is a smaller version of the <see cref="P:Telerik.Windows.Controls.ImageEditorTool.OriginalImage"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.OriginalImage">
+            <summary>
+            Gets or sets the original image that is to be edited.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.IsSelected">
+            <summary>
+            Gets or sets a value that determines if this tool is the current tool in RadImageEditor.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.Visibility">
+            <summary>
+            Gets whether the tool is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorTool.ModifiedImage">
+            <summary>
+            Gets or sets the modified image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RangeTool.OnIsSelectedChanged(System.Boolean)">
+            <summary>
+            A virtual callback that is called when the IsSelected property changes.
+            </summary>
+            <param name="previousValue">The previous property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RangeTool.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            An abstract method that is called when the <see cref="P:Telerik.Windows.Controls.RangeTool.Value"/> property changes.
+            </summary>
+            <param name="newValue">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RangeTool.Max">
+            <summary>
+            Gets the maximum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RangeTool.Min">
+            <summary>
+            Gets the minimum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RangeTool.Value">
+            <summary>
+            Gets or sets the value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RangeTool.SupportsComparison">
+            <summary>
+            Gets a value that determines if the tool supports the before/after feature.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BrightnessTool.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            An abstract method that is called when the Value property changes.
+            </summary>
+            <param name="newValue">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BrightnessTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BrightnessTool.Min">
+            <summary>
+            Gets the minimum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BrightnessTool.Max">
+            <summary>
+            Gets the maximum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BrightnessTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BrightnessTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEffectsTool">
+            <summary>
+            A tool that applies color effects to an image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsTool.OnIsColorFixedChanged(System.Boolean,System.Boolean)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.ColorEffectsTool.IsColorFixed"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsTool.OnIsGreyscaleChanged(System.Boolean,System.Boolean)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.ColorEffectsTool.IsGreyscale"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsTool.OnIsColorInvertedChanged(System.Boolean,System.Boolean)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.ColorEffectsTool.IsColorInverted"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsTool.OnIsSelectedChanged(System.Boolean)">
+            <summary>
+            A virtual callback that is called the IsSelected property changes.
+            </summary>
+            <param name="previousValue">The previous property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsTool.SupportsComparison">
+            <summary>
+            Gets a value that determines if the tool supports the before/after feature.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsTool.IsColorInverted">
+            <summary>
+            Gets or sets a value that inverts the colors of the edited image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsTool.IsGreyscale">
+            <summary>
+            Gets or sets a value that converts the colors of the edited image to greyscale.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsTool.IsColorFixed">
+            <summary>
+            Gets or sets a value that automatically balances the colors of the edited image.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ContrastTool">
+            <summary>
+            A tool that adjusts the contrast of an image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ContrastTool.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            An abstract method that is called when the Value property changes.
+            </summary>
+            <param name="newValue">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ContrastTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ContrastTool.Max">
+            <summary>
+            Gets the maximum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ContrastTool.Min">
+            <summary>
+            Gets the minimum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ContrastTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ContrastTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CropTool">
+            <summary>
+            An image editor tool that crops images.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropTool.#ctor">
+            <summary>
+            Initializes a new instance of the CropTool class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropTool.OnPreviewImageChanged">
+            <summary>
+            A virtual callback that is called when the PreviewImage property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropTool.SelectedRatio">
+            <summary>
+            Gets or sets the selected crop rect ratio.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropTool.CropRect">
+            <summary>
+            Gets or sets the crop rect in normalized coordinates.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropTool.SupportedRatios">
+            <summary>
+            Gets or sets a value that contains the supported ratios of this crop tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropTool.ZoomMode">
+            <summary>
+            Gets the zoom mode of the tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CropToolRatio">
+            <summary>
+            Represents an aspect ratio of the crop rect of CropTool.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropToolRatio.#ctor">
+            <summary>
+            Initializes a new instance of the CropToolRatio class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropToolRatio.OnIsFlippedChanged(System.Boolean,System.Boolean)">
+            <summary>
+            A virtual method that is called when the <see cref="P:Telerik.Windows.Controls.CropToolRatio.IsFlipped"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.CollectionIndex">
+            <summary>
+            The index of the ratio in its parent CropTool.SupportedRatios collection.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.IsSelected">
+            <summary>
+            Gets or sets a value that determines if this ratio is selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.CanResize">
+            <summary>
+            Gets or sets a value that determines if this ratio supports resizing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.IsFlipped">
+            <summary>
+            Gets or sets a value that determines if the Width and Height are swapped.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.Width">
+            <summary>
+            Gets or sets the width of the ratio.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.Height">
+            <summary>
+            Gets or sets the height of the ratio.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.CustomText">
+            <summary>
+            Gets the text of representation of this ratio.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropToolRatio.Text">
+            <summary>
+            Gets the text of representation of this ratio. CustomText is returned if it is set instead.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.HslColor">
+            <summary>
+            Converts colors from RGB to HSL and vice versa.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HslColor.Parse(System.Int32)">
+            <summary>
+            Creates a HSLColor based on an integer containing color information in the rgba format.
+            </summary>
+            <param name="rgba">The color in rgba.</param>
+            <returns>Returns a new instance of HslColor.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HslColor.Parse(System.Windows.Media.Color)">
+            <summary>
+            Creates a HSLColor based on an integer containing color information in the rgba format.
+            </summary>
+            <param name="color">The color in rgba.</param>
+            <returns>Returns a new instance of HslColor.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HslColor.Parse(System.Byte[])">
+            <summary>
+            Creates a HSLColor based on byte array containing color information in the rgba format.
+            </summary>
+            <param name="rgba">The color in rgba.</param>
+            <returns>Returns a new instance of HslColor.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HslColor.ToInt">
+            <summary>
+            Converts this HslColor instance to int in the rgba format.
+            </summary>
+            <returns>Returns an integer.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HslColor.ToColor">
+            <summary>
+            Convertes this HslColor to Color.
+            </summary>
+            <returns>Returns a color object.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HslColor.ToRGB">
+            <summary>
+            Converts this HslColor instance to a byte array in the rgba format.
+            </summary>
+            <returns>An byte array.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HslColor.H">
+            <summary>
+            Gets or sets the hue.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HslColor.S">
+            <summary>
+            Gets or sets the saturation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HslColor.L">
+            <summary>
+            Gets or sets the lightness.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.HueTool">
+            <summary>
+            A tool that adjusts the hue of an image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HueTool.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            An abstract method that is called when the Value property changes.
+            </summary>
+            <param name="newValue">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HueTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HueTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HueTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HueTool.Max">
+            <summary>
+            Gets the maximum value of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HueTool.Min">
+            <summary>
+            Gets the minimum value of the tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageEditorToolUISelector">
+            <summary>
+            Default UI selector for RadImageEditor. The UI selector is used to select a data template that will visualize each image editor tool.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorToolUISelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            When overridden in a derived class, returns a DataTemplate based on custom logic.
+            </summary>
+            <param name="tool">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns>Returns the default UI for a specific image editor tool.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.SharpenToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.SharpenTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.BrightnessToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.BrightnessTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.ContrastToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.ContrastTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.CropToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.CropTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.HueToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.HueTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.OrientationToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.OrientationTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.ResizeToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.ResizeTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.SaturationToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.SaturationTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.ColorEffectsToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.ColorEffectsTool"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUISelector.TextToolUI">
+            <summary>
+            Gets or sets the UI for the <see cref="T:Telerik.Windows.Controls.TextTool"/>
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.OrientationTool">
+            <summary>
+            A tool that flips an image horizontally or vertically.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.OrientationTool.OnRotationChanged">
+            <summary>
+            A virtual callback that is invoked when the <see cref="P:Telerik.Windows.Controls.OrientationTool.Rotation"/> property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.OrientationTool.OnPreviewImageChanged">
+            <summary>
+            A virtual callback that is called when the PreviewImage property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.OrientationTool.OnIsSelectedChanged(System.Boolean)">
+            <summary>
+            A virtual callback that is called the IsSelected property changes.
+            </summary>
+            <param name="previousValue">The previous property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.OrientationTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationTool.ZoomMode">
+            <summary>
+            Gets the zoom mode of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationTool.Rotation">
+            <summary>
+            Gets or sets the rotation angle (in degrees) of the result image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationTool.IsFlippedHorizontal">
+            <summary>
+            Gets or sets a value that determines if the image is flipped horizontally.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationTool.IsFlippedVertical">
+            <summary>
+            Gets or sets a value that determines if the image is flipped vertically.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ResizeTool">
+            <summary>
+            A tool that resizes images.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ResizeTool.#ctor">
+            <summary>
+            Initializes a new instance of the ResizeTool class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ResizeTool.OnOriginalImageChanged">
+            <summary>
+            A virtual callback that is called when the OriginalImage property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ResizeTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.ZoomMode">
+            <summary>
+            Gets the zoom mode of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.MaxWidth">
+            <summary>
+            Gets or sets the max allowed width.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.MaxHeight">
+            <summary>
+            Gets or sets the max allows height.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.Width">
+            <summary>
+            Gets or sets the width of the resized image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.Height">
+            <summary>
+            Gets or sets the height of the resized image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeTool.IsUniform">
+            <summary>
+            Gets or sets whether the image is resized uniformly.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.SaturationTool">
+            <summary>
+            A tool that sets the saturation of an image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.SaturationTool.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            An abstract method that is called when the Value property changes.
+            </summary>
+            <param name="newValue">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.SaturationTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.SaturationTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.SaturationTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.SharpenTool">
+            <summary>
+            The sharpen tool adjusts the sharpness of an image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.SharpenTool.#ctor">
+            <summary>
+            Initializes a new instance of the SharpenTool class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.SharpenTool.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            An abstract method that is called when the Value property changes.
+            </summary>
+            <param name="newValue">The new value.</param>
+            <param name="oldValue">The old value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.SharpenTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.SharpenTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.SharpenTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TextTool">
+            <summary>
+            Used in <see cref="T:Telerik.Windows.Controls.RadImageEditor"/> to draw text on an image.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextTool.HandleApply">
+            <summary>
+            Called by RadImageEditor when the apply button is pressed.
+            </summary>
+            <returns>Returns true if the apply operation was handled and false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextTool.HandleCancel">
+            <summary>
+            Called by RadImageEditor when the cancel button is pressed.
+            </summary>
+            <returns>Returns true if the cancel operation was handled and false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextTool.UpdateName">
+            <summary>
+            Called when the CurrentEditedProperty changes. The Name property is used in RadImageEditor below the
+            tool UI. This tool changes its name based on which text property is being edited.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextTool.OnHueChanged(System.Nullable{System.Double})">
+            <summary>
+            Called when the TextHue property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextTool.OnLightnessChanged(System.Double)">
+            <summary>
+            Called when the TextLightness property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextTool.ApplyCore(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            This method is called when the tool will edit the original image in its full size.
+            This method is called once by the image editor when the accept button is pressed.
+            </summary>
+            <param name="actualImage">The original image to be modified.</param>
+            <returns>Returns a new modified image.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.ZoomMode">
+            <summary>
+            Gets the zoom mode of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.ResetWhenDone">
+            <summary>
+            Gets or sets a value that determines if the text tool will be reset to its default values
+            when the tool is no longer selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.LightnessBrush">
+            <summary>
+            Gets a brush that visualizes all colors on the lightness scale for the current foreground color.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.Icon">
+            <summary>
+            Gets the full path to the icon of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.Name">
+            <summary>
+            Gets the name of the tool.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.CurrentEditedProperty">
+            <summary>
+            Gets or sets the currently edited property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.InitialPropertyValue">
+            <summary>
+            Gets or sets the initial edited property value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.TextPosition">
+            <summary>
+            Gets or sets the location of the text in normalized coordinates.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.CharacterSpacing">
+            <summary>
+            Gets or sets the character spacing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.FontFamily">
+            <summary>
+            Gets or sets the font family.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.FontStretch">
+            <summary>
+            Gets or sets the font stretch.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.FontStyle">
+            <summary>
+            Gets or sets the font style.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.LineHeight">
+            <summary>
+            Gets or sets the line height.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.LineStackingStrategy">
+            <summary>
+            Gets or sets the line stacking strategy.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.Padding">
+            <summary>
+            Gets or sets the padding.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.TextAlignment">
+            <summary>
+            Gets or sets the text alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.TextTrimming">
+            <summary>
+            Gets or sets the text trimming.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.TextWrapping">
+            <summary>
+            Gets or sets the text wrapping.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.Opacity">
+            <summary>
+            Gets or sets the text opacity.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.TextLightness">
+            <summary>
+            Gets or sets the text saturation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.TextHue">
+            <summary>
+            Gets or sets the text hue.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.Foreground">
+            <summary>
+            Gets or sets the color of the text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.FontSize">
+            <summary>
+            Gets or sets the font size of the text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextTool.FontWeight">
+            <summary>
+            Gets or sets the font weight of the text.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.BeforeAfterControl">
+            <summary>
+            This control provides the before/after feature of RadImageEditor.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageEditorToolUI">
+            <summary>
+            Base UI for the default image editor tools.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorToolUI.PreviewImageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ImageEditorToolUI.PreviewImage"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorToolUI.PreviewImage">
+            <summary>
+            Gets or sets the preview image.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.BeforeAfterControl.PanProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.BeforeAfterControl.Pan"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.BeforeAfterControl.ZoomProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.BeforeAfterControl.Zoom"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.BeforeAfterControl.BeforeImageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.BeforeAfterControl.BeforeImage"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.BeforeAfterControl.ImageWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.BeforeAfterControl.ImageWidth"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BeforeAfterControl.#ctor">
+            <summary>
+            Initializes a new instance of the BeforeAfterControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BeforeAfterControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BeforeAfterControl.Pan">
+            <summary>
+            Gets or sets the pan before image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BeforeAfterControl.Zoom">
+            <summary>
+            Gets or sets the zoom of the before image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BeforeAfterControl.ImageWidth">
+            <summary>
+            Gets or sets the image width which determines how much the before/after gizmo can be dragged.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BeforeAfterControl.BeforeImage">
+            <summary>
+            Gets or sets the before image.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEffectsUIControl">
+            <summary>
+            The default UI for <see cref="T:Telerik.Windows.Controls.ColorEffectsTool"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEffectsUIControl.IsColorFixedProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ColorEffectsUIControl.IsColorFixed"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEffectsUIControl.IsColorInvertedProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ColorEffectsUIControl.IsColorInverted"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEffectsUIControl.IsGreyscaleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ColorEffectsUIControl.IsGreyscale"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the ColorEffectsUIControl.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEffectsUIControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsUIControl.IsColorInverted">
+            <summary>
+            Gets or set whether the image colors are inverted.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsUIControl.IsColorFixed">
+            <summary>
+            Gets or sets whether the image colors are auto fixed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEffectsUIControl.IsGreyscale">
+            <summary>
+            Gets or sets whether the image is converted to greyscale.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CropGizmo">
+            <summary>
+            The UI for the selection rectangle of <see cref="T:Telerik.Windows.Controls.CropTool"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropGizmo.CropRatioProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropGizmo.CropRatio"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropGizmo.ImageClipProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropGizmo.ImageClip"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropGizmo.CropRectProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropGizmo.CropRect"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropGizmo.#ctor">
+            <summary>
+            Initializes a new instance of the CropGizmo class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropGizmo.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropGizmo.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropGizmo.OnCropRatioChanged(Telerik.Windows.Controls.CropToolRatio,Telerik.Windows.Controls.CropToolRatio)">
+            <summary>
+            A virtual callback that is called when the <see cref="P:Telerik.Windows.Controls.CropGizmo.CropRatio"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropGizmo.CropRect">
+            <summary>
+            Gets or sets the crop rectangle.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropGizmo.CropRatio">
+            <summary>
+            Gets or sets the crop ratio.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropGizmo.ImageClip">
+            <summary>
+            Gets the clip rectangle.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropGizmo.CanResize">
+            <summary>
+            Gets a value that determines if the crop gizmo can be resized.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CropRatioUIControl">
+            <summary>
+            The default UI of CropRatio.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropRatioUIControl.IsSelectedProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropRatioUIControl.IsSelected"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropRatioUIControl.TextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropRatioUIControl.Text"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropRatioUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the CropRatioUIControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropRatioUIControl.OnLoaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when a System.Windows.FrameworkElement has been constructed and added to the object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropRatioUIControl.OnIsSelectedChanged(System.Boolean,System.Boolean)">
+            <summary>
+            A virtual callback that is called when the <see cref="P:Telerik.Windows.Controls.CropRatioUIControl.IsSelected"/> property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropRatioUIControl.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropRatioUIControl.IsSelected">
+            <summary>
+            Gets or sets a value that determines whether the crop ratio is selected.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CropUIControl">
+            <summary>
+            The default UI for the <see cref="T:Telerik.Windows.Controls.CropTool"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropUIControl.SupportedRatiosProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropUIControl.SupportedRatios"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropUIControl.SelectedRatioProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropUIControl.SelectedRatio"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.CropUIControl.CropRectProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.CropUIControl.CropRect"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the CropUIControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CropUIControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropUIControl.SupportedRatios">
+            <summary>
+            Gets or sets the supported crop ratios.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropUIControl.SelectedRatio">
+            <summary>
+            Gets or sets the selected ratio.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CropUIControl.CropRect">
+            <summary>
+            Gets or sets the crop rect.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.CustomImageButton">
+            <summary>
+            A custom image button that handles manipulation events differently than RadImageButton.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CustomImageButton.#ctor">
+            <summary>
+            Initializes a new instance of the CustomImageButton class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CustomImageButton.OnManipulationStarted(System.Windows.Input.ManipulationStartedEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.ManipulationStarted"/> event occurs.
+            </summary>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CustomImageButton.OnManipulationDelta(System.Windows.Input.ManipulationDeltaEventArgs)">
+            <summary>
+            Called before the System.Windows.UIElement.ManipulationDelta event occurs.
+            </summary>
+            <param name="e">Event data for the event.For information on using manipulations on Windows Phone, see How to handle manipulation events for Windows Phone.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.CustomImageButton.OnManipulationCompleted(System.Windows.Input.ManipulationCompletedEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.ManipulationCompleted"/>  event occurs.
+            </summary>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="T:Telerik.Windows.Controls.FontSelectorControl">
+            <summary>
+            This class visualizes the font selector in the RadImageEditor text editing ui.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.FontSelectorControl.SelectedFontProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.FontSelectorControl.SelectedFont"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.FontSelectorControl.AvailableFontsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.FontSelectorControl.AvailableFonts"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.FontSelectorControl.#ctor">
+            <summary>
+            Initializes a new instance of the FontSelectorControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.FontSelectorControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.FontSelectorControl.SelectedFont">
+            <summary>
+            Gets or sets the selected font.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.FontSelectorControl.AvailableFonts">
+            <summary>
+            Gets or sets the available fonts.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ImageEditorSlider">
+            <summary>
+            A standard slider with plus and minus buttons on each side.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorSlider.MinimumProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ImageEditorSlider.Minimum"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorSlider.MaximumProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ImageEditorSlider.Maximum"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ImageEditorSlider.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ImageEditorSlider.Value"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorSlider.#ctor">
+            <summary>
+            Initializes a new instance of the ImageEditorSlider class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ImageEditorSlider.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorSlider.Minimum">
+            <summary>
+            Gets or sets the minimum value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorSlider.Maximum">
+            <summary>
+            Gets or sets the maximum value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ImageEditorSlider.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.OrientationUIControl">
+            <summary>
+            The default UI of the <see cref="T:Telerik.Windows.Controls.OrientationTool"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.OrientationUIControl.IsFlippedHorizontalProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.OrientationUIControl.IsFlippedHorizontal"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.OrientationUIControl.IsFlippedVerticalProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.OrientationUIControl.IsFlippedVertical"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.OrientationUIControl.RotationProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.OrientationUIControl.Rotation"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.OrientationUIControl.RotationChangeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.OrientationUIControl.RotationChange"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.OrientationUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the OrientationUIControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.OrientationUIControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationUIControl.Rotation">
+            <summary>
+            Gets or sets the rotation of the edited image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationUIControl.RotationChange">
+            <summary>
+            Gets or sets the rotation that is added or subtracted when the rotate buttons are tapped.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationUIControl.IsFlippedHorizontal">
+            <summary>
+            Gets or sets whether the image is flipped horizontally.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OrientationUIControl.IsFlippedVertical">
+            <summary>
+            Gets or sets whether the image is flipped vertically.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.PivotSlider">
+            <summary>
+            The default UI for several <see cref="T:Telerik.Windows.Controls.RadImageEditor"/> tools.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PivotSlider.MaxValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.PivotSlider.MaxValue"/> dependency properties.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PivotSlider.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.PivotSlider.Value"/> dependency properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PivotSlider.#ctor">
+            <summary>
+            Initializes a new instance of the PivotSlider class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PivotSlider.OnTap(System.Windows.Input.GestureEventArgs)">
+            <summary>
+            Called before the System.Windows.UIElement.Tap event occurs.For information
+            on using gestures on Windows Phone, see How to handle manipulation events
+            for Windows Phone.
+            </summary>
+            <param name="e">Event data for the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PivotSlider.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PivotSlider.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            A virtual callback that is called when the Value property changes.
+            </summary>
+            <param name="newValue">The new property value.</param>
+            <param name="oldValue">The old property value.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.PivotSlider.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.PivotSlider.MaxValue">
+            <summary>
+            Gets or sets the max value. The min value is the negative max value.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RangeUIControl">
+            <summary>
+            The default UI for <see cref="T:Telerik.Windows.Controls.RangeTool"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RangeUIControl.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RangeUIControl.Value"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RangeUIControl.MaxValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RangeUIControl.MaxValue"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RangeUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the RangeUIControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RangeUIControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RangeUIControl.Value">
+            <summary>
+            Gets or sets the value of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RangeUIControl.MaxValue">
+            <summary>
+            Gets or sets the max value of the control.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ResizeUIControl">
+            <summary>
+            The default UI for the <see cref="T:Telerik.Windows.Controls.ResizeTool"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ResizeUIControl.IsUniformProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ResizeUIControl.IsUniform"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ResizeUIControl.ImageWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ResizeUIControl.ImageWidth"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ResizeUIControl.ImageHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ResizeUIControl.ImageHeight"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ResizeUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the ResizeUIControl class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeUIControl.ImageWidth">
+            <summary>
+            Gets or sets the image width.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeUIControl.ImageHeight">
+            <summary>
+            Gets or sets the image height.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ResizeUIControl.IsUniform">
+            <summary>
+            Gets or sets whether the image is resized uniformly.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TextToolTextBox">
+            <summary>
+            A text box with special visual states and a resize gizmo used in <see cref="T:Telerik.Windows.Controls.RadImageEditor"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextToolTextBox.TextOpacityProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextToolTextBox.TextOpacity"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextToolTextBox.#ctor">
+            <summary>
+            Initializes a new instance of the TextToolTextBox class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextToolTextBox.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextToolTextBox.TextOpacity">
+            <summary>
+            Gets or sets the text opacity.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TextUIControl">
+            <summary>
+            This class represents the default UI for the <see cref="T:Telerik.Windows.Controls.TextTool"/> class in <see cref="T:Telerik.Windows.Controls.RadImageEditor"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.Text"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextPositionProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextPosition"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.LineHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.LineHeight"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.LineStackingStrategyProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.LineStackingStrategy"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextAlignmentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextAlignment"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextDecorationsProperty">
+            <summary>
+            Identifies the <see cref="T:System.Windows.TextDecorations"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextTrimmingProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextTrimming"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextWrappingProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextWrapping"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextOpacityProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextOpacity"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.PreviewImageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.PreviewImage"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.OpacityUIProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.OpacityUI"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.HueUIProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.HueUI"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.LightnessUIProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.LightnessUI"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.CharacterSpacingUIProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.CharacterSpacingUI"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.LineHeightUIProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.LineHeightUI"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.FontUIProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.FontUI"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextHueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextHue"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.TextLightnessProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.TextLightness"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.CurrentEditedPropertyProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.CurrentEditedProperty"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TextUIControl.CurrentEditedPropertyInitialValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TextUIControl.CurrentEditedPropertyInitialValue"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextUIControl.#ctor">
+            <summary>
+            Initializes a new instance of the TextUIControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextUIControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            In simplest terms, this means the method is called just before a UI element
+            displays in an application.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextUIControl.OnUnloaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when this object is no longer connected to the main object tree.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TextUIControl.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Provides the behavior for the Measure pass of Windows Phone layout. Classes
+            can override this method to define their own Measure pass behavior.
+            </summary>
+            <param name="availableSize">
+            The available size that this object can give to child objects. Infinity (System.Double.PositiveInfinity)
+            can be specified as a value to indicate that the object will size to whatever
+            content is available.
+            </param>
+            <returns>
+            The size that this object determines it needs during layout, based on its
+            calculations of the allocated sizes for child objects; or based on other
+            considerations, such as a fixed container size.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.CurrentEditedProperty">
+            <summary>
+            Gets or sets the current edited property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.CurrentEditedPropertyInitialValue">
+            <summary>
+            Gets or sets the current edited property initial value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.FontUI">
+            <summary>
+            Gets or sets the DataTemplate that visualizes the font editing functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.HueUI">
+            <summary>
+            Gets or sets the DataTemplate that visualizes the hue editing functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.LightnessUI">
+            <summary>
+            Gets or sets the DataTemplate that visualizes the lightness editing functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.CharacterSpacingUI">
+            <summary>
+            Gets or sets the DataTemplate that visualizes the character spacing editing functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.LineHeightUI">
+            <summary>
+            Gets or sets the DataTemplate that visualizes the line height editing functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.OpacityUI">
+            <summary>
+            Gets or sets the DataTemplate that visualizes the font editing functionality.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.PreviewImage">
+            <summary>
+            Gets or sets the preview image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextPosition">
+            <summary>
+            Gets or sets the location of the text in normalized coordinates.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.LineHeight">
+            <summary>
+            Gets or sets the line height.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.LineStackingStrategy">
+            <summary>
+            Gets or sets the line stacking strategy.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextAlignment">
+            <summary>
+            Gets or sets the text alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextTrimming">
+            <summary>
+            Gets or sets the text trimming.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextWrapping">
+            <summary>
+            Gets or sets the text wrapping.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextOpacity">
+            <summary>
+            Gets or sets the text opacity.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextHue">
+            <summary>
+            Gets or sets the text hue.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TextUIControl.TextLightness">
+            <summary>
+            Gets or sets the text lightness.
+            </summary>
+        </member>
+    </members>
+</doc>

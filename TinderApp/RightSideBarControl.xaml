@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="TinderApp.RightSideBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Converters="clr-namespace:TinderApp.Library.Converters;assembly=TinderApp.Library"
+             xmlns:ViewModels="clr-namespace:TinderApp.Library.ViewModels;assembly=TinderApp.Library"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+             d:DesignHeight="332"
+             d:DesignWidth="320"
+             mc:Ignorable="d">
+
+    <UserControl.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal" />
+    </UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal" />
+    </UserControl.FontSize>
+    <UserControl.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush" />
+    </UserControl.Foreground>
+    <UserControl.Resources>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <DataTemplate x:Key="MatchItemTemplate">
+            <Grid Width="320" Height="80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="89" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Ellipse Width="55"
+                         Height="55"
+                         Margin="12,0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Stroke="White"
+                         StrokeThickness="0">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding ProfilePhoto, Mode=OneWay}" Stretch="UniformToFill" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Margin="0,0,0,3"
+                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               FontSize="{StaticResource PhoneFontSizeNormal}"
+                               Foreground="#DEFFFFFF"
+                               Style="{StaticResource PhoneTextTitle3Style}"
+                               Text="{Binding Name,
+                                              Mode=OneWay}"
+                               TextOptions.TextHintingMode="Animated"
+                               TextWrapping="Wrap" />
+                    <TextBlock Margin="0"
+                               FontFamily="{StaticResource PhoneFontFamilyLight}"
+                               FontSize="{StaticResource PhoneFontSizeSmall}"
+                               Foreground="#66C7C7C7"
+                               Style="{StaticResource PhoneTextSubtleStyle}"
+                               Text="{Binding MatchDate,
+                                              Mode=OneWay}"
+                               TextOptions.TextHintingMode="Animated"
+                               TextTrimming="WordEllipsis" />
+                </StackPanel>
+                <Ellipse Grid.Column="2"
+                         Width="25"
+                         Height="25"
+                         Margin="0,0,6,0"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Center"
+                         Fill="#FFB20000"
+                         Stroke="White"
+                         StrokeThickness="0"
+                         Visibility="{Binding IsNew,
+                                              Converter={StaticResource BoolToVisibilityConverter}}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <SolidColorBrush Color="#FF272727" />
+        </Grid.Background>
+
+        <Border x:Name="RightSideBar"
+                Width="320"
+                HorizontalAlignment="Right">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Margin="0,12"
+                           HorizontalAlignment="Center"
+                           FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                           Foreground="#DEFFFFFF"
+                           Style="{StaticResource PhoneTextTitle3Style}"
+                           Text="All Matches"
+                           TextWrapping="Wrap" />
+                <telerikPrimitives:RadDataBoundListBox Grid.Row="2"
+                                                       HorizontalAlignment="Left"
+                                                       EmptyContent="No matches yet!"
+                                                       Foreground="#DEFFFFFF"
+                                                       ItemTap="RadDataBoundListBox_ItemTap"
+                                                       ItemTemplate="{StaticResource MatchItemTemplate}"
+                                                       ItemsSource="{Binding Matches}" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

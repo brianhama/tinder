@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.BackgroundAgentTools</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Controls.PngEncoder.Adler32">
+            <summary>
+            Computes the Adler32 CRC value for a given data set.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.Adler">
+            <summary>
+            Returns the current running Adler32 result.
+            </summary>
+            <returns>An unsigned 32bit integer representing the current Adler32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.Adler(System.Byte[])">
+            <summary>
+            Returns the current running Adler32 result.
+            </summary>
+            <param name="data">A byte[] to process.</param>
+            <returns>An unsigned 32bit integer representing the current Adler32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.Adler(System.Byte[],System.Int32)">
+            <summary>
+            Returns the current running Adler32 result.
+            </summary>
+            <param name="data">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+            <returns>An unsigned 32bit integer representing the current Adler32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.Adler(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Returns the current running Adler32 result.
+            </summary>
+            <param name="data">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+            <param name="offset">The offset to start processing byte[] at.</param>
+            <returns>An unsigned 32bit integer representing the current Adler32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.AddToAdler(System.Byte[])">
+            <summary>
+            Adds to the current running Adler32 the bytes from buf[].
+            </summary>
+            <param name="data">A byte[] to process.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.AddToAdler(System.Byte[],System.Int32)">
+            <summary>
+            Adds to the current running Adler32 the bytes from buf[].
+            </summary>
+            <param name="data">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.AddToAdler(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Adds to the current running Adler32 the bytes from buf[].
+            </summary>
+            <param name="data">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+            <param name="offset">The offset to start processing byte[] at.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.Adler32.ResetAdler">
+            <summary>
+            Resets the running Adler32.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.PngEncoder.CRC32">
+            <summary>
+            Computes the CRC32 value for a given data set.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.MakeCRCTable">
+            <summary>
+            Populates the CRC32 checksum values for every byte.  This should only be called
+            if you are using this library on a non-standard platform that uses some kind of
+            weird binary encoding of bytes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.Crc">
+            <summary>
+            Returns the current running CRC32 result for a PNG file.
+            </summary>
+            <returns>An unsigned 32bit integer representing the current CRC32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.Crc(System.Byte[])">
+            <summary>
+            Returns the current running CRC32 result for a PNG file.
+            </summary>
+            <param name="buf">A byte[] to process.</param>
+            <returns>An unsigned 32bit integer representing the CRC32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.Crc(System.Byte[],System.Int32)">
+            <summary>
+            Returns the current running CRC32 result for a PNG file.
+            </summary>
+            <param name="buf">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+            <returns>An unsigned 32bit integer representing the CRC32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.Crc(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Returns the current running CRC32 result for a PNG file.
+            </summary>
+            <param name="buf">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+            <param name="offset">The offset to start processing byte[] at.</param>
+            <returns>An unsigned 32bit integer representing the CRC32.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.AddToCRC(System.Byte[])">
+            <summary>
+            Adds to the current running CRC32 the bytes from buf[].
+            </summary>
+            <param name="buf">A byte[] to process.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.AddToCRC(System.Byte[],System.Int32)">
+            <summary>
+            Adds to the current running CRC32 the bytes from buf[].
+            </summary>
+            <param name="buf">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.AddToCRC(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Adds to the current running CRC32 the bytes from buf[].
+            </summary>
+            <param name="buf">A byte[] to process.</param>
+            <param name="len">The length of the byte[].</param>
+            <param name="offset">The offset to start processing byte[] at.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.CRC32.ResetCRC">
+            <summary>
+            Resets the running CRC32.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.Header">
+            <summary>
+            The first chunk in a png file. Can only exists once. Contains 
+            common information like the width and the height of the image or
+            the used compression method.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.Palette">
+            <summary>
+            The PLTE chunk contains from 1 to 256 palette entries, each a three byte
+            series in the RGB format.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.Data">
+            <summary>
+            The IDAT chunk contains the actual image data. The image can contains more
+            than one chunk of this type. All chunks together are the whole image.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.End">
+            <summary>
+            This chunk must appear last. It marks the end of the PNG datastream. 
+            The chunk's data field is empty. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.PaletteAlpha">
+            <summary>
+            This chunk specifies that the image uses simple transparency: 
+            either alpha values associated with palette entries (for indexed-color images) 
+            or a single transparent color (for grayscale and truecolor images). 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.Text">
+            <summary>
+            Textual information that the encoder wishes to record with the image can be stored in 
+            tEXt chunks. Each tEXt chunk contains a keyword and a text string.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.Gamma">
+            <summary>
+            This chunk specifies the relationship between the image samples and the desired 
+            display output intensity.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngChunkTypes.Physical">
+            <summary>
+            The pHYs chunk specifies the intended pixel size or aspect ratio for display of the image. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.Width">
+            <summary>
+            The dimension in x-direction of the image in pixels.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.Height">
+            <summary>
+            The dimension in y-direction of the image in pixels.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.BitDepth">
+            <summary>
+            Bit depth is a single-byte integer giving the number of bits per sample 
+            or per palette index (not per pixel). Valid values are 1, 2, 4, 8, and 16, 
+            although not all values are allowed for all color types. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.ColorType">
+            <summary>
+            Color type is a integer that describes the interpretation of the 
+            image data. Color type codes represent sums of the following values: 
+            1 (palette used), 2 (color used), and 4 (alpha channel used).
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.CompressionMethod">
+            <summary>
+            Indicates the method  used to compress the image data. At present, 
+            only compression method 0 (deflate/inflate compression with a sliding 
+            window of at most 32768 bytes) is defined.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.FilterMethod">
+            <summary>
+            Indicates the preprocessing method applied to the image 
+            data before compression. At present, only filter method 0 
+            (adaptive filtering with five basic filter types) is defined.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PngEncoder.PngHeader.InterlaceMethod">
+            <summary>
+            Indicates the transmission order of the image data. 
+            Two values are currently defined: 0 (no interlace) or 1 (Adam7 interlace).
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.PngEncoder.PNGWriter">
+            <summary>
+            WriteableBitmap Extensions for PNG Writing.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.PNGWriter.DetectWBByteOrder">
+            <summary>
+            Detects the color order of a stored byte array.  Byte order may change between platforms, you should call this once before writting a PNG or if you have any issues with colors changing.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.PNGWriter.WritePNG(System.Windows.Media.Imaging.WriteableBitmap,System.IO.Stream)">
+            <summary>
+            Write and PNG file out to a file stream.  Currently compression is not supported.
+            </summary>
+            <param name="image">The WriteableBitmap to work on.</param>
+            <param name="stream">The destination file stream.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PngEncoder.PNGWriter.WritePNG(System.Windows.Media.Imaging.WriteableBitmap,System.IO.Stream,System.Int32)">
+            <summary>
+            Write and PNG file out to a file stream.  Currently compression is not supported.
+            </summary>
+            <param name="image">The WriteableBitmap to work on.</param>
+            <param name="stream">The destination file stream.</param>
+            <param name="compression">Level of compression to use (-1=auto, 0=none, 1-100 is percentage).</param>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ISupportTransparency">
+            <summary>
+            An interface that defines common properties and methods for tile data that supports transparency.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ISupportTransparency.IsTransparencySupported">
+            <summary>
+            Gets or sets a value indicating whether this tile will support transparent elements.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ITileData">
+            <summary>
+            An interface that defines common properties and methods for the different types of tile data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ITileData.CreateTileData(System.Uri)">
+            <summary>
+            Prepares shell tile data from Telerik's tile data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ITileData.RegisterTile(System.Uri)">
+            <summary>
+            Saves information about the actual location of the images used by LiveTileHelper.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ITileData.MeasureMode">
+            <summary>
+            Provides options for the display of UIElement in tiles. 
+            If the mode is Tile, the tile will be created with its default size and the provided element will be placed in the dimensions provided by the tile itself.
+            If the mode is Element, the element will be taken with its own size and stretched/schrinked to fit the tile.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.MeasureMode">
+            <summary>
+            Defines the possible modes for measuring the elements passed to <see cref="T:Telerik.Windows.Controls.LiveTileHelper"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MeasureMode.Tile">
+            <summary>
+            In this mode when <see cref="T:Telerik.Windows.Controls.LiveTileHelper"/> creates tiles it takes their size as a base and places the passed element relatively to the tile.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MeasureMode.Element">
+            <summary>
+            In this mode when <see cref="T:Telerik.Windows.Controls.LiveTileHelper"/> creates tiles it takes the size of the UIElement and stretches it to fit the tile if necessary.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadCycleTileData">
+            <summary>
+            Represents a class used for generating cycle tiles from visual elements.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCycleTileData.SmallVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a small background image.
+            </summary>
+            <remarks>
+            Setting this will override the SmallBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCycleTileData.CycleVisualElements">
+            <summary>
+            Gets or sets the visual elements which will be used as cycle images.
+            </summary>
+            <remarks>
+            Setting this will override the CycleImages property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCycleTileData.IsTransparencySupported">
+            <summary>
+            Gets or sets a value indicating whether this tile will support transparent elements.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCycleTileData.MeasureMode">
+            <summary>
+            Provides options for the display of UIElement in tiles. 
+            If the mode is Tile, the tile will be created with its default size and the provided element will be placed in the dimensions provided by the tile itself.
+            If the mode is Element, the element will be taken with its own size and stretched/schrinked to fit the tile.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadExtendedTileData">
+            <summary>
+            Represents the class used for generating the live tiles.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExtendedTileData.VisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background of the front tile.
+            </summary>
+            <remarks>
+            Setting this will override the BackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExtendedTileData.BackVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background of the back tile.
+            </summary>
+            <remarks>
+            Setting this will override the BackBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExtendedTileData.IsTransparencySupported">
+            <summary>
+            Gets or sets a value indicating whether this tile will support transparent elements.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExtendedTileData.MeasureMode">
+            <summary>
+            Provides options for the display of UIElement in tiles. 
+            If the mode is Tile, the tile will be created with its default size and the provided element will be placed in the dimensions provided by the tile itself.
+            If the mode is Element, the element will be taken with its own size and stretched/schrinked to fit the tile.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadFlipTileData">
+            <summary>
+            Represents a class used for generating flip tiles from visual elements.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.VisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background of the front side of the tile.
+            </summary>
+            <remarks>
+            Setting this will override the BackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.BackVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background of the back side of the tile.
+            </summary>
+            <remarks>
+            Setting this will override the BackBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.SmallVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background for the small size tile.
+            </summary>
+            <remarks>
+            Setting this will override the SmallBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.WideVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background for the front side of the wide size tile.
+            </summary>
+            <remarks>
+            Setting this will override the WideBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.WideBackVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background for the back side of the wide size tile.
+            </summary>
+            <remarks>
+            Setting this will override the WideBackBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.IsTransparencySupported">
+            <summary>
+            Gets or sets a value indicating whether this tile will support transparent elements.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFlipTileData.MeasureMode">
+            <summary>
+            Provides options for the display of UIElement in tiles. 
+            If the mode is Tile, the tile will be created with its default size and the provided element will be placed in the dimensions provided by the tile itself.
+            If the mode is Element, the element will be taken with its own size and stretched/schrinked to fit the tile.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadIconicTileData">
+            <summary>
+            Represents a class used for generating iconic tiles from visual elements.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadIconicTileData.IconVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as an icon image of the tile.
+            </summary>
+            <remarks>
+            Setting this will override the IconImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadIconicTileData.SmallIconVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a small icon image of the tile.
+            </summary>
+            <remarks>
+            Setting this will override the SmallIconImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadIconicTileData.MeasureMode">
+            <summary>
+            Provides options for the display of UIElement in tiles. 
+            If the mode is Tile, the tile will be created with its default size and the provided element will be placed in the dimensions provided by the tile itself.
+            If the mode is Element, the element will be taken with its own size and stretched/schrinked to fit the tile.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData)">
+            <summary>
+            Updates the tile info.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData,System.Boolean)">
+            <summary>
+            Updates the tile info.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.ITileData)">
+            <summary>
+            Updates the tile info.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.ITileData,System.Boolean)">
+            <summary>
+            Updates the tile info.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.GetTile(System.Uri)">
+            <summary>
+            Gets the tile.
+            </summary>
+            <param name="tileUri">The tile URI.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateStandardTileData(Telerik.Windows.Controls.RadExtendedTileData,System.Uri)">
+            <summary>
+            Prepares standard tile data from Telerik extended tile data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CleanupUnpinnedTilesResources">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelperData.SavedCycleTileData">
+            <summary>
+            Used internally.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelperData.SavedTileData">
+            <summary>
+            Used internally.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelperData.SavedTileData.CleanupUnpinnedTilesResourcesForItem">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedTileData.NavigationString">
+            <summary>
+            Gets or sets the navigation string.
+            </summary>
+            <value>The navigation string.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelperData.SavedCycleTileData.CleanupUnpinnedTilesResourcesForItem">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedCycleTileData.SmallBackgroundImagePath">
+            <summary>
+            Gets or sets the small background image path.
+            </summary>
+            <value>The small background image path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedCycleTileData.CycleImagesPaths">
+            <summary>
+            Gets or sets the cycle images paths.
+            </summary>
+            <value>
+            The cycle images paths.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelperData.SavedFlipTileData">
+            <summary>
+            Used internally.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelperData.SavedStandardTileData">
+            <summary>
+            Used internally.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelperData.SavedStandardTileData.CleanupUnpinnedTilesResourcesForItem">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedStandardTileData.FrontBackgroundImagePath">
+            <summary>
+            Gets or sets the front background image path.
+            </summary>
+            <value>The front background image path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedStandardTileData.BackBackgroundImagePath">
+            <summary>
+            Gets or sets the back background image path.
+            </summary>
+            <value>The back background image path.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelperData.SavedFlipTileData.CleanupUnpinnedTilesResourcesForItem">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedFlipTileData.SmallBackgroundImagePath">
+            <summary>
+            Gets or sets the small background image path.
+            </summary>
+            <value>The small background image path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedFlipTileData.WideBackgroundImagePath">
+            <summary>
+            Gets or sets wide background image path.
+            </summary>
+            <value>The wide background image path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedFlipTileData.WideBackBackgroundImagePath">
+            <summary>
+            Gets or sets wide back background image path.
+            </summary>
+            <value>The wide back background image path.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelperData.SavedIconicTileData">
+            <summary>
+            Used internally.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelperData.SavedIconicTileData.CleanupUnpinnedTilesResourcesForItem">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedIconicTileData.IconImagePath">
+            <summary>
+            Gets or sets the icon image path.
+            </summary>
+            <value>The icon image path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.SavedIconicTileData.SmallIconImagePath">
+            <summary>
+            Gets or sets small icon image path.
+            </summary>
+            <value>The small icon image path.</value>
+        </member>
+        <member name="T:Telerik.Configuration.Assemblies.AssemblyInfoHelper">
+            <summary>
+            This class supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.CopyrightMessage">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.AssemblyDescription">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.AssemblyProduct">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.CompanyName">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{306F8C5F-1A21-4C39-946C-F174F1A5E600}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinderApp</RootNamespace>
+    <AssemblyName>TinderApp</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Tinder.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TinderApp.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConversationPage.xaml.cs">
+      <DependentUpon>ConversationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.xaml.cs">
+      <DependentUpon>EditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InitialPage.xaml.cs">
+      <DependentUpon>InitialPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileInfoPage.xaml.cs">
+      <DependentUpon>ProfileInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RightSideBarControl.xaml.cs">
+      <DependentUpon>RightSideBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="ConversationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InitialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RightSideBarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\active_404.png" />
+    <Content Include="Assets\Images\NearbyIcon.png" />
+    <Content Include="Assets\Images\Like.png" />
+    <Content Include="Assets\Images\Pass.png" />
+    <Content Include="Assets\Images\pressed_404.png" />
+    <Content Include="Assets\Images\status.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tinder.png" />
+    <Content Include="Assets\Images\SendIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Images\Chat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\Map_Pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\Messages.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\SmallTopLogo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\Spanner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="JeffWilcox.PhoneThemeManager">
+      <HintPath>..\packages\PhoneThemeManager.2.0\lib\windowsphone8\JeffWilcox.PhoneThemeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Behaviors, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Primitives, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Core, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1127.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\112-group.png" />
+    <Resource Include="Assets\Images\121-landscape.png" />
+    <Resource Include="Assets\Images\156-controller.png" />
+    <Resource Include="Assets\Images\Heart.png" />
+    <Resource Include="Assets\Images\i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TinderApp.Library\TinderApp.Library.csproj">
+      <Project>{A8832718-F295-48B2-BE97-ED7DF79BCA32}</Project>
+      <Name>TinderApp.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

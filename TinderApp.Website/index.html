@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<meta charset="utf-8">
+	<title>Tinder for Windows Phone</title>
+	<meta name="description" content="The Tinder app for Windows Phone.">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+	
+	<link rel="stylesheet" href="stylesheets/base.min.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<style type="text/css">
+
+/* 	[[3]] #Windows Phone App Website Branding Styles */
+
+	/* Text and Background colour */
+	body {
+		color: #000;
+		background-color:#BDBDBD;
+	}
+	
+	/* Header Colours */
+	h1, h2, h3, h4, h5, h6 {color: #333;}
+	
+	/* Link colour */
+	a, a:visited { color: #666;}
+
+	/* Logo */
+	#header #logo h1 {
+		width: 175px;
+		height: 110px;
+		background: transparent url(images/branding/dummylogo.png) no-repeat;
+	}
+
+	/* Strapline colour */
+	#header #strapline p {color: #000;}
+
+	/* App Feature List - define custom feature icons here -  */
+	ul.featurelist li.BulletImage { background-image: url(images/listcircle.png);}
+
+	/* User Review Quote */
+	blockquote.user_quote p {color: #666;}
+
+	</style>
+
+	<link rel="shortcut icon" href="images/branding/favicon.ico">
+
+</head>
+<body>
+
+	<div id="maincontainer" class="container">
+	
+		<div class="sixteen columns" id="header">
+		
+			<div id="logo" class="four columns alpha">
+<!--	[[4]]	# App title #		-->	
+				<h1>Tinder Unauthorized</h1>
+			</div>
+			
+			<div id="strapline" class="six columns omega offset-by-six">
+<!--	[[5]]	# App strapline #		-->	
+				<p>The 1st Tinder app<br/>for Windows Phone</p>
+			</div>
+		</div>
+		<br class="clear"/>
+		<div class="sixteen columns" id="contentcontainer">
+		
+			<div class="four columns alpha">
+				<h2>Updates</h2>
+<p>1/14/14 - The app has been submitted to the Windows Phone store and should be available soon!</p>
+<p>1/14/14 - Users with a developer unlocked phone can download the app here!</p>
+<p>1/14/14 - The <a href="http://github.com/brianhama/tinder">source code</a> for this app is now up on GitHub!</p>
+				
+			</div>
+				
+			<div id="phonescreens" class="six columns">
+				<div id="slider">
+<!--	[[7]]	# App Screenshots - Replace items in this list with your own 240x400px Images #		-->	
+					<ul>				
+						<li><img src="images/screenshots/screenshot0.jpg" alt="App Screenshot" /></li>
+						<li><img src="images/screenshots/screenshot1.jpg" alt="App Screenshot" /></li>
+						<li><img src="images/screenshots/screenshot2.jpg" alt="App Screenshot" /></li>
+					</ul>
+				</div>
+<!--	[[8]]	# App Marketplace Link - Find your app on the marketplace and insert the URL below#		-->	
+				<p class="downloadlink" style="height: 75px"><a style="height: 75px" href="/Tinder.zip">Download for Windows Phone</a></p>
+			</div>
+			
+			<div id="features" class="six columns omega">
+				<h2>How It Works</h2>
+<!--	[[9]]	# App Feature List #		-->	
+				<ul class="featurelist">				
+					<li class="BulletImage">See a stack of photos of people near you</li>
+					<li class="BulletImage">Like or Pass on each photo</li>
+					<li class="BulletImage">View friends/likes in common</li>
+					<li class="BulletImage">If you both like each other, start messaging!</li>
+					<li class="BulletImage">Same network as iPhone and Android</li>
+				</ul>
+<!--	[[10]]	# User Reviews & Quotes #		-->	
+				<blockquote class="user_quote">
+					<p>Tinder is finally on Windows Phone - unofficially that is, of course!</p>
+					<cite>Brian Hamachek, Developer</cite>
+				</blockquote>
+			</div>
+		
+
+		</div>
+
+		
+		
+	</div>
+
+<!--	# Footer #		-->	
+	<div class="container" id="footer">
+		<p style="text-align: center">This app is open-source. <a href="http://github.com/brianhama/tinder">Download the code</a> from GitHub!</p>
+	</div>
+
+	<!-- Load all the JS -->
+	<script type="text/javascript" src="javascripts/jsLoader.js"></script>	
+
+	<script type="text/javascript">
+
+//	[[12]]	# Screenshot Slider options #		
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true,
+				pause: 5000,
+				controlsShow: false
+			});
+		});	
+	</script>
+
+</body>
+</html>
