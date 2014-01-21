@@ -52,5 +52,10 @@ namespace TinderApp
             if (TinderSession.CurrentSession.CurrentProfile.photos.Count >= 6)
                 this.image6.Source = new BitmapImage(new Uri(TinderSession.CurrentSession.CurrentProfile.photos[5].Url, UriKind.Absolute));
         }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/FacebookAlbumsPage.xaml?main=true", UriKind.Relative));
+        }
     }
 }

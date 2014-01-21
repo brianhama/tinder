@@ -12,26 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9BFF02
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TinderApp.Website", "TinderApp.Website\", "{D00B4557-24D7-4C46-B291-06D07995F68A}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/TinderApp.Website"
-		Debug.AspNetCompiler.PhysicalPath = "TinderApp.Website\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\TinderApp.Website\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/TinderApp.Website"
-		Release.AspNetCompiler.PhysicalPath = "TinderApp.Website\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\TinderApp.Website\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "2805"
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,14 +48,6 @@ Global
 		{A8832718-F295-48B2-BE97-ED7DF79BCA32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8832718-F295-48B2-BE97-ED7DF79BCA32}.Release|ARM.ActiveCfg = Release|Any CPU
 		{A8832718-F295-48B2-BE97-ED7DF79BCA32}.Release|x86.ActiveCfg = Release|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Release|ARM.ActiveCfg = Debug|Any CPU
-		{D00B4557-24D7-4C46-B291-06D07995F68A}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,36 +13,40 @@
                             mc:Ignorable="d">
     <phone:PhoneApplicationPage.Resources>
         <Storyboard x:Name="Pulsate">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(Brush.Opacity)">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
                 <EasingDoubleKeyFrame KeyTime="0" Value="1">
                     <EasingDoubleKeyFrame.EasingFunction>
-                        <CubicEase EasingMode="EaseOut" />
+                        <CircleEase EasingMode="EaseIn" />
                     </EasingDoubleKeyFrame.EasingFunction>
                 </EasingDoubleKeyFrame>
-                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2.5">
                     <EasingDoubleKeyFrame.EasingFunction>
-                        <CubicEase EasingMode="EaseOut" />
+                        <CircleEase EasingMode="EaseIn" />
                     </EasingDoubleKeyFrame.EasingFunction>
                 </EasingDoubleKeyFrame>
-                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
-            <ColorAnimationUsingKeyFrames Storyboard.TargetName="_loadingTextBlock" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
-                <EasingColorKeyFrame KeyTime="0" Value="#DEFFFFFF">
-                    <EasingColorKeyFrame.EasingFunction>
-                        <CubicEase EasingMode="EaseOut" />
-                    </EasingColorKeyFrame.EasingFunction>
-                </EasingColorKeyFrame>
-                <EasingColorKeyFrame KeyTime="0:0:1.2" Value="#FF1E0601">
-                    <EasingColorKeyFrame.EasingFunction>
-                        <CubicEase EasingMode="EaseOut" />
-                    </EasingColorKeyFrame.EasingFunction>
-                </EasingColorKeyFrame>
-                <EasingColorKeyFrame KeyTime="0:0:2.2" Value="White">
-                    <EasingColorKeyFrame.EasingFunction>
-                        <CubicEase EasingMode="EaseOut" />
-                    </EasingColorKeyFrame.EasingFunction>
-                </EasingColorKeyFrame>
-            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Style x:Key="DownloadButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
@@ -188,92 +192,238 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Storyboard x:Name="Open">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="openingImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<CircleEase EasingMode="EaseOut" />
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-400">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<CircleEase EasingMode="EaseOut" />
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="openingImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<CircleEase EasingMode="EaseOut" />
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0.2">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<CircleEase EasingMode="EaseOut" />
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="openingImage" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<CircleEase EasingMode="EaseOut" />
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0.2">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<CircleEase EasingMode="EaseOut" />
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="openingImage" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="50">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CubicEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CubicEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <SolidColorBrush x:Key="PopupBackground" Color="#B2FFFFFF" />
+        <Style x:Key="StandardButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+            <Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}" />
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}" />
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+            <Setter Property="Padding" Value="10,5,10,6" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" />
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PopupBackground}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="Foreground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="BorderBrush">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="ButtonBackground"
+                                    Margin="{StaticResource PhoneTouchTargetOverhang}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="0">
+                                <ContentControl x:Name="ContentContainer"
+                                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                Content="{TemplateBinding Content}"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                Foreground="{TemplateBinding Foreground}"
+                                                Padding="{TemplateBinding Padding}" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </phone:PhoneApplicationPage.Resources>
 
     <!--  LayoutRoot is the root grid where all page content is placed  -->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/Background.png" Stretch="UniformToFill" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Border x:Name="border"
-                Grid.RowSpan="2"
-                Width="512"
-                Height="512"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-            <Border.Background>
-                <ImageBrush ImageSource="/Assets/Tinder.png" Stretch="UniformToFill" />
-            </Border.Background>
-            <TextBlock x:Name="_loadingTextBlock"
-                       Margin="190,293,187,176"
+        <Grid x:Name="LoggedInPanel"
+              Grid.RowSpan="2"
+              Height="802"
+              Visibility="Collapsed">
+            <Ellipse x:Name="ellipse"
+                     Width="100"
+                     Height="100"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Fill="#66FF5D00"
+                     Opacity="0.5"
+                     RenderTransformOrigin="0.5,0.5"
+                     Stroke="#FFFF5D00"
+                     StrokeThickness="2">
+                <Ellipse.RenderTransform>
+                    <CompositeTransform />
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Border x:Name="ProfilePhoto"
+                    Width="100"
+                    Height="100"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    BorderThickness="1"
+                    CornerRadius="50"
+                    RenderTransformOrigin="0.5,0.5">
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneDisabledColor}" />
+                </Border.Background>
+                <Border.RenderTransform>
+                    <CompositeTransform />
+                </Border.RenderTransform>
+            </Border>
+            <TextBlock x:Name="textBlock"
+                       Margin="0,400,0,0"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       FontSize="{StaticResource PhoneFontSizeLarge}"
+                       FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                       FontSize="{StaticResource PhoneFontSizeMediumLarge}"
                        Foreground="#DEFFFFFF"
-                       Text="Loading..."
+                       Style="{StaticResource JumpListStringStyle}"
+                       Text="Finding people nearby..."
                        TextOptions.TextHintingMode="Animated"
                        TextWrapping="Wrap" />
-        </Border>
-        <Button x:Name="downloadNearbyBtn"
-                Grid.Row="2"
-                Margin="12"
-                VerticalAlignment="Top"
-                BorderBrush="#FF0079BC"
-                BorderThickness="2"
-                Click="downloadNearbyBtn_Click"
-                Foreground="#FF0076BC"
-                Style="{StaticResource DownloadButton}">
-            <StackPanel Width="427"
-                        Margin="0,6"
-                        Orientation="Horizontal">
-                <Image Width="100"
-                       Height="100"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Top"
-                       Source="Assets/Images/NearbyIcon.png" />
-                <TextBlock Width="278"
-                           Margin="24,0,0,0"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontSize="{StaticResource PhoneFontSizeNormal}"
-                           Foreground="#FF0073BC"
-                           Text="Download 'Nearby' from the Windows Phone Store!"
-                           TextAlignment="Center"
-                           TextWrapping="Wrap" />
-            </StackPanel>
-        </Button>
+        </Grid>
         <Border x:Name="LoginButtonBorder"
                 Grid.RowSpan="2"
-                VerticalAlignment="Center"
+                Margin="12,50,12,0"
+                VerticalAlignment="Top"
+                Background="{StaticResource PopupBackground}"
                 BorderBrush="#FF686868"
                 BorderThickness="0,2"
+                CornerRadius="20"
                 Visibility="Collapsed">
-            <Grid Height="234" Background="#FFDEDEDE">
+            <Grid>
                 <StackPanel Margin="24" Orientation="Vertical">
                     <TextBlock HorizontalAlignment="Center"
                                VerticalAlignment="Top"
                                FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               FontSize="{StaticResource PhoneFontSizeMediumLarge}"
                                Foreground="#DE000000"
                                Style="{StaticResource PhoneTextNormalStyle}"
-                               Text="In order to access Tinder you will need to login with your Facebook profile."
+                               Text="Login With Facebook"
                                TextAlignment="Center"
+                               TextWrapping="Wrap" />
+                    <TextBlock Margin="0,12,0,0"
+                               Text="You need to login using Facebook so that we can use your profile to show you the friends and interests you share in common with people nearby."
+                               TextWrapping="Wrap" />
+                    <TextBlock Margin="0,12,0,0"
+                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               Text="We never post anything to your profile or message your friends."
                                TextWrapping="Wrap" />
                     <Button x:Name="FacebookLoginButton"
                             Width="250"
                             Height="81"
-                            Margin="0,24,0,0"
+                            Margin="0,12,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             BorderThickness="0"
                             Click="FacebookLoginButton_Click"
                             Style="{StaticResource FacebookLoginButton}" />
-                    <TextBlock HorizontalAlignment="Center"
-                               Foreground="#66000000"
-                               Style="{StaticResource PhoneTextSubtleStyle}"
-                               Text="Don't worry, nobody will spam your friends!"
-                               TextWrapping="Wrap" />
                 </StackPanel>
             </Grid>
         </Border>
@@ -283,7 +433,6 @@
                 BorderThickness="0"
                 Visibility="Collapsed">
             <phone:WebBrowser x:Name="webBrowser"
-                              Background="White"
                               BorderBrush="Black"
                               BorderThickness="1"
                               IsGeolocationEnabled="True"
@@ -291,15 +440,19 @@
         </Border>
         <Border x:Name="TermsBorder"
                 Grid.RowSpan="2"
-                VerticalAlignment="Center"
+                Margin="12,50,12,0"
+                VerticalAlignment="Top"
+                Background="{StaticResource PopupBackground}"
                 BorderBrush="#FF686868"
                 BorderThickness="0,2"
-                Visibility="Collapsed">
-            <Grid VerticalAlignment="Top" Background="#FFDEDEDE">
+                CornerRadius="20" Visibility="Collapsed">
+            <Grid VerticalAlignment="Top">
                 <StackPanel Margin="24"
                             VerticalAlignment="Top"
                             Orientation="Vertical">
                     <TextBlock Margin="0,0,0,12"
+                               HorizontalAlignment="Center"
+                               FontSize="{StaticResource PhoneFontSizeMediumLarge}"
                                Foreground="#DE000000"
                                Style="{StaticResource JumpListStringStyle}"
                                Text="Terms Agreement"
@@ -307,18 +460,46 @@
                     <TextBlock Margin="0"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
-                               FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
                                Foreground="#DE000000"
                                Style="{StaticResource PhoneTextNormalStyle}"
                                Text="This app uses your location to display nearby people to you.  Your profile will be shown, along with the distance in miles, to other users as well.  By continuing you are consenting to this sharing of your personal data.  You must be at least 13 years of age to use this app."
                                TextWrapping="Wrap" />
                     <Button x:Name="agreeButton"
                             Margin="-12,12,-12,0"
-                            HorizontalAlignment="Left"
+                            Background="White"
+                            BorderBrush="#DEFFFFFF"
                             Click="agreeButton_Click"
-                            Content="I Agree" />
+                            Content="I Agree"
+                            Foreground="#DE00A40F"
+                            Style="{StaticResource StandardButton}" />
                 </StackPanel>
             </Grid>
+        </Border>
+        <Image x:Name="openingImage"
+               Grid.RowSpan="2"
+               Width="256"
+               Height="256"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               RenderTransformOrigin="0.5,0.5"
+               Source="/Assets/Tinder.png"
+               Stretch="Fill">
+            <Image.RenderTransform>
+                <CompositeTransform ScaleX="0" ScaleY="0" />
+            </Image.RenderTransform>
+        </Image>
+        <Border x:Name="border" Grid.Row="1" Margin="0" VerticalAlignment="Bottom" Height="90" RenderTransformOrigin="0.5,0.5" >
+        	<Border.RenderTransform>
+        		<CompositeTransform/>
+        	</Border.RenderTransform>
+        	<Border.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#7EFF5D36" Offset="0.491"/>
+        			<GradientStop Color="Transparent" Offset="0.397"/>
+        		</LinearGradientBrush>
+        	</Border.Background>
+        	<TextBlock TextWrapping="Wrap" Foreground="White" Text="Sponsored by the Nearby (WNM LIVE) app" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="{StaticResource PhoneFontFamilySemiBold}" Height="31" VerticalAlignment="Bottom" Margin="0,0,0,6" HorizontalAlignment="Center"/>
         </Border>
     </Grid>
 </phone:PhoneApplicationPage>

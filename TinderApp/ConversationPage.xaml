@@ -29,8 +29,11 @@
                 <StackPanel>
                     <TextBlock Margin="0, 0, 0, 0"
                                HorizontalAlignment="Right"
-                               Foreground="{StaticResource PhoneSubtleBrush}"
-                               Text="{Binding FormattedTimeStamp}" />
+                               Text="{Binding FormattedTimeStamp}" >
+                    	<TextBlock.Foreground>
+                    		<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                    	</TextBlock.Foreground>
+                    </TextBlock>
 
                     <telerikPrimitivesNamespace:RadPointerContentControl Background="{StaticResource PhoneAccentBrush}" TargetPoint="-141,-100">
                         <telerikPrimitivesNamespace:RadPointerContentControl.PointerTemplate>
@@ -69,8 +72,11 @@
                 <StackPanel Grid.Column="1">
                     <TextBlock Margin="0, 0, 0, 0"
                                HorizontalAlignment="Left"
-                               Foreground="{StaticResource PhoneSubtleBrush}"
-                               Text="{Binding FormattedTimeStamp}" />
+                               Text="{Binding FormattedTimeStamp}" >
+                    	<TextBlock.Foreground>
+                    		<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                    	</TextBlock.Foreground>
+                    </TextBlock>
 
                     <telerikPrimitivesNamespace:RadPointerContentControl TargetPoint="145, -100">
                         <telerikPrimitivesNamespace:RadPointerContentControl.Background>
@@ -136,7 +142,7 @@
                         <telerikPrimitives:RadTextBox.ActionButtonStyle>
                             <Style TargetType="telerikTextBox:TextBoxActionButton">
                                 <Setter Property="ButtonType" Value="Custom" />
-                                <Setter Property="RestStateImageSource" Value="Images/SendIcon.png" />
+                                <Setter Property="RestStateImageSource" Value="Assets/Images/SendIcon.png" />
                             </Style>
                         </telerikPrimitives:RadTextBox.ActionButtonStyle>
                     </telerikPrimitives:RadTextBox>
@@ -262,7 +268,7 @@
                     Style="{StaticResource ImageButtonStyle}">
                 <Image Width="64"
                        Height="64"
-                       Source="i.png"
+                       Source="Assets/Images/i.png"
                        Stretch="Fill"
                        Tap="Image_Tap" />
             </Button>
@@ -270,7 +276,7 @@
         <telerikData:RadConversationView x:Name="conversationView"
                                          Grid.Row="1"
                                          Margin="0"
-                                         EmptyContent="Well, don't just sit there, message them!"
+                                         EmptyContent="{Binding MessagePrompt}"
                                          EmptyContentTemplate="{StaticResource EmptyDataTemplate}"
                                          IncomingMessageTemplate="{StaticResource IncomingMessageTemplate}"
                                          ItemsSource="{Binding Messages}"

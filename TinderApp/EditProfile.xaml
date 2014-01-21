@@ -142,7 +142,7 @@
                     BorderBrush="#DE9C9C9C"
                     BorderThickness="1"
                     Padding="0"
-                    Style="{StaticResource EditablePhotoButton}">
+                    Style="{StaticResource EditablePhotoButton}" Click="Button_Click">
                 <Image x:Name="image1"
                        Width="224"
                        Height="224"

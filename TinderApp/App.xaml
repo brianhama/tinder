@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:MVVM="clr-namespace:TinderApp.Library.MVVM;assembly=TinderApp.Library"
              xmlns:ViewModels="clr-namespace:TinderApp.Library.ViewModels;assembly=TinderApp.Library"
+             xmlns:controls="clr-namespace:TinderApp.Library.Controls;assembly=TinderApp.Library"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
@@ -76,6 +77,55 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ProfileButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Margin="0,12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="ellipse1"
+                                                            Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)"
+                                                            To="#DEFF0000"
+                                                            d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled" />
+                                    <VisualState x:Name="MouseOver" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse x:Name="ellipse"
+                                     Width="60"
+                                     Height="60"
+                                     Margin="0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Fill="{TemplateBinding Background}"
+                                     StrokeThickness="0" />
+                            <Ellipse x:Name="ellipse1"
+                                     Width="60"
+                                     Height="60"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Stroke="#DEFFFFFF"
+                                     StrokeThickness="2" />
+                            <ContentPresenter Grid.Column="1"
+                                              Margin="24,0,0,0"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="ImageButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}" />
@@ -128,7 +178,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="CustomFrame" TargetType="phone:PhoneApplicationFrame">
+        <Style x:Key="CustomFrame" TargetType="controls:CustomPhoneApplicationFrame">
             <Setter Property="Background" Value="{StaticResource PhoneBackgroundBrush}" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
@@ -136,7 +186,7 @@
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="phone:PhoneApplicationFrame">
+                    <ControlTemplate TargetType="controls:CustomPhoneApplicationFrame">
                         <Border x:Name="ClientArea" Background="White">
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="SideBarState">
@@ -219,10 +269,8 @@
                                 </Grid.RowDefinitions>
                                 <Grid Height="65"
                                       VerticalAlignment="Top"
-                                      Background="#FFFFFFFF">
-                                    <Grid.DataContext>
-                                        <MVVM:TopBarViewModel />
-                                    </Grid.DataContext>
+                                      Background="#7FFFFFFF"
+                                      Visibility="{Binding TopBarVisibility}">
                                     <Button Width="65"
                                             Height="65"
                                             HorizontalAlignment="Left"
@@ -272,7 +320,7 @@
                                                    Fill="{TemplateBinding Foreground}"
                                                    Stroke="Black">
                                             <Rectangle.OpacityMask>
-                                                <ImageBrush ImageSource="Assets/Images/Messages.png" Stretch="None" />
+                                                <ImageBrush ImageSource="Assets/Images/Chats.png" Stretch="None" />
                                             </Rectangle.OpacityMask>
                                         </Rectangle>
                                     </Button>
@@ -305,16 +353,13 @@
                                                 Margin="0,0,0,24"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Top"
+                                                Background="{Binding ProfileImageBrush}"
                                                 BorderBrush="#DEFFFFFF"
                                                 Click="profileButton_Click"
                                                 Content="Profile"
                                                 FontSize="{StaticResource PhoneFontSizeLarge}"
                                                 Foreground="#DEFFFFFF"
-                                                Style="{StaticResource MainMenuButton}">
-                                            <Button.Background>
-                                                <ImageBrush ImageSource="Assets/Images/status.png" Stretch="UniformToFill" />
-                                            </Button.Background>
-                                        </Button>
+                                                Style="{StaticResource ProfileButtonStyle}" />
                                         <Button Margin="0,0,0,24"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Top"
@@ -359,18 +404,6 @@
                                                 <ImageBrush ImageSource="Assets/Images/Spanner.png" Stretch="UniformToFill" />
                                             </Button.Background>
                                         </Button>
-                                        <TextBlock Margin="0,0,12,0"
-                                                   FontSize="{StaticResource PhoneFontSizeSmall}"
-                                                   Foreground="#DEFF9700"
-                                                   Text="Check out the app 'Nearby' for even more fun!"
-                                                   TextOptions.TextHintingMode="Animated"
-                                                   TextWrapping="Wrap" />
-                                        <TextBlock Margin="0,24,12,0"
-                                                   FontSize="{StaticResource PhoneFontSizeSmall}"
-                                                   Foreground="#DEB2B2B2"
-                                                   Text="Tinder is a registered trademark of Tinder, Co."
-                                                   TextOptions.TextHintingMode="Animated"
-                                                   TextWrapping="Wrap" />
                                         <HyperlinkButton x:Name="privacyPolicy"
                                                          Margin="-12,12,0,0"
                                                          HorizontalAlignment="Left"
@@ -398,6 +431,8 @@
         </Style>
     </Application.Resources>
     <Application.ApplicationLifetimeObjects>
-        <shell:PhoneApplicationService />
+        <shell:PhoneApplicationService Activated="PhoneApplicationService_Activated"
+                                       Closing="PhoneApplicationService_Closing"
+                                       Deactivated="PhoneApplicationService_Deactivated" />
     </Application.ApplicationLifetimeObjects>
 </Application>

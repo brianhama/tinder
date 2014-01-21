@@ -15,17 +15,6 @@ namespace TinderApp.Library.ViewModels
         private Match _data;
         private ObservableCollection<ConversationMessageViewModel> _messages = new ObservableCollection<ConversationMessageViewModel>();
 
-        public MatchViewModel()
-        {
-            Match fake = new Match();
-            fake.Id = "a";
-            fake.Person = new Person();
-            fake.Person.Name = "NAme";
-            fake.CreatedDate = "1/1/2014";
-            fake.Closed = true;
-            _data = fake;
-        }
-
         public MatchViewModel(Match data)
         {
             _data = data;

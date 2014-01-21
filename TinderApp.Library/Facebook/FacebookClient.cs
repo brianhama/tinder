@@ -2,6 +2,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TinderApp.Lib.API;
 
 namespace TinderApp.Lib.Facebook
 {
@@ -17,21 +18,20 @@ namespace TinderApp.Lib.Facebook
 
         public async static Task<T> Get<T>(string resource, string accessToken)
         {
-            var response = await _client.GetAsync(resource + "?access_token=" + accessToken);
-            if (response.IsSuccessStatusCode)
-            {
-                string responseData = await response.Content.ReadAsStringAsync();
+            if (resource.Contains("?"))
+                resource = resource + "&access_token=" + accessToken;
+            else
+                resource = resource + "?access_token=" + accessToken;
 
-                JsonSerializerSettings settings = new JsonSerializerSettings();
-                settings.DateParseHandling = DateParseHandling.DateTime;
-                settings.DefaultValueHandling = DefaultValueHandling.Populate;
-                settings.NullValueHandling = NullValueHandling.Include;
-                settings.TypeNameHandling = TypeNameHandling.None;
+            string responseData = await _client.GetStringAsync(resource);
 
-                return JsonConvert.DeserializeObject<T>(responseData);
-            }
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.DateParseHandling = DateParseHandling.DateTime;
+            settings.DefaultValueHandling = DefaultValueHandling.Populate;
+            settings.NullValueHandling = NullValueHandling.Include;
+            settings.TypeNameHandling = TypeNameHandling.None;
 
-            throw new Exception(response.ReasonPhrase);
+            return JsonConvert.DeserializeObject<T>(responseData);
         }
     }
 }

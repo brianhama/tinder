@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using TinderApp.Lib;
 using TinderApp.Library.MVVM;
@@ -8,6 +9,18 @@ namespace TinderApp.Library.ViewModels
 {
     public class MatchesViewModel : ObservableObject
     {
+        public MatchesViewModel()
+        {
+        }
+
+        public MatchesViewModel(List<Match> data)
+        {
+            foreach (var match in data)
+            {
+                _matches.Add(new MatchViewModel(match));
+            }
+        }
+
         private ObservableCollection<MatchViewModel> _matches = new ObservableCollection<MatchViewModel>();
 
         public ObservableCollection<MatchViewModel> Matches

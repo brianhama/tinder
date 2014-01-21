@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Converters;
 using System;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace TinderApp.Lib.API
             _client.DefaultRequestHeaders.Add("UserAgent", "Tinder/3.0.2 (iPhone; iOS 7.1; Scale/2.00)");
             _client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
             _client.BaseAddress = new Uri(Constants.BASE_URL);
+        }
+
+        public static void StopAllRequests()
+        {
+            _client.CancelPendingRequests();
         }
 
         public static String AuthToken
@@ -48,66 +54,83 @@ namespace TinderApp.Lib.API
 
         public async static Task<T> Get<T>(string resource)
         {
-            var response = await _client.GetAsync(resource);
-            if (response.IsSuccessStatusCode)
+            using (var response = await _client.GetAsync(GetCacheBustingResourceUri(resource)))
             {
-                string responseData = await response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseData = await response.Content.ReadAsStringAsync();
 
-                Debug.WriteLine(responseData);
+                    Debug.WriteLine(responseData);
 
-                JsonSerializerSettings settings = new JsonSerializerSettings();
-                settings.DateParseHandling = DateParseHandling.DateTime;
-                settings.DefaultValueHandling = DefaultValueHandling.Populate;
-                settings.NullValueHandling = NullValueHandling.Include;
-                settings.TypeNameHandling = TypeNameHandling.None;
+                    JsonSerializerSettings settings = new JsonSerializerSettings();
+                    settings.DateParseHandling = DateParseHandling.DateTime;
+                    settings.DefaultValueHandling = DefaultValueHandling.Populate;
+                    settings.NullValueHandling = NullValueHandling.Include;
+                    settings.TypeNameHandling = TypeNameHandling.None;
 
-                return JsonConvert.DeserializeObject<T>(responseData);
+                    return JsonConvert.DeserializeObject<T>(responseData);
+                }
+
+                response.EnsureSuccessStatusCode();
+                return default(T);
             }
-
-            throw new Exception(response.ReasonPhrase);
         }
 
         public async static Task Get(string resource)
         {
-            var response = await _client.GetAsync(resource);
-            if (response.IsSuccessStatusCode)
+            using (var response = await _client.GetAsync(GetCacheBustingResourceUri(resource)))
             {
-                string responseData = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseData);
-                return;
-            }
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseData = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(responseData);
+                    return;
+                }
 
-            throw new Exception(response.ReasonPhrase);
+                response.EnsureSuccessStatusCode();
+            }
         }
 
         public async static Task<T> Post<T>(string resource, object body)
         {
             string postData = JsonConvert.SerializeObject(body, new IsoDateTimeConverter());
 
-            var response = await _client.PostAsync(resource, new StringContent(postData, Encoding.UTF8, "application/json"));
-            if (response.IsSuccessStatusCode)
+            using (var response = await _client.PostAsync(resource, new StringContent(postData, Encoding.UTF8, "application/json")))
             {
-                string responseData = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseData);
-                return JsonConvert.DeserializeObject<T>(responseData);
-            }
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseData = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(responseData);
+                    return JsonConvert.DeserializeObject<T>(responseData);
+                }
 
-            throw new Exception(response.ReasonPhrase);
+                response.EnsureSuccessStatusCode();
+                return default(T);
+            }
         }
 
         public async static Task Post(string resource, object body)
         {
             string postData = JsonConvert.SerializeObject(body, new IsoDateTimeConverter());
 
-            var response = await _client.PostAsync(resource, new StringContent(postData, Encoding.UTF8, "application/json"));
-            if (response.IsSuccessStatusCode)
+            using (var response = await _client.PostAsync(resource, new StringContent(postData, Encoding.UTF8, "application/json")))
             {
-                string responseData = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseData);
-                return;
-            }
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseData = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(responseData);
+                    return;
+                }
 
-            throw new Exception(response.ReasonPhrase);
+                response.EnsureSuccessStatusCode();
+            }
+        }
+
+        internal static string GetCacheBustingResourceUri(string resource)
+        {
+            if (resource.Contains("?"))
+                return resource + "&_=" + DateTime.UtcNow.Ticks.ToString();
+            return resource + "?_=" + DateTime.UtcNow.Ticks.ToString();
         }
     }
 }

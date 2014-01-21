@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using System.Windows.Media;
 using TinderApp.Lib;
 using TinderApp.Lib.API;
 using TinderApp.Library;
@@ -9,6 +10,9 @@ namespace TinderApp.Views
 {
     public class UserReccommendationsViewModel : ObservableObject
     {
+        private static SolidColorBrush GRAY_BRUSH = new SolidColorBrush(Colors.LightGray);
+        private static SolidColorBrush BLACK_BRUSH = new SolidColorBrush(Colors.Black);
+
         private readonly ICommand _likeUserCommand;
 
         private readonly ICommand _rejectUserCommand;
@@ -29,6 +33,9 @@ namespace TinderApp.Views
                 RaisePropertyChanged("Age");
                 RaisePropertyChanged("FriendCount");
                 RaisePropertyChanged("LikeCount");
+                RaisePropertyChanged("LikesBrush");
+                RaisePropertyChanged("FriendsBrush");
+                RaisePropertyChanged("PhotosBrush");
                 RaisePropertyChanged("ProfilePhoto");
                 RaisePropertyChanged("CurrentReccomendation");
             }
@@ -42,6 +49,8 @@ namespace TinderApp.Views
         {
             get
             {
+                if (_currentRec == null)
+                    return "Try Later";
                 return String.Format("{0:N0}", Math.Floor(DateTime.UtcNow.Subtract(DateTime.Parse(_currentRec.BirthDate)).TotalDays / 365));
             }
         }
@@ -55,6 +64,8 @@ namespace TinderApp.Views
         {
             get
             {
+                if (_currentRec == null)
+                    return 0;
                 return _currentRec.CommonFriendCount;
             }
         }
@@ -63,7 +74,31 @@ namespace TinderApp.Views
         {
             get
             {
+                if (_currentRec == null)
+                    return 0;
                 return _currentRec.CommonLikeCount;
+            }
+        }
+
+        public SolidColorBrush FriendsBrush
+        {
+            get
+            {
+                return FriendCount > 0 ? BLACK_BRUSH : GRAY_BRUSH;
+            }
+        }
+        public SolidColorBrush LikesBrush
+        {
+            get
+            {
+                return LikeCount > 0 ? BLACK_BRUSH : GRAY_BRUSH;
+            }
+        }
+        public SolidColorBrush PhotosBrush
+        {
+            get
+            {
+                return PhotoCount > 0 ? BLACK_BRUSH : GRAY_BRUSH;
             }
         }
 
@@ -76,6 +111,8 @@ namespace TinderApp.Views
         {
             get
             {
+                if (_currentRec == null)
+                    return "No Nearby People";
                 return _currentRec.Name;
             }
         }
@@ -84,6 +121,8 @@ namespace TinderApp.Views
         {
             get
             {
+                if (_currentRec == null)
+                    return 0;
                 return _currentRec.Photos.Length;
             }
         }
@@ -92,6 +131,8 @@ namespace TinderApp.Views
         {
             get
             {
+                if (_currentRec == null)
+                    return null;
                 return Utils.GetMainPhoto(_currentRec.Photos);
             }
         }
@@ -117,7 +158,10 @@ namespace TinderApp.Views
 
         public async void NextRecommendation()
         {
-            _currentRec = TinderSession.CurrentSession.Recommendations.Pop();
+            if (TinderSession.CurrentSession.Recommendations.Count > 0)
+                _currentRec = TinderSession.CurrentSession.Recommendations.Pop();
+            else
+                _currentRec = null;
             RaisePropertyChanged("PhotoCount");
             RaisePropertyChanged("Name");
             RaisePropertyChanged("Age");
@@ -125,6 +169,9 @@ namespace TinderApp.Views
             RaisePropertyChanged("LikeCount");
             RaisePropertyChanged("ProfilePhoto");
             RaisePropertyChanged("CurrentReccomendation");
+            RaisePropertyChanged("LikesBrush");
+            RaisePropertyChanged("FriendsBrush");
+            RaisePropertyChanged("PhotosBrush");
 
             if (TinderSession.CurrentSession.Recommendations.Count == 0)
                 await TinderSession.CurrentSession.GetRecommendations();

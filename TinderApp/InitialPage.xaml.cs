@@ -1,19 +1,20 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
+using System.Device.Location;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using TinderApp.Library;
 using TinderApp.Library.Facebook;
 using TinderApp.Library.MVVM;
+using Windows.Devices.Geolocation;
 
 namespace TinderApp
 {
     public partial class InitialPage : PhoneApplicationPage
     {
-        private GeographicalCordinates _location;
-        private LocationManager _locationManager;
-
         public InitialPage()
         {
             InitializeComponent();
@@ -24,62 +25,46 @@ namespace TinderApp
             webBrowser.Navigating += webBrowser_Navigating;
             this.LayoutUpdated += InitialPage_LayoutUpdated;
 
-            _locationManager = new LocationManager();
-            _locationManager.OnPositionDetermined += _locationManager_OnPositionDetermined;
+            Open.Completed += Open_Completed;
 
             base.OnNavigatedTo(e);
+        }
+
+        void Open_Completed(object sender, EventArgs e)
+        {
+            if (ConsentManager.HasConsented)
+                LoginButtonBorder.Visibility = Visibility.Visible;
+            else
+                TermsBorder.Visibility = System.Windows.Visibility.Visible;
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             webBrowser.Navigating -= webBrowser_Navigating;
-            _locationManager.OnPositionDetermined -= _locationManager_OnPositionDetermined;
-            _locationManager = null;
+            Open.Completed -= Open_Completed;
             base.OnNavigatingFrom(e);
-        }
-
-        private async void _locationManager_OnPositionDetermined(object sender, PositionDeterminedEventArgs ca)
-        {
-            if (ca.IsPermissionFailure || ca.IsOtherFailure)
-                MessageBox.Show("Unable to determine your location.  Please ensure that location services are enabled.");
-            else
-            {
-                _location = ca.Location;
-
-                Settings settings = Settings.Load();
-
-                if (!String.IsNullOrEmpty(settings.FacebookToken) && !String.IsNullOrEmpty(settings.FacebookId))
-                {
-                    await Authenticate(settings);
-                }
-                else
-                {
-                    LoginButtonBorder.Visibility = Visibility.Visible;
-                }
-            }
         }
 
         private void agreeButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             TermsBorder.Visibility = Visibility.Collapsed;
             ConsentManager.HasConsented = true;
-
-            if (Pulsate.GetCurrentState() != ClockState.Active)
-            {
-                Pulsate.RepeatBehavior = RepeatBehavior.Forever;
-                Pulsate.Begin();
-            }
-
-            _locationManager.BeginGetLocation();
+            LoginButtonBorder.Visibility = Visibility.Visible;
         }
 
-        private async System.Threading.Tasks.Task Authenticate(Settings settings)
+        private async System.Threading.Tasks.Task Authenticate(string accessToken, string fbid)
         {
-            FacebookSessionInfo sessionInfo = new FacebookSessionInfo();
-            sessionInfo.FacebookToken = settings.FacebookToken;
-            sessionInfo.FacebookID = settings.FacebookId;
+            ProfilePhoto.Background = new ImageBrush() { ImageSource = new BitmapImage(new Uri(String.Format("https://graph.facebook.com/me/picture?access_token={0}&height=100&width=100", accessToken))) };
 
-            TinderSession activeSession = TinderSession.CreateNewSession(sessionInfo, _location);
+            FacebookSessionInfo sessionInfo = new FacebookSessionInfo();
+            sessionInfo.FacebookToken = accessToken;
+            sessionInfo.FacebookID = fbid;
+
+            Geolocator location = new Geolocator();
+            location.DesiredAccuracy = PositionAccuracy.Default;
+            var usrLocation = await location.GetGeopositionAsync();
+
+            TinderSession activeSession = TinderSession.CreateNewSession(sessionInfo, new GeographicalCordinates() { Latitude = usrLocation.Coordinate.Latitude, Longitude = usrLocation.Coordinate.Longitude });
             if (await activeSession.Authenticate())
             {
                 (App.Current as App).RightSideBar.DataContext = activeSession.Matches;
@@ -92,18 +77,9 @@ namespace TinderApp
             }
         }
 
-        private void downloadNearbyBtn_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Microsoft.Phone.Tasks.MarketplaceDetailTask task = new Microsoft.Phone.Tasks.MarketplaceDetailTask();
-            task.ContentIdentifier = "e0b331a9-85e8-df11-9264-00237de2db9e";
-            task.ContentType = Microsoft.Phone.Tasks.MarketplaceContentType.Applications;
-            task.Show();
-        }
-
         private void FacebookLoginButton_Click(object sender, RoutedEventArgs e)
         {
             LoginButtonBorder.Visibility = System.Windows.Visibility.Collapsed;
-            downloadNearbyBtn.Visibility = System.Windows.Visibility.Collapsed;
             WebViewBorder.Visibility = System.Windows.Visibility.Visible;
 
             webBrowser.Navigate(new Uri("https://www.facebook.com/dialog/oauth?client_id=464891386855067&redirect_uri=https://www.facebook.com/connect/login_success.html&scope=basic_info,email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_interests,user_likes,user_location,user_photos,user_relationship_details&response_type=token", UriKind.Absolute));
@@ -115,16 +91,31 @@ namespace TinderApp
 
             if (ConsentManager.HasConsented)
             {
-                if (Pulsate.GetCurrentState() != ClockState.Active)
+                if (!(App.Current as App).JustLoggedOut)
                 {
-                    Pulsate.RepeatBehavior = RepeatBehavior.Forever;
-                    Pulsate.Begin();
-                }
+                    TombstoneData data = TombstoneManager.Load();
+                    if (data != null)
+                    {
+                        TinderSession activeSession = TinderSession.FromTombstoneData(data);
+                        (App.Current as App).RightSideBar.DataContext = activeSession.Matches;
 
-                _locationManager.BeginGetLocation();
+                        TopBarViewModel.ShowTopButtons = System.Windows.Visibility.Visible;
+
+                        NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+
+                        App.RootFrame.RemoveBackEntry();
+
+                        return;
+                    }
+                }
+                else
+                {
+                    LoginButtonBorder.Visibility = System.Windows.Visibility.Visible;
+                }
             }
-            else
-                TermsBorder.Visibility = Visibility.Visible;
+
+            if (!(App.Current as App).JustLoggedOut)
+                Open.Begin();
         }
 
         private async void webBrowser_Navigating(object sender, NavigatingEventArgs e)
@@ -134,8 +125,8 @@ namespace TinderApp
                 e.Cancel = true;
 
                 WebViewBorder.Visibility = System.Windows.Visibility.Collapsed;
-
                 LoginButtonBorder.Visibility = System.Windows.Visibility.Collapsed;
+                LoggedInPanel.Visibility = System.Windows.Visibility.Visible;
 
                 if (Pulsate.GetCurrentState() != ClockState.Active)
                 {
@@ -143,19 +134,48 @@ namespace TinderApp
                     Pulsate.Begin();
                 }
 
-                string accessToken = e.Uri.ToString().Substring(e.Uri.ToString().IndexOf("access_token=") + "access_token=".Length);
-                if (accessToken.IndexOf("&") > 0)
-                    accessToken = accessToken.Substring(0, accessToken.IndexOf("&"));
+                FacebookUser user = null;
+                string accessToken = "";
 
-                var user = await FacebookUserResponse.GetFacebookUser(accessToken);
+                try
+                {
 
-                Settings settings = new Settings();
-                settings.FacebookId = user.Id;
-                settings.FacebookToken = accessToken;
-                settings.Save();
+                    accessToken = e.Uri.ToString().Substring(e.Uri.ToString().IndexOf("access_token=") + "access_token=".Length);
+                    if (accessToken.IndexOf("&") > 0)
+                        accessToken = accessToken.Substring(0, accessToken.IndexOf("&"));
 
-                await Authenticate(settings);
+                    user = await FacebookUserResponse.GetFacebookUser(accessToken);
+
+                }
+                catch { }
+
+                if (user == null)
+                {
+                    if (Pulsate.GetCurrentState() == ClockState.Active)
+                    {
+                        Pulsate.Stop();
+                    }
+                    await webBrowser.ClearCookiesAsync();
+                    WebViewBorder.Visibility = System.Windows.Visibility.Collapsed;
+                    LoginButtonBorder.Visibility = System.Windows.Visibility.Visible;
+                    LoggedInPanel.Visibility = System.Windows.Visibility.Collapsed;
+                    MessageBox.Show("Unable to login using Facebook.  Please try again.");
+                }
+                else
+                    await Authenticate(accessToken, user.Id);
             }
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (webBrowser.Visibility == System.Windows.Visibility.Visible)
+            {
+                LoginButtonBorder.Visibility = System.Windows.Visibility.Visible;
+                webBrowser.Visibility = System.Windows.Visibility.Collapsed;
+                e.Cancel = true;
+            }
+
+            base.OnBackKeyPress(e);
         }
     }
 }

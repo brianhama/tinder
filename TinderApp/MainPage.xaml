@@ -32,13 +32,11 @@
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Stroke)">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <SolidColorBrush Color="#FFE51400" />
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="ellipse"
+                                                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                            To="Red"
+                                                            d:IsOptimized="True" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Normal" />
@@ -79,13 +77,11 @@
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Stroke)">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <SolidColorBrush Color="#FF3AFF00" />
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="ellipse"
+                                                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                            To="#FF3AFF00"
+                                                            d:IsOptimized="True" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Normal" />
@@ -126,13 +122,11 @@
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(Shape.Stroke)">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <SolidColorBrush Color="#FF00A7E5" />
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
+                                            <ColorAnimation Duration="0"
+                                                            Storyboard.TargetName="ellipse"
+                                                            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                            To="#FF00A7E5"
+                                                            d:IsOptimized="True" />
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Normal" />
@@ -147,7 +141,7 @@
                                      Height="{TemplateBinding Height}"
                                      Fill="#FFF4F4F5"
                                      Stroke="{TemplateBinding BorderBrush}"
-                                     StrokeThickness="15" />
+                                     StrokeThickness="12" />
                             <ContentPresenter Width="100" Height="100" />
                         </Canvas>
                     </ControlTemplate>
@@ -217,6 +211,7 @@
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        <SolidColorBrush x:Key="ImageBorderBrush" Color="#FFA4A4A4" />
     </phone:PhoneApplicationPage.Resources>
 
     <phone:PhoneApplicationPage.FontFamily>
@@ -236,11 +231,33 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Border Margin="12,12,12,0"
+        <Border Grid.RowSpan="2"
+                Height="529"
+                Margin="20,20,20,0"
+                VerticalAlignment="Top"
+                Background="#FFF0F0F0"
+                BorderBrush="{StaticResource ImageBorderBrush}"
+                BorderThickness="2" />
+        <Border Height="529"
+                Margin="16,16,16,-6"
+                VerticalAlignment="Top"
+                Background="#FFF0F0F0"
+                BorderBrush="{StaticResource ImageBorderBrush}"
+                BorderThickness="2" />
+        <Border Width="456"
+                Height="529"
+                Margin="12,12,12,0"
                 VerticalAlignment="Top"
                 Background="White"
-                BorderBrush="#FFA4A4A4"
-                BorderThickness="2">
+                BorderBrush="{StaticResource ImageBorderBrush}"
+                BorderThickness="2"
+                CacheMode="BitmapCache"
+                ManipulationCompleted="OnManipulationCompleted"
+                ManipulationDelta="OnManipulationDelta"
+                RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <CompositeTransform x:Name="transform" TranslateX="0" />
+            </Border.RenderTransform>
             <StackPanel Orientation="Vertical">
                 <Grid Height="460">
                     <Image Width="460"
@@ -251,13 +268,13 @@
                                             Mode=OneWay}"
                            Stretch="UniformToFill" />
                     <Image x:Name="image"
-                           HorizontalAlignment="Right"
+                           HorizontalAlignment="Left"
                            VerticalAlignment="Top"
                            Source="/Assets/Images/Like.png"
                            Stretch="None"
                            Visibility="Collapsed" />
                     <Image x:Name="image1"
-                           HorizontalAlignment="Left"
+                           HorizontalAlignment="Right"
                            VerticalAlignment="Top"
                            Source="/Assets/Images/Pass.png"
                            Stretch="None"
@@ -300,13 +317,17 @@
                     <StackPanel Grid.Column="1"
                                 Margin="0,0,12,0"
                                 HorizontalAlignment="Left"
-                                VerticalAlignment="Center">
-                        <Image Height="23"
-                               Source="Assets/Images/112-group.png"
-                               Stretch="None" />
+                                VerticalAlignment="Top">
+                        <Rectangle Width="36"
+                                   Height="36"
+                                   Fill="{Binding FriendsBrush}">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="Assets/Images/friends.png" Stretch="Uniform" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   Foreground="Black"
+                                   Foreground="{Binding FriendsBrush}"
                                    Text="{Binding FriendCount,
                                                   Mode=OneWay}"
                                    TextWrapping="Wrap" />
@@ -315,28 +336,36 @@
                                 Margin="0,0,12,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center">
-                        <Image Height="23"
-                               Source="Assets/Images/156-controller.png"
-                               Stretch="None" />
+                        <Rectangle Width="36"
+                                   Height="36"
+                                   VerticalAlignment="Top"
+                                   Fill="{Binding LikesBrush}">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/Assets/Images/interests.png" Stretch="Uniform" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   Foreground="Black"
+                                   Foreground="{Binding LikesBrush}"
                                    Text="{Binding LikeCount,
                                                   Mode=OneWay}"
                                    TextWrapping="Wrap" />
                     </StackPanel>
                     <StackPanel Grid.Column="3"
                                 Grid.ColumnSpan="2"
-                                Height="50"
                                 Margin="0,0,12,0"
                                 HorizontalAlignment="Left"
-                                VerticalAlignment="Center">
-                        <Image Height="23"
-                               Source="Assets/Images/121-landscape.png"
-                               Stretch="None" />
+                                VerticalAlignment="Top">
+                        <Rectangle Width="36"
+                                   Height="36"
+                                   Fill="{Binding PhotosBrush}">
+                            <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="/Assets/Images/photos.png" Stretch="Uniform" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   Foreground="Black"
+                                   Foreground="{Binding PhotosBrush}"
                                    Text="{Binding PhotoCount,
                                                   Mode=OneWay}"
                                    TextWrapping="Wrap" />
@@ -351,9 +380,9 @@
                VerticalAlignment="Top" />
         <StackPanel Grid.Row="1"
                     Grid.RowSpan="2"
-                    Margin="0,12,0,0"
+                    Margin="0"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
+                    VerticalAlignment="Center"
                     Orientation="Horizontal">
             <Button x:Name="button"
                     Width="125"
@@ -370,16 +399,17 @@
                            VerticalAlignment="Top"
                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
                            FontSize="64"
-                           Foreground="#FFA4A4A4"
+                           Foreground="#FFB6B6B6"
                            Text="X"
                            TextWrapping="Wrap" />
             </Button>
             <Button Width="75"
                     Height="75"
-                    Margin="0"
+                    Margin="-6,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     BorderBrush="#FFD4D4D4"
+                    BorderThickness="3"
                     Foreground="#FFA4A4A4"
                     Style="{StaticResource InfoButtonStyle}"
                     Tap="Button_Tap">
@@ -400,11 +430,11 @@
                     Command="{Binding LikeUserCommand,
                                       Mode=OneWay}"
                     Style="{StaticResource LikeButtonStyle}">
-                <Image Width="100"
-                       Height="100"
+                <Image Width="75"
+                       Height="75"
                        Margin="13,14,-13,-14"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
                        Source="Assets/Images/Heart.png"
                        Stretch="Fill" />
             </Button>

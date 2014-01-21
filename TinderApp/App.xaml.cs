@@ -3,12 +3,14 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Navigation;
+using TinderApp.Lib.API;
 using TinderApp.Library;
+using TinderApp.Library.Controls;
 using TinderApp.Library.MVVM;
 
 namespace TinderApp
 {
-    public partial class App : Application
+    public partial class App : Application, IApp
     {
         public App()
         {
@@ -21,16 +23,24 @@ namespace TinderApp
             ThemeManager.ToLightTheme();
         }
 
-        public static PhoneApplicationFrame RootFrame { get; private set; }
+        public static CustomPhoneApplicationFrame RootFrame { get; private set; }
+
+        public CustomPhoneApplicationFrame RootFrameInstance { get { return RootFrame; } }
 
         public RightSideBarControl RightSideBar { get; set; }
 
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
-            if (Debugger.IsAttached)
+
+            if (e.ExceptionObject.Message.Contains("Unauthorized"))
             {
-                Debugger.Break();
+                Logout();
+                return;
             }
+
+            Console.WriteLine("Exception: " + e.ExceptionObject.Message);
+
+            e.Handled = true;
         }
 
         private void Home_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -97,9 +107,10 @@ namespace TinderApp
             if (phoneApplicationInitialized)
                 return;
 
-            RootFrame = new PhoneApplicationFrame();
-            RootFrame.SetValue(PhoneApplicationFrame.StyleProperty, Application.Current.Resources["CustomFrame"]);
+            RootFrame = new CustomPhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
+
+            RootFrame.SetValue(CustomPhoneApplicationFrame.StyleProperty, Application.Current.Resources["CustomFrame"]);
 
             RootFrame.NavigationFailed += RootFrame_NavigationFailed;
 
@@ -115,6 +126,47 @@ namespace TinderApp
             VisualStateManager.GoToState(Application.Current.RootVisual as PhoneApplicationFrame, "Default", true);
             if (TinderSession.CurrentSession != null)
                 RootFrame.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
+        }
+
+        private void PhoneApplicationService_Activated(object sender, Microsoft.Phone.Shell.ActivatedEventArgs e)
+        {
+            if (!e.IsApplicationInstancePreserved)
+            {
+                TombstoneData data = TombstoneManager.Load();
+                if (data != null)
+                    TinderSession.FromTombstoneData(data);
+            }
+        }
+
+        private void PhoneApplicationService_Closing(object sender, Microsoft.Phone.Shell.ClosingEventArgs e)
+        {
+            if (TinderSession.CurrentSession.IsAuthenticated)
+                TombstoneManager.Save(TinderSession.CurrentSession.ToTombstoneData());
+        }
+
+        private void PhoneApplicationService_Deactivated(object sender, Microsoft.Phone.Shell.DeactivatedEventArgs e)
+        {
+            if (TinderSession.CurrentSession.IsAuthenticated)
+                TombstoneManager.Save(TinderSession.CurrentSession.ToTombstoneData());
+        }
+
+        public void ShowTopBar()
+        {
+            RootFrame.ViewModel.TopBarVisible = true;
+        }
+
+        public Boolean JustLoggedOut { get; set; }
+
+        public void Logout()
+        {
+            JustLoggedOut = true;
+            Client.StopAllRequests();
+            TinderSession.CurrentSession.Logout();
+            TombstoneManager.Delete();
+            RootFrame.ViewModel.TopBarVisible = false;
+            RootFrameInstance.Navigate(new Uri("/InitialPage.xaml", UriKind.Relative));
+            while (RootFrameInstance.CanGoBack)
+                RootFrameInstance.RemoveBackEntry();
         }
     }
 }

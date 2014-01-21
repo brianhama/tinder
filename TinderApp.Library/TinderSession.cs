@@ -1,15 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Linq;
 using System.Windows.Threading;
 using TinderApp.Lib;
 using TinderApp.Library.ViewModels;
+using TinderApp.Lib.API;
+using System.Net.Http;
+using TinderApp.Library.Controls;
 
 namespace TinderApp.Library
 {
+    [DataContract]
     public class TinderSession
     {
+        public TinderSession()
+        {
+        }
+
         private static TinderSession _currentSession = null;
 
         private readonly FacebookSessionInfo _fbSessionInfo;
@@ -72,7 +82,7 @@ namespace TinderApp.Library
         {
             get
             {
-                return _currentUser != null;
+                return _currentUser != null && !String.IsNullOrEmpty(Client.AuthToken);
             }
         }
 
@@ -116,18 +126,25 @@ namespace TinderApp.Library
                 await GetUpdate();
                 await GetRecommendations();
 
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    _updateTimer = new DispatcherTimer();
-                    _updateTimer.Interval = TimeSpan.FromMilliseconds(_globalInfo.UpdatesInterval);
-                    _updateTimer.Tick += _updateTimer_Tick;
-                    _updateTimer.Start();
-                });
+                StartUpdatesTimer();
+
+                (Application.Current as TinderApp.Library.Controls.IApp).RootFrameInstance.LoggedIn();
 
                 return true;
             }
 
             return false;
+        }
+
+        private void StartUpdatesTimer()
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _updateTimer = new DispatcherTimer();
+                _updateTimer.Interval = TimeSpan.FromMilliseconds(_globalInfo.UpdatesInterval);
+                _updateTimer.Tick += _updateTimer_Tick;
+                _updateTimer.Start();
+            });
         }
 
         public async Task GetRecommendations()
@@ -141,10 +158,10 @@ namespace TinderApp.Library
             }
         }
 
-        public async Task<UpdatesResponse> GetUpdate()
+        public async Task GetUpdate()
         {
             if (_isUpdating)
-                return null;
+                return;
 
             try
             {
@@ -160,8 +177,17 @@ namespace TinderApp.Library
                 }
 
                 LastActivity = DateTime.Parse(response.LastActivityDate);
-
-                return response;
+            }
+            catch (HttpRequestException e)
+            {
+                if (e.Message.Contains("Unauthorized"))
+                {
+                    (Application.Current as IApp).Logout();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception during update: " + ex.Message);
             }
             finally
             {
@@ -171,8 +197,8 @@ namespace TinderApp.Library
 
         public void Logout()
         {
-            Settings settings = new Settings();
-            settings.Save();
+            _updateTimer.Stop();
+            _currentSession = null;
         }
 
         private async void _updateTimer_Tick(object sender, EventArgs e)
@@ -186,6 +212,39 @@ namespace TinderApp.Library
             ping.lat = _location.Latitude;
             ping.lon = _location.Longitude;
             await ping.Ping();
+        }
+
+        public TombstoneData ToTombstoneData()
+        {
+            return new TombstoneData()
+            {
+                 AuthToken = Client.AuthToken,
+                 CurrentGlobals = _globalInfo,
+                 CurrentProfile = _currentProfile,
+                 CurrentUser = _currentUser,
+                 FBSession = _fbSessionInfo,
+                 LastActivity = _lastActivity,
+                 Location = _location,
+                 Matches = new List<Match>(Matches.Matches.Select(a=>a.Data)),
+                 Recommendations = _recommendations.ToList()
+            };
+        }
+
+        public static TinderSession FromTombstoneData(TombstoneData data)
+        {
+            Client.AuthToken = data.AuthToken;
+            _currentSession = new TinderSession(data.FBSession, data.Location);
+            _currentSession._currentProfile = data.CurrentProfile;
+            _currentSession._currentUser = data.CurrentUser;
+            _currentSession._globalInfo = data.CurrentGlobals;
+            _currentSession._lastActivity = data.LastActivity;
+            _currentSession._matches = new MatchesViewModel(data.Matches);
+            _currentSession._recommendations = new Stack<UserResult>(data.Recommendations);
+            _currentSession.StartUpdatesTimer();
+
+            (Application.Current as TinderApp.Library.Controls.IApp).RootFrameInstance.LoggedIn();
+
+            return _currentSession;
         }
     }
 }

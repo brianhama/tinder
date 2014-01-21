@@ -41,8 +41,7 @@ namespace TinderApp
 
         private void logout_Click(object sender, RoutedEventArgs e)
         {
-            TinderSession.CurrentSession.Logout();
-            NavigationService.Navigate(new Uri("/InitialPage.xaml", UriKind.Relative));
+            (App.Current as App).Logout();
         }
 
         private void SettingsPage_LayoutUpdated(object sender, EventArgs e)
