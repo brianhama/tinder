@@ -1,7 +1,7 @@
 ﻿<phone:PhoneApplicationPage x:Class="TinderApp.SettingsPage"
                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                            xmlns:Lib="clr-namespace:TinderApp.Lib;assembly=TinderApp.Library"
+                            xmlns:Lib="clr-namespace:TinderApp.Models;assembly=TinderApp.Library"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -20,7 +20,7 @@
                                         Margin="0"
                                         VerticalAlignment="Top"
                                         Header="I am a"
-                                        SelectedIndex="{Binding gender,
+                                        SelectedIndex="{Binding GenderID,
                                                                 Mode=TwoWay}">
                 <ListBoxItem Content="Man" />
                 <ListBoxItem Content="Woman" />
@@ -38,7 +38,7 @@
                                            BorderBrush="Black"
                                            Change="5"
                                            Header="Search Distance:"
-                                           Value="{Binding distance_filter,
+                                           Value="{Binding DistanceFilter,
                                                            Mode=TwoWay}" />
             <telerikInput:RadNumericUpDown x:Name="minAge"
                                            Margin="0,24,0,0"
@@ -46,7 +46,7 @@
                                            Header="Minimum Age:"
                                            MaxValue="49"
                                            MinValue="18"
-                                           Value="{Binding age_filter_min,
+                                           Value="{Binding AgeFilterMinimum,
                                                            Mode=TwoWay}" />
             <telerikInput:RadNumericUpDown x:Name="maxAge"
                                            Margin="0,24,0,0"
@@ -55,7 +55,7 @@
                                            MaxValue="50"
                                            MinValue="{Binding Value,
                                                               ElementName=minAge}"
-                                           Value="{Binding age_filter_max,
+                                           Value="{Binding AgeFilterMaximum,
                                                            Mode=TwoWay}" />
             <TextBlock Margin="0,24,0,0"
                        HorizontalAlignment="Center"

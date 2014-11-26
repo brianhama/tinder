@@ -1,8 +1,8 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
 using System.Windows.Navigation;
-using TinderApp.Lib;
 using TinderApp.Library.ViewModels;
+using TinderApp.Models;
 
 namespace TinderApp
 {

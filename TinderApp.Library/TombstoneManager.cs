@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TinderApp.Models;
 
 namespace TinderApp.Library
 {
     public static class TombstoneManager
     {
-        public static void Save(TombstoneData data)
+        public static void Delete()
         {
-            Coding4Fun.Toolkit.Storage.Serializer.Save<TombstoneData>("TombstoneState", data);
+            Coding4Fun.Toolkit.Storage.PlatformFileAccess.DeleteFile("TombstoneState");
         }
 
         public static TombstoneData Load()
@@ -21,9 +18,9 @@ namespace TinderApp.Library
             return null;
         }
 
-        public static void Delete()
+        public static void Save(TombstoneData data)
         {
-            Coding4Fun.Toolkit.Storage.PlatformFileAccess.DeleteFile("TombstoneState");
+            Coding4Fun.Toolkit.Storage.Serializer.Save<TombstoneData>("TombstoneState", data);
         }
     }
 }

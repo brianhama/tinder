@@ -1,16 +1,12 @@
-﻿using System;
+﻿using Microsoft.Phone.Controls;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using TinderApp.Library.ViewModels;
 using TinderApp.Library;
-using TinderApp.Lib.API;
-using TinderApp.Lib;
+using TinderApp.Library.ViewModels;
+using TinderApp.Models;
+using TinderApp.TinderApi;
 
 namespace TinderApp
 {
@@ -58,7 +54,7 @@ namespace TinderApp
 
                 request.Assets = new Asset[] { asset };
 
-                TinderSession.CurrentSession.CurrentProfile.photos = await ContentClient.Post<List<Photo>>("media", request);
+                TinderSession.CurrentSession.CurrentProfile.Photos = await ContentClient.PostAsync<List<Photo>>("media", request).ConfigureAwait(false);
 
                 NavigationService.GoBack();
             }

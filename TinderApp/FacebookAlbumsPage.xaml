@@ -48,5 +48,4 @@
                                 LayoutMode="Grid"
                                 SelectionChanged="photoList_SelectionChanged" />
     </Grid>
-
 </phone:PhoneApplicationPage>

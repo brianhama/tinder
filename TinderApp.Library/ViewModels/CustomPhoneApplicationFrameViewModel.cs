@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -13,16 +9,14 @@ namespace TinderApp.Library.ViewModels
     public class CustomPhoneApplicationFrameViewModel : ObservableObject
     {
         private Boolean _topBarVisible = false;
-        public Boolean TopBarVisible
+
+        public ImageBrush ProfileImageBrush
         {
             get
             {
-                return _topBarVisible;
-            }
-            set
-            {
-                _topBarVisible = value;
-                base.RaisePropertyChanged("TopBarVisibility");
+                if (TinderSession.CurrentSession != null && TinderSession.CurrentSession.IsAuthenticated)
+                    return new ImageBrush() { ImageSource = new BitmapImage(new Uri(String.Format("https://graph.facebook.com/me/picture?access_token={0}&height=60&width=60", TinderSession.CurrentSession.FbSessionInfo.FacebookToken))) };
+                return null;
             }
         }
 
@@ -36,13 +30,16 @@ namespace TinderApp.Library.ViewModels
             }
         }
 
-        public ImageBrush ProfileImageBrush
+        public Boolean TopBarVisible
         {
             get
             {
-                if (TinderSession.CurrentSession != null && TinderSession.CurrentSession.IsAuthenticated)
-                    return new ImageBrush() { ImageSource = new BitmapImage(new Uri(String.Format("https://graph.facebook.com/me/picture?access_token={0}&height=60&width=60", TinderSession.CurrentSession.FbSessionInfo.FacebookToken))) };
-                return null;
+                return _topBarVisible;
+            }
+            set
+            {
+                _topBarVisible = value;
+                base.RaisePropertyChanged("TopBarVisibility");
             }
         }
 

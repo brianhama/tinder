@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Device.Location;
-using System.Windows.Threading;
+using TinderApp.Models;
 
 namespace TinderApp.Library
 {
-    public class GeographicalCordinates
-    {
-        public double Latitude { get; set; }
-
-        public double Longitude { get; set; }
-    }
-
     public class LocationManager
     {
         #region Delegates
@@ -24,12 +17,12 @@ namespace TinderApp.Library
 
         static LocationManager()
         {
-            LastPosition = new GeographicalCordinates() { Latitude = 35, Longitude = 35 };
+            LastPosition = new Position() { Latitude = 35, Longitude = 35 };
         }
 
         public event PositionDeterminedHandler OnPositionDetermined;
 
-        public static GeographicalCordinates LastPosition { get; set; }
+        public static Position LastPosition { get; set; }
 
         public Boolean HasDeterminedPosition
         {
@@ -49,9 +42,9 @@ namespace TinderApp.Library
                 PositionDetermined(new PositionDeterminedEventArgs(true, false));
         }
 
-        private GeographicalCordinates GetGeographicalCordinatesFromGeoCoordinate(GeoCoordinate e)
+        private Position GetPositionFromGeoCoordinate(GeoCoordinate e)
         {
-            return new GeographicalCordinates() { Latitude = (float)e.Latitude, Longitude = (float)e.Longitude };
+            return new Position() { Latitude = (float)e.Latitude, Longitude = (float)e.Longitude };
         }
 
         private void PositionDetermined(PositionDeterminedEventArgs e)
@@ -68,7 +61,7 @@ namespace TinderApp.Library
             if (!e.Position.Location.IsUnknown)
             {
                 watcher.Stop();
-                PositionDetermined(new PositionDeterminedEventArgs(GetGeographicalCordinatesFromGeoCoordinate(e.Position.Location)));
+                PositionDetermined(new PositionDeterminedEventArgs(GetPositionFromGeoCoordinate(e.Position.Location)));
             }
         }
     }
@@ -81,7 +74,7 @@ namespace TinderApp.Library
             IsOtherFailure = isOtherFailure;
         }
 
-        public PositionDeterminedEventArgs(GeographicalCordinates coordinate)
+        public PositionDeterminedEventArgs(Position coordinate)
         {
             Location = coordinate;
             IsPermissionFailure = false;
@@ -92,6 +85,6 @@ namespace TinderApp.Library
 
         public Boolean IsPermissionFailure { get; private set; }
 
-        public GeographicalCordinates Location { get; private set; }
+        public Position Location { get; private set; }
     }
 }

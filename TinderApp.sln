@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinderApp", "TinderApp\TinderApp.csproj", "{306F8C5F-1A21-4C39-946C-F174F1A5E600}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinderApp.Library", "TinderApp.Library\TinderApp.Library.csproj", "{A8832718-F295-48B2-BE97-ED7DF79BCA32}"
@@ -11,6 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9BFF02
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinderApp.Models", "TinderApp.Models\TinderApp.Models.csproj", "{EAA18625-44E2-420E-9B7C-0913B5C402B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinderApp.TinderApi", "TinderApp.TinderApi\TinderApp.TinderApi.csproj", "{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinderApp.Common", "TinderApp.Common\TinderApp.Common.csproj", "{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +56,42 @@ Global
 		{A8832718-F295-48B2-BE97-ED7DF79BCA32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8832718-F295-48B2-BE97-ED7DF79BCA32}.Release|ARM.ActiveCfg = Release|Any CPU
 		{A8832718-F295-48B2-BE97-ED7DF79BCA32}.Release|x86.ActiveCfg = Release|Any CPU
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Debug|ARM.Build.0 = Debug|ARM
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Debug|x86.ActiveCfg = Debug|x86
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Debug|x86.Build.0 = Debug|x86
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Release|ARM.ActiveCfg = Release|ARM
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Release|ARM.Build.0 = Release|ARM
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Release|x86.ActiveCfg = Release|x86
+		{EAA18625-44E2-420E-9B7C-0913B5C402B1}.Release|x86.Build.0 = Release|x86
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Debug|ARM.Build.0 = Debug|ARM
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Debug|x86.ActiveCfg = Debug|x86
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Debug|x86.Build.0 = Debug|x86
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Release|ARM.ActiveCfg = Release|ARM
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Release|ARM.Build.0 = Release|ARM
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Release|x86.ActiveCfg = Release|x86
+		{FBEFC968-0C85-45E5-AAAB-9196AA8944E3}.Release|x86.Build.0 = Release|x86
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Debug|ARM.Build.0 = Debug|ARM
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Debug|x86.ActiveCfg = Debug|x86
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Debug|x86.Build.0 = Debug|x86
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Release|ARM.ActiveCfg = Release|ARM
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Release|ARM.Build.0 = Release|ARM
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Release|x86.ActiveCfg = Release|x86
+		{7B7A5950-6FDF-4E45-AC3D-25F1E1ABD372}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

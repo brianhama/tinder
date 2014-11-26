@@ -102,9 +102,6 @@
     <phone:PhoneApplicationPage.Foreground>
         <StaticResource ResourceKey="PhoneForegroundBrush" />
     </phone:PhoneApplicationPage.Foreground>
-    <phone:PhoneApplicationPage.DataContext>
-        <Lib:Profile />
-    </phone:PhoneApplicationPage.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -240,7 +237,7 @@
                                       AcceptsReturn="True"
                                       Header="Bio"
                                       MaxLength="250"
-                                      Text="{Binding bio,
+                                      Text="{Binding BiographyText,
                                                      Mode=TwoWay}"
                                       TextWrapping="Wrap"
                                       Watermark="Enter something about yourself..." />

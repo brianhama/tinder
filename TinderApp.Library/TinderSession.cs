@@ -1,30 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Linq;
 using System.Windows.Threading;
-using TinderApp.Lib;
-using TinderApp.Library.ViewModels;
-using TinderApp.Lib.API;
-using System.Net.Http;
 using TinderApp.Library.Controls;
+using TinderApp.Library.ViewModels;
+using TinderApp.Models;
+using TinderApp.Models.Facebook;
+using TinderApp.TinderApi;
 
 namespace TinderApp.Library
 {
     [DataContract]
     public class TinderSession
     {
-        public TinderSession()
-        {
-        }
-
         private static TinderSession _currentSession = null;
 
         private readonly FacebookSessionInfo _fbSessionInfo;
 
-        private readonly GeographicalCordinates _location;
+        private readonly Position _location;
 
         private Profile _currentProfile;
 
@@ -42,7 +39,11 @@ namespace TinderApp.Library
 
         private DispatcherTimer _updateTimer;
 
-        private TinderSession(FacebookSessionInfo fbSession, GeographicalCordinates location)
+        public TinderSession()
+        {
+        }
+
+        private TinderSession(FacebookSessionInfo fbSession, Position location)
         {
             _fbSessionInfo = fbSession;
             _location = location;
@@ -103,9 +104,26 @@ namespace TinderApp.Library
             get { return _recommendations; }
         }
 
-        public static TinderSession CreateNewSession(FacebookSessionInfo fbSession, GeographicalCordinates location)
+        public static TinderSession CreateNewSession(FacebookSessionInfo fbSession, Position location)
         {
             _currentSession = new TinderSession(fbSession, location);
+
+            return _currentSession;
+        }
+
+        public static TinderSession FromTombstoneData(TombstoneData data)
+        {
+            Client.AuthToken = data.AuthToken;
+            _currentSession = new TinderSession(data.FBSession, data.Location);
+            _currentSession._currentProfile = data.CurrentProfile;
+            _currentSession._currentUser = data.CurrentUser;
+            _currentSession._globalInfo = data.CurrentGlobals;
+            _currentSession._lastActivity = data.LastActivity;
+            _currentSession._matches = new MatchesViewModel(data.Matches);
+            _currentSession._recommendations = new Stack<UserResult>(data.Recommendations);
+            _currentSession.StartUpdatesTimer();
+
+            (Application.Current as TinderApp.Library.Controls.IApp).RootFrameInstance.LoggedIn();
 
             return _currentSession;
         }
@@ -113,13 +131,13 @@ namespace TinderApp.Library
         public async Task<Boolean> Authenticate()
         {
             AuthRequest request = new AuthRequest();
-            request.facebook_token = FbSessionInfo.FacebookToken;
-            request.facebook_id = FbSessionInfo.FacebookID;
+            request.FacebookToken = FbSessionInfo.FacebookToken;
+            request.FacebookID = FbSessionInfo.FacebookID;
             AuthResponse response = await request.Send();
-            if (response.token.Length > 0)
+            if (response.AuthToken.Length > 0)
             {
-                _currentUser = response.user;
-                _globalInfo = response.globals;
+                _currentUser = response.UserProfile;
+                _globalInfo = response.GlobalVariables;
                 _currentProfile = await Profile.GetProfile();
 
                 await PingWithLocation();
@@ -136,20 +154,9 @@ namespace TinderApp.Library
             return false;
         }
 
-        private void StartUpdatesTimer()
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                _updateTimer = new DispatcherTimer();
-                _updateTimer.Interval = TimeSpan.FromMilliseconds(_globalInfo.UpdatesInterval);
-                _updateTimer.Tick += _updateTimer_Tick;
-                _updateTimer.Start();
-            });
-        }
-
         public async Task GetRecommendations()
         {
-            ReccommendationsRequest response = await ReccommendationsRequest.GetRecommendations();
+            ReccommendationsRequest response = await ReccommendationsRequest.GetRecommendations().ConfigureAwait(false);
             if (response.Status == 200)
             {
                 if (Recommendations.Count == 0)
@@ -168,12 +175,12 @@ namespace TinderApp.Library
                 _isUpdating = true;
 
                 UpdatesRequest request = new UpdatesRequest();
-                request.last_activity_date = LastActivity;
-                UpdatesResponse response = await request.GetUpdate();
+                request.LastActivityDate = LastActivity;
+                UpdatesResponse response = await request.GetUpdate().ConfigureAwait(false);
 
                 if (response.Matches != null && response.Matches.Length > 0)
                 {
-                    _matches.Update(response.Matches);
+                    _matches.Update(response.Matches.Where(a => a.Person != null).ToArray());
                 }
 
                 LastActivity = DateTime.Parse(response.LastActivityDate);
@@ -201,6 +208,22 @@ namespace TinderApp.Library
             _currentSession = null;
         }
 
+        public TombstoneData ToTombstoneData()
+        {
+            return new TombstoneData()
+            {
+                AuthToken = Client.AuthToken,
+                CurrentGlobals = _globalInfo,
+                CurrentProfile = _currentProfile,
+                CurrentUser = _currentUser,
+                FBSession = _fbSessionInfo,
+                LastActivity = _lastActivity,
+                Location = _location,
+                Matches = new List<Match>(Matches.Matches.Select(a => a.Data)),
+                Recommendations = _recommendations.ToList()
+            };
+        }
+
         private async void _updateTimer_Tick(object sender, EventArgs e)
         {
             await GetUpdate();
@@ -209,42 +232,20 @@ namespace TinderApp.Library
         private async Task PingWithLocation()
         {
             PingRequest ping = new PingRequest();
-            ping.lat = _location.Latitude;
-            ping.lon = _location.Longitude;
+            ping.Latitude = _location.Latitude;
+            ping.Longitude = _location.Longitude;
             await ping.Ping();
         }
 
-        public TombstoneData ToTombstoneData()
+        private void StartUpdatesTimer()
         {
-            return new TombstoneData()
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                 AuthToken = Client.AuthToken,
-                 CurrentGlobals = _globalInfo,
-                 CurrentProfile = _currentProfile,
-                 CurrentUser = _currentUser,
-                 FBSession = _fbSessionInfo,
-                 LastActivity = _lastActivity,
-                 Location = _location,
-                 Matches = new List<Match>(Matches.Matches.Select(a=>a.Data)),
-                 Recommendations = _recommendations.ToList()
-            };
-        }
-
-        public static TinderSession FromTombstoneData(TombstoneData data)
-        {
-            Client.AuthToken = data.AuthToken;
-            _currentSession = new TinderSession(data.FBSession, data.Location);
-            _currentSession._currentProfile = data.CurrentProfile;
-            _currentSession._currentUser = data.CurrentUser;
-            _currentSession._globalInfo = data.CurrentGlobals;
-            _currentSession._lastActivity = data.LastActivity;
-            _currentSession._matches = new MatchesViewModel(data.Matches);
-            _currentSession._recommendations = new Stack<UserResult>(data.Recommendations);
-            _currentSession.StartUpdatesTimer();
-
-            (Application.Current as TinderApp.Library.Controls.IApp).RootFrameInstance.LoggedIn();
-
-            return _currentSession;
+                _updateTimer = new DispatcherTimer();
+                _updateTimer.Interval = TimeSpan.FromMilliseconds(_globalInfo.UpdatesInterval);
+                _updateTimer.Tick += _updateTimer_Tick;
+                _updateTimer.Start();
+            });
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 using Telerik.Windows.Controls;
-using TinderApp.Lib;
 using TinderApp.Library;
 using TinderApp.Library.MVVM;
+using TinderApp.Models;
 
 namespace TinderApp.Views.ViewModels.Conversation
 {
@@ -19,7 +19,7 @@ namespace TinderApp.Views.ViewModels.Conversation
         {
             get
             {
-                return Utils.GetPrettyDate(TimeStamp);
+                return Utility.GetPrettyDate(TimeStamp);
             }
         }
 

@@ -3,9 +3,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using TinderApp.Lib;
-using TinderApp.Lib.API;
 using TinderApp.Library.MVVM;
+using TinderApp.Models;
+using TinderApp.TinderApi;
 using TinderApp.Views.ViewModels.Conversation;
 
 namespace TinderApp.Library.ViewModels
@@ -70,7 +70,7 @@ namespace TinderApp.Library.ViewModels
         {
             get
             {
-                return Utils.GetMainPhoto(_data.Person.Photos);
+                return Utility.GetMainPhoto(_data.Person.Photos);
             }
         }
 

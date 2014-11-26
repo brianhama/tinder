@@ -1,14 +1,14 @@
 ﻿using Microsoft.Phone.Controls;
 using System;
-using System.Device.Location;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using TinderApp.Library;
-using TinderApp.Library.Facebook;
 using TinderApp.Library.MVVM;
+using TinderApp.Models;
+using TinderApp.Models.Facebook;
 using Windows.Devices.Geolocation;
 
 namespace TinderApp
@@ -20,6 +20,18 @@ namespace TinderApp
             InitializeComponent();
         }
 
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (webBrowser.Visibility == System.Windows.Visibility.Visible)
+            {
+                LoginButtonBorder.Visibility = System.Windows.Visibility.Visible;
+                webBrowser.Visibility = System.Windows.Visibility.Collapsed;
+                e.Cancel = true;
+            }
+
+            base.OnBackKeyPress(e);
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             webBrowser.Navigating += webBrowser_Navigating;
@@ -28,14 +40,6 @@ namespace TinderApp
             Open.Completed += Open_Completed;
 
             base.OnNavigatedTo(e);
-        }
-
-        void Open_Completed(object sender, EventArgs e)
-        {
-            if (ConsentManager.HasConsented)
-                LoginButtonBorder.Visibility = Visibility.Visible;
-            else
-                TermsBorder.Visibility = System.Windows.Visibility.Visible;
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -64,7 +68,7 @@ namespace TinderApp
             location.DesiredAccuracy = PositionAccuracy.Default;
             var usrLocation = await location.GetGeopositionAsync();
 
-            TinderSession activeSession = TinderSession.CreateNewSession(sessionInfo, new GeographicalCordinates() { Latitude = usrLocation.Coordinate.Latitude, Longitude = usrLocation.Coordinate.Longitude });
+            TinderSession activeSession = TinderSession.CreateNewSession(sessionInfo, new Position() { Latitude = usrLocation.Coordinate.Latitude, Longitude = usrLocation.Coordinate.Longitude });
             if (await activeSession.Authenticate())
             {
                 (App.Current as App).RightSideBar.DataContext = activeSession.Matches;
@@ -118,6 +122,14 @@ namespace TinderApp
                 Open.Begin();
         }
 
+        private void Open_Completed(object sender, EventArgs e)
+        {
+            if (ConsentManager.HasConsented)
+                LoginButtonBorder.Visibility = Visibility.Visible;
+            else
+                TermsBorder.Visibility = System.Windows.Visibility.Visible;
+        }
+
         private async void webBrowser_Navigating(object sender, NavigatingEventArgs e)
         {
             if (e.Uri.ToString().StartsWith("https://www.facebook.com/connect/login_success.html"))
@@ -139,13 +151,11 @@ namespace TinderApp
 
                 try
                 {
-
                     accessToken = e.Uri.ToString().Substring(e.Uri.ToString().IndexOf("access_token=") + "access_token=".Length);
                     if (accessToken.IndexOf("&") > 0)
                         accessToken = accessToken.Substring(0, accessToken.IndexOf("&"));
 
                     user = await FacebookUserResponse.GetFacebookUser(accessToken);
-
                 }
                 catch { }
 
@@ -164,18 +174,6 @@ namespace TinderApp
                 else
                     await Authenticate(accessToken, user.Id);
             }
-        }
-
-        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
-        {
-            if (webBrowser.Visibility == System.Windows.Visibility.Visible)
-            {
-                LoginButtonBorder.Visibility = System.Windows.Visibility.Visible;
-                webBrowser.Visibility = System.Windows.Visibility.Collapsed;
-                e.Cancel = true;
-            }
-
-            base.OnBackKeyPress(e);
         }
     }
 }

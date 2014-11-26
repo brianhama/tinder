@@ -29,10 +29,10 @@
                 <StackPanel>
                     <TextBlock Margin="0, 0, 0, 0"
                                HorizontalAlignment="Right"
-                               Text="{Binding FormattedTimeStamp}" >
-                    	<TextBlock.Foreground>
-                    		<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
-                    	</TextBlock.Foreground>
+                               Text="{Binding FormattedTimeStamp}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneSubtleColor}" />
+                        </TextBlock.Foreground>
                     </TextBlock>
 
                     <telerikPrimitivesNamespace:RadPointerContentControl Background="{StaticResource PhoneAccentBrush}" TargetPoint="-141,-100">
@@ -72,10 +72,10 @@
                 <StackPanel Grid.Column="1">
                     <TextBlock Margin="0, 0, 0, 0"
                                HorizontalAlignment="Left"
-                               Text="{Binding FormattedTimeStamp}" >
-                    	<TextBlock.Foreground>
-                    		<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
-                    	</TextBlock.Foreground>
+                               Text="{Binding FormattedTimeStamp}">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneSubtleColor}" />
+                        </TextBlock.Foreground>
                     </TextBlock>
 
                     <telerikPrimitivesNamespace:RadPointerContentControl TargetPoint="145, -100">

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{306f8c5f-1a21-4c39-946c-f174f1a5e600}" Title="Kindling" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="TinderApp author" Description="Kindling" Publisher="TinderApp" PublisherID="{e2f6e37a-a7f6-4858-aafe-0ca1df0b1bce}">
+  <App xmlns="" ProductID="{306f8c5f-1a21-4c39-946c-f174f1a5e600}" Title="Kindling" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal" Author="TinderApp author" Description="Kindling" Publisher="TinderApp" PublisherID="{e2f6e37a-a7f6-4858-aafe-0ca1df0b1bce}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

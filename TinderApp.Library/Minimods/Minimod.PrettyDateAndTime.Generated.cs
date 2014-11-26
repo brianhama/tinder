@@ -30,52 +30,7 @@ namespace Minimod.PrettyDateAndTime
             return dateTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + kind;
         }
 
-        public static string GetPrettyString(this DateTimeOffset dateTime)
-        {
-            return "<DateTimeOffset> { "
-                   + GetPrettyString(dateTime.LocalDateTime) + ", "
-                   + GetPrettyString(dateTime.UtcDateTime)
-                   + " }";
-        }
-
-        public static string GetPrettyString(this TimeSpan timeSpan)
-        {
-            if (timeSpan == TimeSpan.Zero)
-            {
-                return "<TimeSpan.Zero>";
-            }
-
-            if (timeSpan == TimeSpan.MinValue)
-            {
-                return "<TimeSpan.MinValue>";
-            }
-
-            if (timeSpan == TimeSpan.MaxValue)
-            {
-                return "<TimeSpan.MaxValue>";
-            }
-
-            if (timeSpan < TimeSpan.FromSeconds(1))
-            {
-                return milliseconds(timeSpan);
-            }
-            if (timeSpan < TimeSpan.FromMinutes(1))
-            {
-                return seconds(timeSpan);
-            }
-            if (timeSpan < TimeSpan.FromHours(1))
-            {
-                return minutes(timeSpan);
-            }
-            if (timeSpan < TimeSpan.FromHours(24))
-            {
-                return hours(timeSpan);
-            }
-
-            return days(timeSpan);
-        }
-
-        private static string days(TimeSpan timeSpan)
+        private static string Days(TimeSpan timeSpan)
         {
             if (timeSpan.TotalDays % 1 == 0)
             {
@@ -93,7 +48,7 @@ namespace Minimod.PrettyDateAndTime
                                  timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
         }
 
-        private static string hours(TimeSpan timeSpan)
+        private static string Hours(TimeSpan timeSpan)
         {
             if (timeSpan.TotalHours % 1 == 0)
             {
@@ -106,37 +61,6 @@ namespace Minimod.PrettyDateAndTime
                                                                         ? ""
                                                                         : ".{3:D3}")) + " h", timeSpan.Hours,
                                  timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
-        }
-
-        private static string milliseconds(TimeSpan timeSpan)
-        {
-            if (timeSpan.TotalMilliseconds % 1 == 0)
-            {
-                return (int)timeSpan.TotalMilliseconds + " ms";
-            }
-
-            return timeSpan.TotalMilliseconds.ToString() + " ms";
-        }
-
-        private static string minutes(TimeSpan timeSpan)
-        {
-            if (timeSpan.TotalMinutes % 1 == 0)
-            {
-                return (int)timeSpan.TotalMinutes + " min";
-            }
-
-            return String.Format("{0}:{1:D2}" + (timeSpan.Milliseconds == 0 ? "" : ".{2:D3}") + " min",
-                                 timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
-        }
-
-        private static string seconds(TimeSpan timeSpan)
-        {
-            if (timeSpan.TotalSeconds % 1 == 0)
-            {
-                return (int)timeSpan.TotalSeconds + " s";
-            }
-
-            return String.Format("{0}.{1:D3} s", timeSpan.Seconds, timeSpan.Milliseconds);
         }
     }
 }
